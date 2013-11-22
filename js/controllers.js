@@ -35,6 +35,16 @@ mapApp.controller('SearchCtrl', function($scope, $http, $window) {
         searcher = new Fuse(result.data, options);
 
         // add markers to the map.
+        var index;
+        for (index = 0; index < result.data.length; index++) {
+            var building = result.data[index];
+            var latLng = new google.maps.LatLng(building.location.latitude, building.location.longitude);
+            var marker = new google.maps.Marker({
+                position: latLng,
+                map: map,
+                title: building.name
+            });
+        }
     });
 
     $scope.$watch('searchText', function(newValue, oldValue) {
@@ -54,8 +64,6 @@ mapApp.controller('SearchCtrl', function($scope, $http, $window) {
         };
         map = new google.maps.Map(document.getElementById('map-canvas'),
             mapOptions);
-
-
     }
 
 });
