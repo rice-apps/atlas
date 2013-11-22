@@ -11,7 +11,9 @@ mapApp.controller('SearchCtrl', function($scope, $http, $window) {
 
     // declare the google map.
     var map;
-    var infoWindows = [];
+
+    // init the lat/lng dictionary. Maps a latLng to various things.
+    var latLngDict = {};
 
     //init search results.
     $scope.searchResults = [];
@@ -33,8 +35,11 @@ mapApp.controller('SearchCtrl', function($scope, $http, $window) {
     $scope.focusBuilding = function(buildingToFocus) {
         var latLng = new google.maps.LatLng(buildingToFocus.location.latitude, buildingToFocus.location.longitude);
         map.setCenter(latLng);
+        var dictEntry = latLngDict[latLng];
+        dictEntry.infoWindow.open(map, dictEntry.marker);
     };
 
+    // load in the campus data json via a HTTP GET request.
     $http.get('/data/campus_data.json').then(function(result) {
         // set the fuse searcher.
         var options = {
@@ -56,14 +61,15 @@ mapApp.controller('SearchCtrl', function($scope, $http, $window) {
             var contentString = '<div id="content">'+
                 '</div>'+
                 "AEL";
-            var infowindow = new google.maps.InfoWindow({
+            var infoWindow = new google.maps.InfoWindow({
                 content: contentString
             });
-            infoWindows[index] = new google.maps.InfoWindow({
-                content: contentString
-            });
+
+            // add entry to latLngDict.
+            latLngDict[latLng] = {"marker":marker, "infoWindow":infoWindow};
             google.maps.event.addListener(marker, 'click', function(target){
-                infoWindows[marker.index].open(map,marker);
+                var dictEntry = latLngDict[target.latLng];
+                dictEntry.infoWindow.open(map, dictEntry.marker);
             }); 
         }
     });
