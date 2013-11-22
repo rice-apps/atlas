@@ -11,6 +11,7 @@ mapApp.controller('SearchCtrl', function($scope, $http, $window) {
 
     // declare the google map.
     var map;
+    var infoWindows = [];
 
     //init search results.
     $scope.searchResults = [];
@@ -49,11 +50,23 @@ mapApp.controller('SearchCtrl', function($scope, $http, $window) {
             var marker = new google.maps.Marker({
                 position: latLng,
                 map: map,
-                title: building.name
+                title: building.name,
+                index: index
             });
+            var contentString = '<div id="content">'+
+                '</div>'+
+                "AEL";
+            var infowindow = new google.maps.InfoWindow({
+                content: contentString
+            });
+            infoWindows[index] = new google.maps.InfoWindow({
+                content: contentString
+            });
+            google.maps.event.addListener(marker, 'click', function(target){
+                infoWindows[marker.index].open(map,marker);
+            }); 
         }
     });
-
     $scope.$watch('searchText', function(newValue, oldValue) {
         if (searcher !== undefined) {
             $scope.searchResults = searcher.search(newValue);
