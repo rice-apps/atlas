@@ -86,7 +86,10 @@ mapApp.controller('SearchCtrl', function($scope, $http, $window) {
         var mapOptions = {
           zoom: 17,
           center: new google.maps.LatLng(29.718204, -95.400000),
-          mapTypeId: google.maps.MapTypeId.ROADMAP
+          mapTypeId: google.maps.MapTypeId.ROADMAP,
+          disableDefaultUI: true,
+          minZoom: 15,
+          maxZoom: 20
         };
         map = new google.maps.Map(document.getElementById('map-canvas'),
             mapOptions);
