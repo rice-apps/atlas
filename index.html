@@ -1,9 +1,20 @@
 <!DOCTYPE html>
-<html>
+<html ng-app="mapApp">
 <head>
     <title>Rice Map</title>
+
+    <script src="js/fuse.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.0/angular.min.js"></script>
+    <script src="js/controllers.js"></script>
 </head>
 <body>
-    Welcome to the new and improved Rice Map!
+    <h1>Welcome to the new and improved Rice Map!</h1>
+
+    <div ng-controller="SearchCtrl">
+        <input type="text" ng-model="searchText" />
+        <ul>
+            <li ng-repeat="result in searchResults">{{result.name}}</li>
+        </ul>
+    </div>
 </body>
 </html>
