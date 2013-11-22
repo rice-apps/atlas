@@ -59,8 +59,8 @@ mapApp.controller('SearchCtrl', function($scope, $http, $window) {
                 index: index
             });
             var contentString = '<div id="content">'+
-                '</div>'+
-                "AEL";
+                building.abbreviation + ' ' + building.name +
+                '</div>';
             var infoWindow = new google.maps.InfoWindow({
                 content: contentString
             });
