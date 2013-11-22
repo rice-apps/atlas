@@ -1,7 +1,7 @@
 [
 {
   "name": "Abercrombie Engineering Laboratory",
-  "abbreviation": ""
+  "abbreviation": "AEL"
 },
 {
   "name": "Allen Business Center",
@@ -13,11 +13,11 @@
 },
 {
   "name": "Anderson Biological Laboratories, M.D.",
-  "abbreviation": ""
+  "abbreviation": "ABL"
 },
 {
   "name": "Anderson Hall, M.D.",
-  "abbreviation": ""
+  "abbreviation": "ANH"
 },
 {
   "name": "Dean of Architecture",
@@ -33,7 +33,7 @@
 },
 {
   "name": "Baker Hall, James A. III",
-  "abbreviation": ""
+  "abbreviation": "BKH"
 },
 {
   "name": "Dean of Social Sciences",
@@ -45,7 +45,7 @@
 },
 {
   "name": "BioScience Research Collaborative",
-  "abbreviation": ""
+  "abbreviation": "BRC"
 },
 {
   "name": "Booth Centennial Pavilion, Suzanne Deal",
@@ -61,11 +61,11 @@
 },
 {
   "name": "Brockman Hall for Physics",
-  "abbreviation": ""
+  "abbreviation": "BRK"
 },
 {
   "name": "Brown College, Margarett Root",
-  "abbreviation": ""
+  "abbreviation": "BNC"
 },
 {
   "name": "Brown College Masters House",
@@ -73,7 +73,7 @@
 },
 {
   "name": "Brown Hall, Alice Pratt",
-  "abbreviation": ""
+  "abbreviation": "APB"
 },
 {
   "name": "Dean of Shepherd School of Music",
@@ -81,7 +81,7 @@
 },
 {
   "name": "Brown Hall, George R",
-  "abbreviation": ""
+  "abbreviation": "GRB"
 },
 {
   "name": "Dean of Wiess School of Natural Sciences",
@@ -89,15 +89,15 @@
 },
 {
   "name": "Brown Hall for Mathematical Sciences, Herman",
-  "abbreviation": ""
+  "abbreviation": "HBH"
 },
 {
   "name": "Butcher Hall, Dell",
-  "abbreviation": ""
+  "abbreviation": "DBH"
 },
 {
   "name": "Cohen House, Robert and Agnes",
-  "abbreviation": ""
+  "abbreviation": "COH"
 },
 {
   "name": "Continuing Studies, Martel Center for",
@@ -113,7 +113,7 @@
 },
 {
   "name": "Duncan College",
-  "abbreviation": ""
+  "abbreviation": "DCC"
 },
 {
   "name": "Duncan College Masters House",
@@ -121,7 +121,7 @@
 },
 {
   "name": "Duncan Hall, Anne and Charles",
-  "abbreviation": ""
+  "abbreviation": "DCH"
 },
 {
   "name": "Dean of George R. Brown School of Engineering",
@@ -133,11 +133,11 @@
 },
 {
   "name": "Fondren Library",
-  "abbreviation": ""
+  "abbreviation": "FON"
 },
 {
   "name": "Gibbs Recreation and Wellness Center, Barbara and David",
-  "abbreviation": ""
+  "abbreviation": "GRW"
 },
 {
   "name": "Greenbriar Building",
@@ -149,11 +149,11 @@
 },
 {
   "name": "Hamman Hall",
-  "abbreviation": ""
+  "abbreviation": "HAM"
 },
 {
   "name": "Hanszen College",
-  "abbreviation": ""
+  "abbreviation": "HNZ"
 },
 {
   "name": "Hanszen College Masters House",
@@ -161,11 +161,11 @@
 },
 {
   "name": "Herring Hall, Robert R.",
-  "abbreviation": ""
+  "abbreviation": "HRG"
 },
 {
   "name": "Herzstein Hall",
-  "abbreviation": ""
+  "abbreviation": "HRZ"
 },
 {
   "name": "Hess Tennis Stadium, Jake",
@@ -197,7 +197,7 @@
 },
 {
   "name": "Humanities Building",
-  "abbreviation": ""
+  "abbreviation": "HUM"
 },
 {
   "name": "Dean of Humanities",
@@ -212,15 +212,15 @@
   "abbreviation": ""
 },{
   "name": "Keck Hall",
-  "abbreviation": ""
+  "abbreviation": "KCK"
 },
 {
   "name": "Keith-Wiess Geological Laboratories",
-  "abbreviation": ""
+  "abbreviation": "KWG"
 },
 {
   "name": "Ley Student Center",
-  "abbreviation": ""
+  "abbreviation": "LEY"
 },
 {
   "name": "Lovett College, Edgar Odell",
@@ -244,7 +244,7 @@
 },
 {
   "name": "Martel College",
-  "abbreviation": ""
+  "abbreviation": "MLC"
 },
 {
   "name": "Martel College Masters House",
@@ -259,7 +259,7 @@
 },
 {
   "name": "McNair Hall, Janice and Robert",
-  "abbreviation": ""
+  "abbreviation": "MCN"
 },
 {
   "name": "Dean of Jesse H. Jones Graduate School of Business",
@@ -267,31 +267,35 @@
 },
 {
   "name": "Mechanical Engineering Building",
-  "abbreviation": ""
+  "abbreviation": "MEB"
 },
 {
   "name": "Mechanical Laboratory",
-  "abbreviation": ""
+  "abbreviation": "MEL"
 },
 {
   "name": "Media Center",
-  "abbreviation": ""
+  "abbreviation": "MED"
 },
 {
   "name": "Mudd Computer Science Building",
-  "abbreviation": ""
+  "abbreviation": "MUD"
 },
 {
   "name": "North Servery",
-  "abbreviation": ""
+  "abbreviation": "NSV"
 },
 {
   "name": "Oshman Engineering Design Kitchen",
-  "abbreviation": ""
+  "abbreviation": "OED"
+},
+{
+  "name": "Police Department",
+  "abbreviation": "POL"
 },
 {
   "name": "Rayzor Hall",
-  "abbreviation": ""
+  "abbreviation": "RZR"
 },
 {
   "name": "Reckling Park at Cameron Field",
@@ -303,7 +307,7 @@
 },
 {
   "name": "Rice Memorial Center",
-  "abbreviation": ""
+  "abbreviation": "RMC"
 },
 {
   "name": "Campus Bookstore",
@@ -315,7 +319,7 @@
 },
 {
   "name": "Rice Stadium",
-  "abbreviation": ""
+  "abbreviation": "STA"
 },
 {
   "name": "Rice University Police Department",
@@ -335,7 +339,7 @@
 },
 {
   "name": "Ryon Engineering Laboratory",
-  "abbreviation": ""
+  "abbreviation": "RYN"
 },
 {
   "name": "Seibel Servery, Abe and Annie",
@@ -343,7 +347,7 @@
 },
 {
   "name": "Sewall Hall",
-  "abbreviation": ""
+  "abbreviation": "SEW"
 },
 {
   "name": "Rice Art Gallery",
@@ -355,15 +359,15 @@
 },
 {
   "name": "South Servery",
-  "abbreviation": ""
+  "abbreviation": "SSV"
 },
 {
   "name": "Space Science and Technology Building",
-  "abbreviation": ""
+  "abbreviation": "SST"
 },
 {
   "name": "Tudor Fieldhouse and Youngkin Center",
-  "abbreviation": ""
+  "abbreviation": "TUD"
 },
 {
   "name": "Autry Court",
@@ -375,11 +379,11 @@
 },
 {
   "name": "West Servery",
-  "abbreviation": ""
+  "abbreviation": "WSV"
 },
 {
   "name": "Wiess College",
-  "abbreviation": ""
+  "abbreviation": "WSC"
 },
 {
   "name": "Wiess President’s House",
