@@ -1,448 +1,898 @@
 [
-{
-  "name": "Abercrombie Engineering Laboratory",
-  "abbreviation": "AEL"
-},
-{
-  "name": "Allen Business Center",
-  "abbreviation": ""
-},
-{
-  "name": "President's Office",
-  "abbreviation": ""
-},
-{
-  "name": "Anderson Biological Laboratories, M.D.",
-  "abbreviation": "ABL"
-},
-{
-  "name": "Anderson Hall, M.D.",
-  "abbreviation": "ANH"
-},
-{
-  "name": "Dean of Architecture",
-  "abbreviation": ""
-},
-{
-  "name": "Baker College",
-  "abbreviation": ""
-},
-{
-  "name": "Baker College Masters House",
-  "abbreviation": ""
-},
-{
-  "name": "Baker Hall, James A. III",
-  "abbreviation": "BKH"
-},
-{
-  "name": "Dean of Social Sciences",
-  "abbreviation": ""
-},
-{
-  "name": "James A. Baker III Institute for Public Policy",
-  "abbreviation": ""
-},
-{
-  "name": "BioScience Research Collaborative",
-  "abbreviation": "BRC"
-},
-{
-  "name": "Booth Centennial Pavilion, Suzanne Deal",
-  "abbreviation": ""
-},
-{
-  "name": "James Turrell‘s \"Twilight\" Epiphany Skyspace",
-  "abbreviation": ""
-},
-{
-  "name": "Brochstein Pavilion, Raymond and Susan",
-  "abbreviation": ""
-},
-{
-  "name": "Brockman Hall for Physics",
-  "abbreviation": "BRK"
-},
-{
-  "name": "Brown College, Margarett Root",
-  "abbreviation": "BNC"
-},
-{
-  "name": "Brown College Masters House",
-  "abbreviation": ""
-},
-{
-  "name": "Brown Hall, Alice Pratt",
-  "abbreviation": "APB"
-},
-{
-  "name": "Dean of Shepherd School of Music",
-  "abbreviation": ""
-},
-{
-  "name": "Brown Hall, George R",
-  "abbreviation": "GRB"
-},
-{
-  "name": "Dean of Wiess School of Natural Sciences",
-  "abbreviation": ""
-},
-{
-  "name": "Brown Hall for Mathematical Sciences, Herman",
-  "abbreviation": "HBH"
-},
-{
-  "name": "Butcher Hall, Dell",
-  "abbreviation": "DBH"
-},
-{
-  "name": "Cohen House, Robert and Agnes",
-  "abbreviation": "COH"
-},
-{
-  "name": "Continuing Studies, Martel Center for",
-  "abbreviation": ""
-},
-{
-  "name": "Dean of Susanne M. Glasscock School of Continuing Studies",
-  "abbreviation": ""
-},
-{
-  "name": "Cox Fitness Center, John L.",
-  "abbreviation": ""
-},
-{
-  "name": "Duncan College",
-  "abbreviation": "DCC"
-},
-{
-  "name": "Duncan College Masters House",
-  "abbreviation": ""
-},
-{
-  "name": "Duncan Hall, Anne and Charles",
-  "abbreviation": "DCH"
-},
-{
-  "name": "Dean of George R. Brown School of Engineering",
-  "abbreviation": ""
-},
-{
-  "name": "Facilities Engineering and Planning Building",
-  "abbreviation": ""
-},
-{
-  "name": "Fondren Library",
-  "abbreviation": "FON"
-},
-{
-  "name": "Gibbs Recreation and Wellness Center, Barbara and David",
-  "abbreviation": "GRW"
-},
-{
-  "name": "Greenbriar Building",
-  "abbreviation": ""
-},
-{
-  "name": "Greenhouse",
-  "abbreviation": ""
-},
-{
-  "name": "Hamman Hall",
-  "abbreviation": "HAM"
-},
-{
-  "name": "Hanszen College",
-  "abbreviation": "HNZ"
-},
-{
-  "name": "Hanszen College Masters House",
-  "abbreviation": ""
-},
-{
-  "name": "Herring Hall, Robert R.",
-  "abbreviation": "HRG"
-},
-{
-  "name": "Herzstein Hall",
-  "abbreviation": "HRZ"
-},
-{
-  "name": "Hess Tennis Stadium, Jake",
-  "abbreviation": ""
-},
-{
-  "name": "Holloway Field",
-  "abbreviation": ""
-},
-{
-  "name": "Wendel D. Ley Track",
-  "abbreviation": ""
-},
-{
-  "name": "Housing and Dining",
-  "abbreviation": ""
-},
-{
-  "name": "Huff House, Peter and Nancy",
-  "abbreviation": ""
-},
-{
-  "name": "Alumni Affairs",
-  "abbreviation": ""
-},
-{
-  "name": "Center for Student Professional Development",
-  "abbreviation": ""
-},
-{
-  "name": "Humanities Building",
-  "abbreviation": "HUM"
-},
-{
-  "name": "Dean of Humanities",
-  "abbreviation": ""
-},
-{
-  "name": "Jones College, Mary Gibbs",
-  "abbreviation": ""
-},
-{
-  "name": "Jones College Masters House ",
-  "abbreviation": ""
-},{
-  "name": "Keck Hall",
-  "abbreviation": "KCK"
-},
-{
-  "name": "Keith-Wiess Geological Laboratories",
-  "abbreviation": "KWG"
-},
-{
-  "name": "Ley Student Center",
-  "abbreviation": "LEY"
-},
-{
-  "name": "Lovett College, Edgar Odell",
-  "abbreviation": ""
-},
-{
-  "name": "Lovett College Masters House",
-  "abbreviation": ""
-},
-{
-  "name": "Lovett Hall",
-  "abbreviation": ""
-},
-{
-  "name": "Admission Office",
-  "abbreviation": ""
-},
-{
-  "name": "Welcome Center",
-  "abbreviation": ""
-},
-{
-  "name": "Martel College",
-  "abbreviation": "MLC"
-},
-{
-  "name": "Martel College Masters House",
-  "abbreviation": ""
-},{
-  "name": "McMurtry College, Burton and Deedee",
-  "abbreviation": ""
-},
-{
-  "name": "McMurtry College Masters House",
-  "abbreviation": ""
-},
-{
-  "name": "McNair Hall, Janice and Robert",
-  "abbreviation": "MCN"
-},
-{
-  "name": "Dean of Jesse H. Jones Graduate School of Business",
-  "abbreviation": ""
-},
-{
-  "name": "Mechanical Engineering Building",
-  "abbreviation": "MEB"
-},
-{
-  "name": "Mechanical Laboratory",
-  "abbreviation": "MEL"
-},
-{
-  "name": "Media Center",
-  "abbreviation": "MED"
-},
-{
-  "name": "Mudd Computer Science Building",
-  "abbreviation": "MUD"
-},
-{
-  "name": "North Servery",
-  "abbreviation": "NSV"
-},
-{
-  "name": "Oshman Engineering Design Kitchen",
-  "abbreviation": "OED"
-},
-{
-  "name": "Police Department",
-  "abbreviation": "POL"
-},
-{
-  "name": "Rayzor Hall",
-  "abbreviation": "RZR"
-},
-{
-  "name": "Reckling Park at Cameron Field",
-  "abbreviation": ""
-},
-{
-  "name": "Rice Children’s Campus",
-  "abbreviation": ""
-},
-{
-  "name": "Rice Memorial Center",
-  "abbreviation": "RMC"
-},
-{
-  "name": "Campus Bookstore",
-  "abbreviation": ""
-},
-{
-  "name": "Rice Memorial Chapel",
-  "abbreviation": ""
-},
-{
-  "name": "Rice Stadium",
-  "abbreviation": "STA"
-},
-{
-  "name": "Rice University Police Department",
-  "abbreviation": ""
-},
-{
-  "name": "Rich Student Health Center, Morton L.",
-  "abbreviation": ""
-},
-{
-  "name": "Richardson College, Sid W.",
-  "abbreviation": ""
-},
-{
-  "name": "Richardson College Masters House",
-  "abbreviation": ""
-},
-{
-  "name": "Ryon Engineering Laboratory",
-  "abbreviation": "RYN"
-},
-{
-  "name": "Seibel Servery, Abe and Annie",
-  "abbreviation": ""
-},
-{
-  "name": "Sewall Hall",
-  "abbreviation": "SEW"
-},
-{
-  "name": "Rice Art Gallery",
-  "abbreviation": ""
-},
-{
-  "name": "South Plant",
-  "abbreviation": ""
-},
-{
-  "name": "South Servery",
-  "abbreviation": "SSV"
-},
-{
-  "name": "Space Science and Technology Building",
-  "abbreviation": "SST"
-},
-{
-  "name": "Tudor Fieldhouse and Youngkin Center",
-  "abbreviation": "TUD"
-},
-{
-  "name": "Autry Court",
-  "abbreviation": ""
-},
-{
-  "name": "Fox Gymnasium",
-  "abbreviation": ""
-},
-{
-  "name": "West Servery",
-  "abbreviation": "WSV"
-},
-{
-  "name": "Wiess College",
-  "abbreviation": "WSC"
-},
-{
-  "name": "Wiess President’s House",
-  "abbreviation": ""
-},
-{
-  "name": "Will Rice College",
-  "abbreviation": ""
-},
-{
-  "name": "Will Rice College Masters House",
-  "abbreviation": ""
-},
-{
-  "name": "Wilson House",
-  "abbreviation": ""
-},
-{
-  "name": "Wiess College Masters",
-  "abbreviation": ""
-},
-{
-  "name": "Architecture, School of",
-  "abbreviation": ""
-},
-{
-  "name": "Business, Jesse H. Jones Graduate School of",
-  "abbreviation": ""
-},
-{
-  "name": "Continuing Studies, Susanne M. Glasscock School of",
-  "abbreviation": ""
-},
-{
-  "name": "Engineering, George R. Brown School of",
-  "abbreviation": ""
-},
-{
-  "name": "Humanities, School of",
-  "abbreviation": ""
-},
-{
-  "name": "Music, The Shepherd School of",
-  "abbreviation": ""
-},
-{
-  "name": "Natural Sciences, Wiess School of",
-  "abbreviation": ""
-},
-{
-  "name": "Social Sciences, School of",
-  "abbreviation": ""
-},
-{
-  "name": "Rice Graduate Apartments",
-  "abbreviation": ""
-},
-{
-  "name": "Rice Village Apartments",
-  "abbreviation": ""
-}
+  {
+    "name":"Abercrombie Engineering Laboratory",
+    "abbreviation":"AEL",
+    "location":{
+      "latitude":"",
+      "longitude":""
+    }
+  },
+  {
+    "name":"Allen Business Center",
+    "abbreviation":"",
+    "location":{
+      "latitude":"",
+      "longitude":""
+    }
+  },
+  {
+    "name":"President's Office",
+    "abbreviation":"",
+    "location":{
+      "latitude":"",
+      "longitude":""
+    }
+  },
+  {
+    "name":"Anderson Biological Laboratories, M.D.",
+    "abbreviation":"ABL",
+    "location":{
+      "latitude":"",
+      "longitude":""
+    }
+  },
+  {
+    "name":"Anderson Hall, M.D.",
+    "abbreviation":"ANH",
+    "location":{
+      "latitude":"",
+      "longitude":""
+    }
+  },
+  {
+    "name":"Dean of Architecture",
+    "abbreviation":"",
+    "location":{
+      "latitude":"",
+      "longitude":""
+    }
+  },
+  {
+    "name":"Baker College",
+    "abbreviation":"",
+    "location":{
+      "latitude":"",
+      "longitude":""
+    }
+  },
+  {
+    "name":"Baker College Masters House",
+    "abbreviation":"",
+    "location":{
+      "latitude":"",
+      "longitude":""
+    }
+  },
+  {
+    "name":"Baker Hall, James A. III",
+    "abbreviation":"BKH",
+    "location":{
+      "latitude":"",
+      "longitude":""
+    }
+  },
+  {
+    "name":"Dean of Social Sciences",
+    "abbreviation":"",
+    "location":{
+      "latitude":"",
+      "longitude":""
+    }
+  },
+  {
+    "name":"James A. Baker III Institute for Public Policy",
+    "abbreviation":"",
+    "location":{
+      "latitude":"",
+      "longitude":""
+    }
+  },
+  {
+    "name":"BioScience Research Collaborative",
+    "abbreviation":"BRC",
+    "location":{
+      "latitude":"",
+      "longitude":""
+    }
+  },
+  {
+    "name":"Booth Centennial Pavilion, Suzanne Deal",
+    "abbreviation":"",
+    "location":{
+      "latitude":"",
+      "longitude":""
+    }
+  },
+  {
+    "name":"James Turrell\u2018s \"Twilight\" Epiphany Skyspace",
+    "abbreviation":"",
+    "location":{
+      "latitude":"",
+      "longitude":""
+    }
+  },
+  {
+    "name":"Brochstein Pavilion, Raymond and Susan",
+    "abbreviation":"",
+    "location":{
+      "latitude":"",
+      "longitude":""
+    }
+  },
+  {
+    "name":"Brockman Hall for Physics",
+    "abbreviation":"BRK",
+    "location":{
+      "latitude":"",
+      "longitude":""
+    }
+  },
+  {
+    "name":"Brown College, Margarett Root",
+    "abbreviation":"BNC",
+    "location":{
+      "latitude":"",
+      "longitude":""
+    }
+  },
+  {
+    "name":"Brown College Masters House",
+    "abbreviation":"",
+    "location":{
+      "latitude":"",
+      "longitude":""
+    }
+  },
+  {
+    "name":"Brown Hall, Alice Pratt",
+    "abbreviation":"APB",
+    "location":{
+      "latitude":"",
+      "longitude":""
+    }
+  },
+  {
+    "name":"Dean of Shepherd School of Music",
+    "abbreviation":"",
+    "location":{
+      "latitude":"",
+      "longitude":""
+    }
+  },
+  {
+    "name":"Brown Hall, George R",
+    "abbreviation":"GRB",
+    "location":{
+      "latitude":"",
+      "longitude":""
+    }
+  },
+  {
+    "name":"Dean of Wiess School of Natural Sciences",
+    "abbreviation":"",
+    "location":{
+      "latitude":"",
+      "longitude":""
+    }
+  },
+  {
+    "name":"Brown Hall for Mathematical Sciences, Herman",
+    "abbreviation":"HBH",
+    "location":{
+      "latitude":"",
+      "longitude":""
+    }
+  },
+  {
+    "name":"Butcher Hall, Dell",
+    "abbreviation":"DBH",
+    "location":{
+      "latitude":"",
+      "longitude":""
+    }
+  },
+  {
+    "name":"Cohen House, Robert and Agnes",
+    "abbreviation":"COH",
+    "location":{
+      "latitude":"",
+      "longitude":""
+    }
+  },
+  {
+    "name":"Continuing Studies, Martel Center for",
+    "abbreviation":"",
+    "location":{
+      "latitude":"",
+      "longitude":""
+    }
+  },
+  {
+    "name":"Dean of Susanne M. Glasscock School of Continuing Studies",
+    "abbreviation":"",
+    "location":{
+      "latitude":"",
+      "longitude":""
+    }
+  },
+  {
+    "name":"Cox Fitness Center, John L.",
+    "abbreviation":"",
+    "location":{
+      "latitude":"",
+      "longitude":""
+    }
+  },
+  {
+    "name":"Duncan College",
+    "abbreviation":"DCC",
+    "location":{
+      "latitude":"",
+      "longitude":""
+    }
+  },
+  {
+    "name":"Duncan College Masters House",
+    "abbreviation":"",
+    "location":{
+      "latitude":"",
+      "longitude":""
+    }
+  },
+  {
+    "name":"Duncan Hall, Anne and Charles",
+    "abbreviation":"DCH",
+    "location":{
+      "latitude":"",
+      "longitude":""
+    }
+  },
+  {
+    "name":"Dean of George R. Brown School of Engineering",
+    "abbreviation":"",
+    "location":{
+      "latitude":"",
+      "longitude":""
+    }
+  },
+  {
+    "name":"Facilities Engineering and Planning Building",
+    "abbreviation":"",
+    "location":{
+      "latitude":"",
+      "longitude":""
+    }
+  },
+  {
+    "name":"Fondren Library",
+    "abbreviation":"FON",
+    "location":{
+      "latitude":"",
+      "longitude":""
+    }
+  },
+  {
+    "name":"Gibbs Recreation and Wellness Center, Barbara and David",
+    "abbreviation":"GRW",
+    "location":{
+      "latitude":"",
+      "longitude":""
+    }
+  },
+  {
+    "name":"Greenbriar Building",
+    "abbreviation":"",
+    "location":{
+      "latitude":"",
+      "longitude":""
+    }
+  },
+  {
+    "name":"Greenhouse",
+    "abbreviation":"",
+    "location":{
+      "latitude":"",
+      "longitude":""
+    }
+  },
+  {
+    "name":"Hamman Hall",
+    "abbreviation":"HAM",
+    "location":{
+      "latitude":"",
+      "longitude":""
+    }
+  },
+  {
+    "name":"Hanszen College",
+    "abbreviation":"HNZ",
+    "location":{
+      "latitude":"",
+      "longitude":""
+    }
+  },
+  {
+    "name":"Hanszen College Masters House",
+    "abbreviation":"",
+    "location":{
+      "latitude":"",
+      "longitude":""
+    }
+  },
+  {
+    "name":"Herring Hall, Robert R.",
+    "abbreviation":"HRG",
+    "location":{
+      "latitude":"",
+      "longitude":""
+    }
+  },
+  {
+    "name":"Herzstein Hall",
+    "abbreviation":"HRZ",
+    "location":{
+      "latitude":"",
+      "longitude":""
+    }
+  },
+  {
+    "name":"Hess Tennis Stadium, Jake",
+    "abbreviation":"",
+    "location":{
+      "latitude":"",
+      "longitude":""
+    }
+  },
+  {
+    "name":"Holloway Field",
+    "abbreviation":"",
+    "location":{
+      "latitude":"",
+      "longitude":""
+    }
+  },
+  {
+    "name":"Wendel D. Ley Track",
+    "abbreviation":"",
+    "location":{
+      "latitude":"",
+      "longitude":""
+    }
+  },
+  {
+    "name":"Housing and Dining",
+    "abbreviation":"",
+    "location":{
+      "latitude":"",
+      "longitude":""
+    }
+  },
+  {
+    "name":"Huff House, Peter and Nancy",
+    "abbreviation":"",
+    "location":{
+      "latitude":"",
+      "longitude":""
+    }
+  },
+  {
+    "name":"Alumni Affairs",
+    "abbreviation":"",
+    "location":{
+      "latitude":"",
+      "longitude":""
+    }
+  },
+  {
+    "name":"Center for Student Professional Development",
+    "abbreviation":"",
+    "location":{
+      "latitude":"",
+      "longitude":""
+    }
+  },
+  {
+    "name":"Humanities Building",
+    "abbreviation":"HUM",
+    "location":{
+      "latitude":"",
+      "longitude":""
+    }
+  },
+  {
+    "name":"Dean of Humanities",
+    "abbreviation":"",
+    "location":{
+      "latitude":"",
+      "longitude":""
+    }
+  },
+  {
+    "name":"Jones College, Mary Gibbs",
+    "abbreviation":"",
+    "location":{
+      "latitude":"",
+      "longitude":""
+    }
+  },
+  {
+    "name":"Jones College Masters House ",
+    "abbreviation":"",
+    "location":{
+      "latitude":"",
+      "longitude":""
+    }
+  },
+  {
+    "name":"Keck Hall",
+    "abbreviation":"KCK",
+    "location":{
+      "latitude":"",
+      "longitude":""
+    }
+  },
+  {
+    "name":"Keith-Wiess Geological Laboratories",
+    "abbreviation":"KWG",
+    "location":{
+      "latitude":"",
+      "longitude":""
+    }
+  },
+  {
+    "name":"Ley Student Center",
+    "abbreviation":"LEY",
+    "location":{
+      "latitude":"",
+      "longitude":""
+    }
+  },
+  {
+    "name":"Lovett College, Edgar Odell",
+    "abbreviation":"",
+    "location":{
+      "latitude":"",
+      "longitude":""
+    }
+  },
+  {
+    "name":"Lovett College Masters House",
+    "abbreviation":"",
+    "location":{
+      "latitude":"",
+      "longitude":""
+    }
+  },
+  {
+    "name":"Lovett Hall",
+    "abbreviation":"",
+    "location":{
+      "latitude":"",
+      "longitude":""
+    }
+  },
+  {
+    "name":"Admission Office",
+    "abbreviation":"",
+    "location":{
+      "latitude":"",
+      "longitude":""
+    }
+  },
+  {
+    "name":"Welcome Center",
+    "abbreviation":"",
+    "location":{
+      "latitude":"",
+      "longitude":""
+    }
+  },
+  {
+    "name":"Martel College",
+    "abbreviation":"MLC",
+    "location":{
+      "latitude":"",
+      "longitude":""
+    }
+  },
+  {
+    "name":"Martel College Masters House",
+    "abbreviation":"",
+    "location":{
+      "latitude":"",
+      "longitude":""
+    }
+  },
+  {
+    "name":"McMurtry College, Burton and Deedee",
+    "abbreviation":"",
+    "location":{
+      "latitude":"",
+      "longitude":""
+    }
+  },
+  {
+    "name":"McMurtry College Masters House",
+    "abbreviation":"",
+    "location":{
+      "latitude":"",
+      "longitude":""
+    }
+  },
+  {
+    "name":"McNair Hall, Janice and Robert",
+    "abbreviation":"MCN",
+    "location":{
+      "latitude":"",
+      "longitude":""
+    }
+  },
+  {
+    "name":"Dean of Jesse H. Jones Graduate School of Business",
+    "abbreviation":"",
+    "location":{
+      "latitude":"",
+      "longitude":""
+    }
+  },
+  {
+    "name":"Mechanical Engineering Building",
+    "abbreviation":"MEB",
+    "location":{
+      "latitude":"",
+      "longitude":""
+    }
+  },
+  {
+    "name":"Mechanical Laboratory",
+    "abbreviation":"MEL",
+    "location":{
+      "latitude":"",
+      "longitude":""
+    }
+  },
+  {
+    "name":"Media Center",
+    "abbreviation":"MED",
+    "location":{
+      "latitude":"",
+      "longitude":""
+    }
+  },
+  {
+    "name":"Mudd Computer Science Building",
+    "abbreviation":"MUD",
+    "location":{
+      "latitude":"",
+      "longitude":""
+    }
+  },
+  {
+    "name":"North Servery",
+    "abbreviation":"NSV",
+    "location":{
+      "latitude":"",
+      "longitude":""
+    }
+  },
+  {
+    "name":"Oshman Engineering Design Kitchen",
+    "abbreviation":"OED",
+    "location":{
+      "latitude":"",
+      "longitude":""
+    }
+  },
+  {
+    "name":"Police Department",
+    "abbreviation":"POL",
+    "location":{
+      "latitude":"",
+      "longitude":""
+    }
+  },
+  {
+    "name":"Rayzor Hall",
+    "abbreviation":"RZR",
+    "location":{
+      "latitude":"",
+      "longitude":""
+    }
+  },
+  {
+    "name":"Reckling Park at Cameron Field",
+    "abbreviation":"",
+    "location":{
+      "latitude":"",
+      "longitude":""
+    }
+  },
+  {
+    "name":"Rice Children\u2019s Campus",
+    "abbreviation":"",
+    "location":{
+      "latitude":"",
+      "longitude":""
+    }
+  },
+  {
+    "name":"Rice Memorial Center",
+    "abbreviation":"RMC",
+    "location":{
+      "latitude":"",
+      "longitude":""
+    }
+  },
+  {
+    "name":"Campus Bookstore",
+    "abbreviation":"",
+    "location":{
+      "latitude":"",
+      "longitude":""
+    }
+  },
+  {
+    "name":"Rice Memorial Chapel",
+    "abbreviation":"",
+    "location":{
+      "latitude":"",
+      "longitude":""
+    }
+  },
+  {
+    "name":"Rice Stadium",
+    "abbreviation":"STA",
+    "location":{
+      "latitude":"",
+      "longitude":""
+    }
+  },
+  {
+    "name":"Rice University Police Department",
+    "abbreviation":"",
+    "location":{
+      "latitude":"",
+      "longitude":""
+    }
+  },
+  {
+    "name":"Rich Student Health Center, Morton L.",
+    "abbreviation":"",
+    "location":{
+      "latitude":"",
+      "longitude":""
+    }
+  },
+  {
+    "name":"Richardson College, Sid W.",
+    "abbreviation":"",
+    "location":{
+      "latitude":"",
+      "longitude":""
+    }
+  },
+  {
+    "name":"Richardson College Masters House",
+    "abbreviation":"",
+    "location":{
+      "latitude":"",
+      "longitude":""
+    }
+  },
+  {
+    "name":"Ryon Engineering Laboratory",
+    "abbreviation":"RYN",
+    "location":{
+      "latitude":"",
+      "longitude":""
+    }
+  },
+  {
+    "name":"Seibel Servery, Abe and Annie",
+    "abbreviation":"",
+    "location":{
+      "latitude":"",
+      "longitude":""
+    }
+  },
+  {
+    "name":"Sewall Hall",
+    "abbreviation":"SEW",
+    "location":{
+      "latitude":"",
+      "longitude":""
+    }
+  },
+  {
+    "name":"Rice Art Gallery",
+    "abbreviation":"",
+    "location":{
+      "latitude":"",
+      "longitude":""
+    }
+  },
+  {
+    "name":"South Plant",
+    "abbreviation":"",
+    "location":{
+      "latitude":"",
+      "longitude":""
+    }
+  },
+  {
+    "name":"South Servery",
+    "abbreviation":"SSV",
+    "location":{
+      "latitude":"",
+      "longitude":""
+    }
+  },
+  {
+    "name":"Space Science and Technology Building",
+    "abbreviation":"SST",
+    "location":{
+      "latitude":"",
+      "longitude":""
+    }
+  },
+  {
+    "name":"Tudor Fieldhouse and Youngkin Center",
+    "abbreviation":"TUD",
+    "location":{
+      "latitude":"",
+      "longitude":""
+    }
+  },
+  {
+    "name":"Autry Court",
+    "abbreviation":"",
+    "location":{
+      "latitude":"",
+      "longitude":""
+    }
+  },
+  {
+    "name":"Fox Gymnasium",
+    "abbreviation":"",
+    "location":{
+      "latitude":"",
+      "longitude":""
+    }
+  },
+  {
+    "name":"West Servery",
+    "abbreviation":"WSV",
+    "location":{
+      "latitude":"",
+      "longitude":""
+    }
+  },
+  {
+    "name":"Wiess College",
+    "abbreviation":"WSC",
+    "location":{
+      "latitude":"",
+      "longitude":""
+    }
+  },
+  {
+    "name":"Wiess President\u2019s House",
+    "abbreviation":"",
+    "location":{
+      "latitude":"",
+      "longitude":""
+    }
+  },
+  {
+    "name":"Will Rice College",
+    "abbreviation":"",
+    "location":{
+      "latitude":"",
+      "longitude":""
+    }
+  },
+  {
+    "name":"Will Rice College Masters House",
+    "abbreviation":"",
+    "location":{
+      "latitude":"",
+      "longitude":""
+    }
+  },
+  {
+    "name":"Wilson House",
+    "abbreviation":"",
+    "location":{
+      "latitude":"",
+      "longitude":""
+    }
+  },
+  {
+    "name":"Wiess College Masters",
+    "abbreviation":"",
+    "location":{
+      "latitude":"",
+      "longitude":""
+    }
+  },
+  {
+    "name":"Architecture, School of",
+    "abbreviation":"",
+    "location":{
+      "latitude":"",
+      "longitude":""
+    }
+  },
+  {
+    "name":"Business, Jesse H. Jones Graduate School of",
+    "abbreviation":"",
+    "location":{
+      "latitude":"",
+      "longitude":""
+    }
+  },
+  {
+    "name":"Continuing Studies, Susanne M. Glasscock School of",
+    "abbreviation":"",
+    "location":{
+      "latitude":"",
+      "longitude":""
+    }
+  },
+  {
+    "name":"Engineering, George R. Brown School of",
+    "abbreviation":"",
+    "location":{
+      "latitude":"",
+      "longitude":""
+    }
+  },
+  {
+    "name":"Humanities, School of",
+    "abbreviation":"",
+    "location":{
+      "latitude":"",
+      "longitude":""
+    }
+  },
+  {
+    "name":"Music, The Shepherd School of",
+    "abbreviation":"",
+    "location":{
+      "latitude":"",
+      "longitude":""
+    }
+  },
+  {
+    "name":"Natural Sciences, Wiess School of",
+    "abbreviation":"",
+    "location":{
+      "latitude":"",
+      "longitude":""
+    }
+  },
+  {
+    "name":"Social Sciences, School of",
+    "abbreviation":"",
+    "location":{
+      "latitude":"",
+      "longitude":""
+    }
+  },
+  {
+    "name":"Rice Graduate Apartments",
+    "abbreviation":"",
+    "location":{
+      "latitude":"",
+      "longitude":""
+    }
+  },
+  {
+    "name":"Rice Village Apartments",
+    "abbreviation":"",
+    "location":{
+      "latitude":"",
+      "longitude":""
+    }
+  }
 ]
