@@ -15,14 +15,19 @@
     <link href="css/style.css" rel="stylesheet" media="screen">
     <link href="css/bootstrap.min.css" rel="stylesheet" media="screen">
 </head>
-<body>
+<body ng-controller="SearchCtrl" ng-click="hideSearchResults($event)">
     <h1>Welcome to the new and improved Rice Map!</h1>
 
-    <div ng-controller="SearchCtrl">
-        <input type="text" ng-model="searchText" />
-        <ul>
-            <li ng-repeat="result in searchResults">{{result.name}}</li>
-        </ul>
+    <div>
+        <input id="searchBox" ng-model="searchText">
+        
+        <div class="results">
+            <ul class="lookahead" ng-class="{shown: open, hidden: !open}">
+                <li class="lookaheadElement" ng-repeat="result in searchResults | limitTo:4" require focus>
+                    <a href="#">{{result.name}}</a>
+                </li>
+            </ul>
+        </div>
     </div>
 
     <div id="map-canvas"></div>
