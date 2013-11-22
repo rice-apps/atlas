@@ -18,6 +18,7 @@ mapApp.controller('SearchCtrl', function($scope, $http, $window) {
     // init the open status for the search results.
     $scope.open = true;
 
+    // function that gets called on all clicks to hide/show search results.
     $scope.hideSearchResults = function(clickedElement) {
         if (clickedElement.target.id !== 'searchBox') {
             $scope.open = false;
@@ -26,6 +27,12 @@ mapApp.controller('SearchCtrl', function($scope, $http, $window) {
             $scope.open = true;
         }
     }
+
+    // function for focusing on a building.
+    $scope.focusBuilding = function(buildingToFocus) {
+        var latLng = new google.maps.LatLng(buildingToFocus.location.latitude, buildingToFocus.location.longitude);
+        map.setCenter(latLng);
+    };
 
     $http.get('/data/campus_data.json').then(function(result) {
         // set the fuse searcher.
