@@ -35,8 +35,10 @@ mapApp.controller('SearchCtrl', function($scope, $http, $window) {
             $scope.open = true;
         }
     }
+    // function that gets called when the Show My Location button is clicked, and show the user's locaiton on the map and pans to your location.
     $scope.showMyLocation = function() {
-        var myloc = new google.maps.Marker({
+        // Makes the marker to show where you are.
+        var myLocMarker = new google.maps.Marker({
             clickable: false,
             icon: new google.maps.MarkerImage('//maps.gstatic.com/mapfiles/mobile/mobileimgs2.png',
                                                     new google.maps.Size(22,22),
@@ -46,11 +48,11 @@ mapApp.controller('SearchCtrl', function($scope, $http, $window) {
             zIndex: 999,
             map: map
         });
-
+        //sets the marker at your location and pans the screen to it.
         if (navigator.geolocation) navigator.geolocation.getCurrentPosition(function(pos) {
-            var me = new google.maps.LatLng(pos.coords.latitude, pos.coords.longitude);
-            myloc.setPosition(me);
-        map.panTo(me);
+            var myLoc = new google.maps.LatLng(pos.coords.latitude, pos.coords.longitude);
+            myLocMarker.setPosition(myLoc);
+            map.panTo(myLoc);
         }, function(error) {
             // ...
         });
