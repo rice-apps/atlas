@@ -1,0 +1,40 @@
+html, body, #map-canvas {
+  width: 90%;
+  height: 94%;
+  margin: 0px;
+  padding: 0px;
+}
+
+.lookahead {
+  background: #ffffff; border-radius: 0px; padding: 0;
+  position: absolute; z-index: 1000;
+}
+
+.lookaheadElement {
+  float: none; 
+  border-top: 1px solid #6b727c;
+  border-bottom: 1px solid #575f6a;
+  position: relative;
+}
+
+.firstSearchResult {
+  background-color: #dddddd;
+}
+
+.lookaheadElement a {
+  display: block;
+  text-decoration: none;
+  padding: 10px 30px;
+}
+
+.searchResults.shown {
+  visibility: visible;
+}
+
+.searchResults.shown {
+  visibility: hidden;
+}
+
+.myLocButton {
+  display: inline-block;
+}

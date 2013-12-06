@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html ng-app="mapApp">
+<head>
+    <title>Rice Map</title>
+
+    <script src="js/fuse.min.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.0/angular.min.js"></script>
+
+    <script src="js/controllers.js"></script>
+
+    <link href="css/style.css" rel="stylesheet" media="screen">
+    <link href="css/bootstrap.min.css" rel="stylesheet" media="screen">
+</head>
+<body ng-controller="SearchCtrl" ng-click="hideSearchResults($event)" ng-init="init()">
+    <h1>Welcome to the new and improved Rice Map!</h1>
+
+    <div class="topPanel">
+        <span class="glyphicon glyphicon-search"></span>
+        <input id="searchBox" ng-model="searchText" ng-keypress="buildingSelectedByKeyPress($event)" ng-focus="showSearchResults()">
+        
+        <button ng-click="showMyLocation()" class="myLocButton" >
+            Show My Location
+        </button>
+
+        <div class="results">
+            <ul class="lookahead" ng-class="{shown: open, hidden: !open}">
+                <li class="lookaheadElement" ng-class="{firstSearchResult: $first}" ng-repeat="result in searchResults | limitTo:4" require focus ng-click="focusBuilding(result)">
+                    <a href="#">{{result.abbreviation}} {{result.name}}</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <div id="map-canvas"></div>
+</body>
+</html>
