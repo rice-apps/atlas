@@ -1,8 +1,12 @@
 html, body, #map-canvas {
-  width: 90%;
+  width: 100%;
   height: 94%;
   margin: 0px;
   padding: 0px;
+}
+
+#map-canvas {
+  height: 90%;
 }
 
 .lookahead {
@@ -59,4 +63,5 @@ html, body, #map-canvas {
 .top-panel {
   padding: 10px;
   position: relative;
+  height: 10%;
 }
