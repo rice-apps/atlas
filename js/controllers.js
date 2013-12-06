@@ -30,7 +30,26 @@ mapApp.controller('SearchCtrl', function($scope, $http, $window) {
             $scope.open = true;
         }
     }
+    $scope.showMyLocation = function() {
+        var myloc = new google.maps.Marker({
+            clickable: false,
+            icon: new google.maps.MarkerImage('//maps.gstatic.com/mapfiles/mobile/mobileimgs2.png',
+                                                    new google.maps.Size(22,22),
+                                                    new google.maps.Point(0,18),
+                                                    new google.maps.Point(11,11)),
+            shadow: null,
+            zIndex: 999,
+            map: map
+        });
 
+        if (navigator.geolocation) navigator.geolocation.getCurrentPosition(function(pos) {
+            var me = new google.maps.LatLng(pos.coords.latitude, pos.coords.longitude);
+            myloc.setPosition(me);
+        map.panTo(me);
+        }, function(error) {
+            // ...
+        });
+    }
     // function for focusing on a building.
     $scope.focusBuilding = function(building) {
         var latLng = new google.maps.LatLng(building.location.latitude, building.location.longitude);

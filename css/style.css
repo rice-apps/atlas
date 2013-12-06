@@ -30,3 +30,11 @@ html, body, #map-canvas {
 .searchResults.shown {
   visibility: hidden;
 }
+
+.myLocButton {
+  display: inline-block;
+}
+
+.results {
+  display: inline-block;
+}

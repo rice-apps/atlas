@@ -17,7 +17,7 @@
 <body ng-controller="SearchCtrl" ng-click="hideSearchResults($event)" ng-init="init()">
     <h1>Welcome to the new and improved Rice Map!</h1>
 
-    <div>
+    <div class="topPanel">
         <span class="glyphicon glyphicon-search"></span>
         <input id="searchBox" ng-model="searchText">
         
@@ -28,6 +28,9 @@
                 </li>
             </ul>
         </div>
+        <button ng-click="showMyLocation()" class="myLocButton" >
+            Show My Location
+        </button>
     </div>
 
     <div id="map-canvas"></div>
