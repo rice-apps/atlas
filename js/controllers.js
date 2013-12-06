@@ -72,6 +72,9 @@ mapApp.controller('SearchCtrl', function($scope, $http, $window) {
 
     // function for focusing on a building.
     $scope.focusBuilding = function(building) {
+        // first close all info windows.
+        closeAllInfoWindows();
+
         var latLng = new google.maps.LatLng(building.location.latitude, building.location.longitude);
         map.panTo(latLng);
 
@@ -130,6 +133,15 @@ mapApp.controller('SearchCtrl', function($scope, $http, $window) {
         };
         map = new google.maps.Map(document.getElementById('map-canvas'),
             mapOptions);
+    }
+
+    /**
+     * Closes all info windows on the map.
+     */
+    function closeAllInfoWindows() {
+        for (var latLng in latLngDict) {
+            latLngDict[latLng].infoWindow.close();
+        }
     }
 
 });
