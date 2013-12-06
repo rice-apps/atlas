@@ -50,6 +50,19 @@ mapApp.controller('SearchCtrl', function($scope, $http, $window) {
             // ...
         });
     }
+
+    // event where a building was selected by a keypress..
+    $scope.buildingSelectedByKeyPress = function(keyPressed) {
+        if (keyPressed.keyCode == 13 && $scope.searchResults.length > 0) {
+            // focus on the building.
+            var building = $scope.searchResults[0];
+            $scope.focusBuilding(building);
+
+            // hide the search results. we have to emulate a clicked element here.
+            $scope.hideSearchResults({target: {id: 'fakeElement'}});
+        }
+    }
+
     // function for focusing on a building.
     $scope.focusBuilding = function(building) {
         var latLng = new google.maps.LatLng(building.location.latitude, building.location.longitude);
@@ -87,7 +100,7 @@ mapApp.controller('SearchCtrl', function($scope, $http, $window) {
         var options = {
           keys: ['name', 'abbreviation']
         }
-        
+
         searcher = new Fuse(result.data, options);
     });
     $scope.$watch('searchText', function(newValue, oldValue) {

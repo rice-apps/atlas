@@ -17,6 +17,10 @@ html, body, #map-canvas {
   position: relative;
 }
 
+.firstSearchResult {
+  background-color: #dddddd;
+}
+
 .lookaheadElement a {
   display: block;
   text-decoration: none;
