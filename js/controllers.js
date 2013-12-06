@@ -34,7 +34,7 @@ mapApp.controller('SearchCtrl', function($scope, $http, $window) {
     // function for focusing on a building.
     $scope.focusBuilding = function(buildingToFocus) {
         var latLng = new google.maps.LatLng(buildingToFocus.location.latitude, buildingToFocus.location.longitude);
-        map.setCenter(latLng);
+        map.panTo(latLng);
         var dictEntry = latLngDict[latLng];
         dictEntry.infoWindow.open(map, dictEntry.marker);
     };
