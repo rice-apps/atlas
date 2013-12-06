@@ -21,6 +21,11 @@ mapApp.controller('SearchCtrl', function($scope, $http, $window) {
     // init the open status for the search results.
     $scope.open = true;
 
+    // function that shows search results.
+    $scope.showSearchResults = function() {
+        $scope.open = true;
+    }
+
     // function that gets called on all clicks to hide/show search results.
     $scope.hideSearchResults = function(clickedElement) {
         if (clickedElement.target.id !== 'searchBox') {

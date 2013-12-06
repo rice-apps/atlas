@@ -19,12 +19,12 @@
 
     <div class="topPanel">
         <span class="glyphicon glyphicon-search"></span>
-        <input id="searchBox" ng-model="searchText" ng-keypress="buildingSelectedByKeyPress($event)">
+        <input id="searchBox" ng-model="searchText" ng-keypress="buildingSelectedByKeyPress($event)" ng-focus="showSearchResults()">
         
         <button ng-click="showMyLocation()" class="myLocButton" >
             Show My Location
         </button>
-        
+
         <div class="results">
             <ul class="lookahead" ng-class="{shown: open, hidden: !open}">
                 <li class="lookaheadElement" ng-class="{firstSearchResult: $first}" ng-repeat="result in searchResults | limitTo:4" require focus ng-click="focusBuilding(result)">
