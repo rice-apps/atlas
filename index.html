@@ -21,6 +21,10 @@
         <span class="glyphicon glyphicon-search"></span>
         <input id="searchBox" ng-model="searchText" ng-keypress="buildingSelectedByKeyPress($event)">
         
+        <button ng-click="showMyLocation()" class="myLocButton" >
+            Show My Location
+        </button>
+        
         <div class="results">
             <ul class="lookahead" ng-class="{shown: open, hidden: !open}">
                 <li class="lookaheadElement" ng-class="{firstSearchResult: $first}" ng-repeat="result in searchResults | limitTo:4" require focus ng-click="focusBuilding(result)">
@@ -28,9 +32,6 @@
                 </li>
             </ul>
         </div>
-        <button ng-click="showMyLocation()" class="myLocButton" >
-            Show My Location
-        </button>
     </div>
 
     <div id="map-canvas"></div>
