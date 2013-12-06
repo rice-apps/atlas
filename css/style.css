@@ -10,7 +10,7 @@ html, body, #map-canvas {
   position: absolute; z-index: 1000;
 }
 
-.lookaheadElement {
+.lookahead-element {
   float: none; 
   border-top: 1px solid #6b727c;
   border-bottom: 1px solid #575f6a;
@@ -21,7 +21,7 @@ html, body, #map-canvas {
   background-color: #dddddd;
 }
 
-.lookaheadElement a {
+.lookahead-element a {
   display: block;
   text-decoration: none;
   padding: 10px 30px;
@@ -35,6 +35,28 @@ html, body, #map-canvas {
   visibility: hidden;
 }
 
-.myLocButton {
+.my-loc-button {
   display: inline-block;
+}
+
+.left-search-icon {
+  position: absolute;
+}
+
+.search-box {
+  display: inline-block;
+}
+
+.search-box i {
+  position: absolute;
+  padding: 15px 10px;
+}
+
+.search-box input {
+  padding-left: 30px;
+}
+
+.top-panel {
+  padding: 10px;
+  position: relative;
 }
