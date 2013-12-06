@@ -1,6 +1,6 @@
 html, body, #map-canvas {
   width: 100%;
-  height: 94%;
+  height: 100%;
   margin: 0px;
   padding: 0px;
 }
@@ -61,7 +61,7 @@ html, body, #map-canvas {
 }
 
 .top-panel {
-  padding: 10px;
+  padding: 1%;
   position: relative;
-  height: 10%;
+  height: 9%;
 }
