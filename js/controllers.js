@@ -32,31 +32,17 @@ mapApp.controller('SearchCtrl', function($scope, $http, $window) {
     }
 
     // function for focusing on a building.
-    $scope.focusBuilding = function(buildingToFocus) {
-        var latLng = new google.maps.LatLng(buildingToFocus.location.latitude, buildingToFocus.location.longitude);
+    $scope.focusBuilding = function(building) {
+        var latLng = new google.maps.LatLng(building.location.latitude, building.location.longitude);
         map.panTo(latLng);
-        var dictEntry = latLngDict[latLng];
-        dictEntry.infoWindow.open(map, dictEntry.marker);
-    };
 
-    // load in the campus data json via a HTTP GET request.
-    $http.get('/data/campus_data.json').then(function(result) {
-        // set the fuse searcher.
-        var options = {
-          keys: ['name', 'abbreviation']
-        }
-        searcher = new Fuse(result.data, options);
-
-        // add markers to the map.
-        var index;
-        for (index = 0; index < result.data.length; index++) {
-            var building = result.data[index];
+        // check whether we've made the maker yet. If not, make it.
+        if (!(latLng in latLngDict)) {
             var latLng = new google.maps.LatLng(building.location.latitude, building.location.longitude);
             var marker = new google.maps.Marker({
                 position: latLng,
                 map: map,
-                title: building.name,
-                index: index
+                title: building.name
             });
             var contentString = '<div id="content">'+
                 building.abbreviation + ' ' + building.name +
@@ -72,6 +58,18 @@ mapApp.controller('SearchCtrl', function($scope, $http, $window) {
                 dictEntry.infoWindow.open(map, dictEntry.marker);
             }); 
         }
+        var dictEntry = latLngDict[latLng];
+        dictEntry.infoWindow.open(map, dictEntry.marker);
+    };
+
+    // load in the campus data json via a HTTP GET request.
+    $http.get('/data/campus_data.json').then(function(result) {
+        // set the fuse searcher.
+        var options = {
+          keys: ['name', 'abbreviation']
+        }
+        
+        searcher = new Fuse(result.data, options);
     });
     $scope.$watch('searchText', function(newValue, oldValue) {
         if (searcher !== undefined) {
