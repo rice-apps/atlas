@@ -10,8 +10,12 @@ html, body, #map-canvas {
 }
 
 .lookahead {
-  background: #ffffff; border-radius: 0px; padding: 0;
-  position: absolute; z-index: 1000;
+  background: #ffffff;
+  border-radius: 0px;
+  padding: 0;
+  position: absolute;
+  z-index: 1000;
+  list-style-type: none;
 }
 
 .lookahead-element {
