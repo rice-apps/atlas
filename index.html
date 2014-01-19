@@ -16,14 +16,14 @@
 </head>
 <body ng-controller="SearchCtrl" ng-click="hideSearchResults($event)" ng-init="init()">
     <div class="top-panel">
-        <div class="search-box">
-            <i class="left-search-icon glyphicon glyphicon-search"></i>
-            <input id="searchBox" ng-model="searchText" ng-keypress="buildingSelectedByKeyPress($event)" ng-focus="showSearchResults()">
-        </div>
-        
         <button ng-click="showMyLocation()" class="my-loc-button" >
             Show My Location
         </button>
+        
+        <div class="search-box">
+            <i class="left-search-icon glyphicon glyphicon-search"></i>
+            <input id="searchBox" class="search-box-input" ng-model="searchText" ng-keypress="buildingSelectedByKeyPress($event)" ng-focus="showSearchResults()">
+        </div>
 
         <div class="results">
             <ul class="lookahead" ng-class="{shown: open, hidden: !open}">
