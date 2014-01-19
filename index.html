@@ -11,18 +11,18 @@
 
     <script src="js/controllers.js"></script>
 
-    <link href="css/style.css" rel="stylesheet" media="screen">
     <link href="css/bootstrap.min.css" rel="stylesheet" media="screen">
+    <link href="css/style.css" rel="stylesheet" media="screen">
 </head>
 <body ng-controller="SearchCtrl" ng-click="hideSearchResults($event)" ng-init="init()">
     <div class="top-panel">
-        <button ng-click="showMyLocation()" class="my-loc-button" >
+        <button ng-click="showMyLocation()" class="btn btn-default my-loc-button" >
             Show My Location
         </button>
         
         <div class="search-box">
             <i class="left-search-icon glyphicon glyphicon-search"></i>
-            <input id="searchBox" class="search-box-input" ng-model="searchText" ng-keypress="buildingSelectedByKeyPress($event)" ng-focus="showSearchResults()">
+            <input id="searchBox" class="form-control search-box-input" ng-model="searchText" ng-keypress="buildingSelectedByKeyPress($event)" ng-focus="showSearchResults()">
         </div>
 
         <div class="results">

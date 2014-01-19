@@ -64,7 +64,6 @@ html, body, #map-canvas {
 .my-loc-button {
   display: inline-block;
   position: absolute;
-  height: 45px;
   width: 150px;
   right: 0;
 }
@@ -75,7 +74,6 @@ html, body, #map-canvas {
 
 .search-box-input {
   width: 100%;
-  line-height: 40px;
   padding-left: 30px;
 }
 
