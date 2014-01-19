@@ -30,7 +30,7 @@
         <div class="results">
             <ul class="lookahead" ng-class="{shown: open, hidden: !open}">
                 <li class="lookahead-element" ng-class="{firstSearchResult: $first}" ng-repeat="result in searchResults | limitTo:4" require focus ng-click="focusBuilding(result)">
-                    <a href="#">{{result.abbreviation}} {{result.name}}</a>
+                    <a href="">{{result.abbreviation}} {{result.name}}</a>
                 </li>
             </ul>
         </div>
