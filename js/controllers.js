@@ -75,6 +75,7 @@ mapApp.controller('SearchCtrl', function($scope, $http, $window) {
         // first close all info windows.
         closeAllInfoWindows();
 
+        map.setZoom(18);
         var latLng = new google.maps.LatLng(building.location.latitude, building.location.longitude);
         map.panTo(latLng);
 
@@ -124,7 +125,7 @@ mapApp.controller('SearchCtrl', function($scope, $http, $window) {
      */
     function initializeMap() {
         var mapOptions = {
-          zoom: 18,
+          zoom: 17,
           center: new google.maps.LatLng(29.718204, -95.400000),
           mapTypeId: google.maps.MapTypeId.ROADMAP,
           disableDefaultUI: true,
