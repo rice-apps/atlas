@@ -124,7 +124,7 @@ mapApp.controller('SearchCtrl', function($scope, $http, $window) {
      */
     function initializeMap() {
         var mapOptions = {
-          zoom: 17,
+          zoom: 18,
           center: new google.maps.LatLng(29.718204, -95.400000),
           mapTypeId: google.maps.MapTypeId.ROADMAP,
           disableDefaultUI: true,
