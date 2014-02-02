@@ -16,7 +16,7 @@ mapApp.controller('SearchCtrl', function($scope, $http, $window) {
     var map;
 
     // the center of the map.
-    var mapCenter = new google.maps.LatLng(29.717533, -95.402398);
+    var mapCenter = new google.maps.LatLng(29.717384, -95.403171);
 
     // init the lat/lng dictionary. Maps a latLng to various things.
     var latLngDict = {};
