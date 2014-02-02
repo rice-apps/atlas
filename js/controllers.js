@@ -49,7 +49,7 @@ mapApp.controller('SearchCtrl', function($scope, $http, $window) {
         }
         else {
             removeAllMarkers();
-            
+
             // center the camera and zoom out.
             map.panTo(new google.maps.LatLng(29.718204, -95.400000));
             map.setZoom(15);
@@ -69,9 +69,8 @@ mapApp.controller('SearchCtrl', function($scope, $http, $window) {
                     }
                 }
             }
+            $scope.visitorLotsShown = true;
         }
-
-        $scope.visitorLotsShown = !$scope.visitorLotsShown;
     };
 
     // function that gets called when the My Location button is clicked, and show the user's locaiton on the map and pans to your location.
