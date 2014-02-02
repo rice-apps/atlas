@@ -75,6 +75,10 @@ html, body, #map-canvas {
   right: 100px;
 }
 
+.pushed-button {
+  background-color: #ebebeb;
+}
+
 .left-search-icon {
   position: absolute;
 }

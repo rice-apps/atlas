@@ -18,7 +18,7 @@
 </head>
 <body ng-controller="SearchCtrl" ng-click="hideSearchResults($event)" ng-init="init()">
     <div class="top-panel">
-        <button ng-click="showVisitorLots()" class="btn btn-default visitor-lots-button" >
+        <button ng-click="toggleVisitorLots()" ng-class="{'pushed-button': visitorLotsShown}" class="btn btn-default visitor-lots-button" >
             Visitor Lots
         </button>
         <button ng-click="showMyLocation()" class="btn btn-default my-loc-button" >

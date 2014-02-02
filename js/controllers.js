@@ -6,6 +6,9 @@ mapApp.controller('SearchCtrl', function($scope, $http, $window) {
         initializeMap();
     };
 
+    // elements on the map. Initialized using campus_data.json.
+    var mapElements;
+
     // declare Fuse searcher
     var searcher;
 
@@ -14,6 +17,9 @@ mapApp.controller('SearchCtrl', function($scope, $http, $window) {
 
     // init the lat/lng dictionary. Maps a latLng to various things.
     var latLngDict = {};
+
+    // boolean for whether the visitor lots are being shown.
+    $scope.visitorLotsShown = false;
 
     //init search results.
     $scope.searchResults = [];
@@ -37,8 +43,38 @@ mapApp.controller('SearchCtrl', function($scope, $http, $window) {
     }
 
     // function that gets called when the "Visitor Lots" button is pressed. Zooms out and shows available visitor lots.
-    $scope.showVisitorLots = function() {
-        map.setZoom(15);
+    $scope.toggleVisitorLots = function() {
+        if ($scope.visitorLotsShown) {
+            for (var i = 0; i < mapElements.length; i++) {
+                var mapElement = mapElements[i];
+                if (mapElement.type === "lot" && mapElement.visitor_parking > 0) {
+                    removeMarker(mapElement);
+                }
+            }
+        }
+        else {
+            // center the camera and zoom out.
+            map.panTo(new google.maps.LatLng(29.718204, -95.400000));
+            map.setZoom(16);
+
+            for (var i = 0; i < mapElements.length; i++) {
+                var mapElement = mapElements[i];
+                if (mapElement.type === "lot" && mapElement.visitor_parking > 0) {
+                    if (mapElement.visitor_parking === 1) {
+                        placeMarker(mapElement)
+                    }
+                    else if (mapElement.visitor_parking === 2) {
+                        var currentDate = new Date();
+                        if ((currentDate.getDay() === 0 || currentDate.getDay() === 6) || 
+                            (currentDate.getHours() > 17 || currentDate.getHours() < 8)) {
+                            placeMarker(mapElement);
+                        }
+                    }
+                }
+            }
+        }
+
+        $scope.visitorLotsShown = !$scope.visitorLotsShown;
     };
 
     // function that gets called when the My Location button is clicked, and show the user's locaiton on the map and pans to your location.
@@ -87,16 +123,21 @@ mapApp.controller('SearchCtrl', function($scope, $http, $window) {
         var latLng = new google.maps.LatLng(building.location.latitude, building.location.longitude);
         map.panTo(latLng);
 
+        placeMarker(building)
+    };
+
+    // places a marker on the map for a map element.
+    var placeMarker = function(mapElement) {
         // check whether we've made the maker yet. If not, make it.
+        var latLng = new google.maps.LatLng(mapElement.location.latitude, mapElement.location.longitude);
         if (!(latLng in latLngDict)) {
-            var latLng = new google.maps.LatLng(building.location.latitude, building.location.longitude);
             var marker = new google.maps.Marker({
                 position: latLng,
                 map: map,
-                title: building.name
+                title: mapElement.name
             });
             var contentString = '<div id="content">'+
-                building.abbreviation + ' ' + building.name +
+                mapElement.abbreviation + ' ' + mapElement.name +
                 '</div>';
             var infoWindow = new google.maps.InfoWindow({
                 content: contentString
@@ -113,6 +154,17 @@ mapApp.controller('SearchCtrl', function($scope, $http, $window) {
         dictEntry.infoWindow.open(map, dictEntry.marker);
     };
 
+    // removes a marker on the map for a map element.
+    var removeMarker = function(mapElement) {
+        // check whether we've made the maker yet. If it exists, remove it.
+        var latLng = new google.maps.LatLng(mapElement.location.latitude, mapElement.location.longitude);
+        if (latLng in latLngDict) {
+            // delete marker and entry in latLngDict.
+            latLngDict[latLng].marker.setMap(null);
+            delete latLngDict[latLng];
+        }
+    }
+
     // load in the campus data json via a HTTP GET request.
     $http.get('data/campus_data.json').then(function(result) {
         // set the fuse searcher.
@@ -121,6 +173,8 @@ mapApp.controller('SearchCtrl', function($scope, $http, $window) {
         }
 
         searcher = new Fuse(result.data, options);
+
+        mapElements = result.data;
     });
     $scope.$watch('searchText', function(newValue, oldValue) {
         if (searcher !== undefined) {
