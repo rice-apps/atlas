@@ -45,17 +45,14 @@ mapApp.controller('SearchCtrl', function($scope, $http, $window) {
     // function that gets called when the "Visitor Lots" button is pressed. Zooms out and shows available visitor lots.
     $scope.toggleVisitorLots = function() {
         if ($scope.visitorLotsShown) {
-            for (var i = 0; i < mapElements.length; i++) {
-                var mapElement = mapElements[i];
-                if (mapElement.type === "lot" && mapElement.visitor_parking > 0) {
-                    removeMarker(mapElement);
-                }
-            }
+            removeAllMarkers();
         }
         else {
+            removeAllMarkers();
+            
             // center the camera and zoom out.
             map.panTo(new google.maps.LatLng(29.718204, -95.400000));
-            map.setZoom(16);
+            map.setZoom(15);
 
             for (var i = 0; i < mapElements.length; i++) {
                 var mapElement = mapElements[i];
