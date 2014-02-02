@@ -15,6 +15,9 @@ mapApp.controller('SearchCtrl', function($scope, $http, $window) {
     // declare the google map.
     var map;
 
+    // the center of the map.
+    var mapCenter = new google.maps.LatLng(29.717533, -95.402398);
+
     // init the lat/lng dictionary. Maps a latLng to various things.
     var latLngDict = {};
 
@@ -51,7 +54,7 @@ mapApp.controller('SearchCtrl', function($scope, $http, $window) {
             removeAllMarkers();
 
             // center the camera and zoom out.
-            map.panTo(new google.maps.LatLng(29.718204, -95.400000));
+            map.panTo(mapCenter);
             map.setZoom(15);
 
             for (var i = 0; i < mapElements.length; i++) {
@@ -184,8 +187,8 @@ mapApp.controller('SearchCtrl', function($scope, $http, $window) {
      */
     function initializeMap() {
         var mapOptions = {
-          zoom: 17,
-          center: new google.maps.LatLng(29.718204, -95.400000),
+          zoom: 15,
+          center: mapCenter,
           mapTypeId: google.maps.MapTypeId.ROADMAP,
           disableDefaultUI: true,
           minZoom: 15,
