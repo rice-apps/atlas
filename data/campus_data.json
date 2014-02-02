@@ -886,5 +886,101 @@
       "latitude":"29.714419",
       "longitude":"-95.415888"
     }
+  },
+  {
+    "name":"West Lot 1",
+    "abbreviation":"",
+    "location":{
+      "latitude":"29.715800",
+      "longitude":"-95.405955"
+    }
+  },
+  {
+    "name":"West Lot 2",
+    "abbreviation":"",
+    "location":{
+      "latitude":"29.717501",
+      "longitude":"-95.406808"
+    }
+  },
+  {
+    "name":"West Lot 3",
+    "abbreviation":"",
+    "location":{
+      "latitude":"29.717235",
+      "longitude":"-95.407698"
+    }
+  },
+  {
+    "name":"West Lot 4",
+    "abbreviation":"",
+    "location":{
+      "latitude":"29.715310",
+      "longitude":"-95.407087"
+    }
+  },
+  {
+    "name":"West Lot 5",
+    "abbreviation":"",
+    "location":{
+      "latitude":"29.714384",
+      "longitude":"-95.408146"
+    }
+  },
+  {
+    "name":"Greenbriar Lot",
+    "abbreviation":"",
+    "location":{
+      "latitude":"29.717282",
+      "longitude":"-95.410874"
+    }
+  },
+  {
+    "name":"North Annex Lot",
+    "abbreviation":"",
+    "location":{
+      "latitude":"29.719764",
+      "longitude":"-95.404437"
+    }
+  },
+  {
+    "name":"North Lot",
+    "abbreviation":"",
+    "location":{
+      "latitude":"29.720491",
+      "longitude":"-95.402784"
+    }
+  },
+  {
+    "name":"Central Campus Garage",
+    "abbreviation":"",
+    "location":{
+      "latitude":"29.717256",
+      "longitude":"-95.404230"
+    }
+  },
+  {
+    "name":"Founder's Court Visitor Lot",
+    "abbreviation":"",
+    "location":{
+      "latitude":"29.718823",
+      "longitude":"-95.396778"
+    }
+  },
+  {
+    "name":"Lovett Lot",
+    "abbreviation":"",
+    "location":{
+      "latitude":"29.717193",
+      "longitude":"-95.397492"
+    }
+  },
+  {
+    "name":"Lovett Lot Visitor Parking",
+    "abbreviation":"",
+    "location":{
+      "latitude":"29.719836",
+      "longitude":"-95.397342"
+    }
   }
 ]
