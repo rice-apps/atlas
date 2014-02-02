@@ -35,7 +35,13 @@ mapApp.controller('SearchCtrl', function($scope, $http, $window) {
             $scope.open = true;
         }
     }
-    // function that gets called when the Show My Location button is clicked, and show the user's locaiton on the map and pans to your location.
+
+    // function that gets called when the "Visitor Lots" button is pressed. Zooms out and shows available visitor lots.
+    $scope.showVisitorLots = function() {
+        map.setZoom(15);
+    };
+
+    // function that gets called when the My Location button is clicked, and show the user's locaiton on the map and pans to your location.
     $scope.showMyLocation = function() {
         // Makes the marker to show where you are.
         var myLocMarker = new google.maps.Marker({
