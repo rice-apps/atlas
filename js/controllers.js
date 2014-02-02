@@ -123,7 +123,6 @@ mapApp.controller('SearchCtrl', function($scope, $http, $window) {
         var latLng = new google.maps.LatLng(building.location.latitude, building.location.longitude);
         map.panTo(latLng);
 
-
         placeMarker(building)
     };
 
