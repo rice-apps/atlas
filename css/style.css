@@ -63,6 +63,7 @@ html, body, #map-canvas {
 
 .my-loc-button {
   display: inline-block;
+  background-color: #ffffff !important;
   position: absolute;
   width: 100px;
   right: 0;
@@ -70,13 +71,14 @@ html, body, #map-canvas {
 
 .visitor-lots-button {
   display: inline-block;
+  background-color: #ffffff !important;
   position: absolute;
   width: 100px;
   right: 100px;
 }
 
 .pushed-button {
-  background-color: #ebebeb;
+  background-color: #ebebeb !important;
 }
 
 .left-search-icon {

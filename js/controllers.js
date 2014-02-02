@@ -53,10 +53,6 @@ mapApp.controller('SearchCtrl', function($scope, $http, $window) {
         else {
             removeAllMarkers();
 
-            // center the camera and zoom out.
-            map.panTo(mapCenter);
-            map.setZoom(15);
-
             for (var i = 0; i < mapElements.length; i++) {
                 var mapElement = mapElements[i];
                 if (mapElement.type === "lot" && mapElement.visitor_parking > 0) {
@@ -72,6 +68,11 @@ mapApp.controller('SearchCtrl', function($scope, $http, $window) {
                     }
                 }
             }
+
+            // center the camera and zoom out.
+            map.panTo(mapCenter);
+            map.setZoom(15);
+
             $scope.visitorLotsShown = true;
         }
     };
