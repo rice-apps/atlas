@@ -77,6 +77,13 @@ html, body, #map-canvas {
   right: 100px;
 }
 
+.clear-input-button {
+  display: inline-block;
+  position: absolute;
+  cursor: pointer;
+  right: 215px;
+}
+
 .pushed-button {
   background-color: #ebebeb !important;
 }

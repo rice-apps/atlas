@@ -1,6 +1,6 @@
 var mapApp = angular.module('mapApp', []);
 
-mapApp.controller('SearchCtrl', function($scope, $http, $window) {
+mapApp.controller('SearchCtrl', function($scope, $http, $window, $timeout) {
     // init function for body.
     $scope.init = function() {
         initializeMap();
@@ -33,6 +33,14 @@ mapApp.controller('SearchCtrl', function($scope, $http, $window) {
     // function that shows search results.
     $scope.showSearchResults = function() {
         $scope.open = true;
+    }
+
+    // function that clears input from input box and selects the input.
+    $scope.clearInput = function() {
+        $scope.searchText = "";
+        $timeout(function() {
+            $('#searchBox').focus();
+        });
     }
 
     // function that gets called on all clicks to hide/show search results.
@@ -109,6 +117,7 @@ mapApp.controller('SearchCtrl', function($scope, $http, $window) {
 
             // hide the search results. we have to emulate a clicked element here.
             $scope.hideSearchResults({target: {id: 'fakeElement'}});
+            $('#searchBox').blur();
         }
     }
 

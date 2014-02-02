@@ -28,6 +28,7 @@
         <div class="search-box">
             <i class="left-search-icon glyphicon glyphicon-search"></i>
             <input id="searchBox" class="form-control search-box-input" placeholder="Search by Building or Lot" ng-model="searchText" ng-keypress="buildingSelectedByKeyPress($event)" ng-focus="showSearchResults()" ng-blur="open == false">
+            <i ng-click="clearInput()" class="glyphicon glyphicon-remove clear-input-button"></i>
         </div>
 
         <div class="results">
