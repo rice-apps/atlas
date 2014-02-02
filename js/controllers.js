@@ -114,8 +114,8 @@ mapApp.controller('SearchCtrl', function($scope, $http, $window) {
 
     // function for focusing on a building.
     $scope.focusBuilding = function(building) {
-        // first close all info windows.
-        closeAllInfoWindows();
+        // first remove all markers.
+        removeAllMarkers();
 
         $scope.searchText = "";
 
@@ -123,11 +123,12 @@ mapApp.controller('SearchCtrl', function($scope, $http, $window) {
         var latLng = new google.maps.LatLng(building.location.latitude, building.location.longitude);
         map.panTo(latLng);
 
+
         placeMarker(building)
     };
 
     // places a marker on the map for a map element.
-    var placeMarker = function(mapElement) {
+    function placeMarker(mapElement) {
         // check whether we've made the maker yet. If not, make it.
         var latLng = new google.maps.LatLng(mapElement.location.latitude, mapElement.location.longitude);
         if (!(latLng in latLngDict)) {
@@ -204,6 +205,18 @@ mapApp.controller('SearchCtrl', function($scope, $http, $window) {
     function closeAllInfoWindows() {
         for (var latLng in latLngDict) {
             latLngDict[latLng].infoWindow.close();
+        }
+    }
+
+    /**
+     * Removes all markers from the map.
+     */
+    function removeAllMarkers() {
+        $scope.visitorLotsShown = false;
+
+        for (var latLng in latLngDict) {
+            latLngDict[latLng].marker.setMap(null);
+            delete latLngDict[latLng];
         }
     }
 
