@@ -117,7 +117,9 @@ mapApp.controller('SearchCtrl', function($scope, $http, $window, $timeout) {
 
             // hide the search results. we have to emulate a clicked element here.
             $scope.hideSearchResults({target: {id: 'fakeElement'}});
-            $('#searchBox').blur();
+            $timeout(function() {
+                $('#searchBox').blur();
+            });
         }
     }
 
