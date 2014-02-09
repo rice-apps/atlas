@@ -1049,16 +1049,6 @@
     }
   },
   {
-    "name":"Greenbriar Lot",
-    "type":"lot",
-    "visitor_parking":1,
-    "abbreviation":"",
-    "location":{
-      "latitude":"29.717282",
-      "longitude":"-95.410874"
-    }
-  },
-  {
     "name":"North Annex Lot",
     "type":"lot",
     "visitor_parking":1,
@@ -1115,6 +1105,16 @@
     "location":{
       "latitude":"29.719836",
       "longitude":"-95.397342"
+    }
+  },
+  {
+    "name":"Greenbriar Lot",
+    "type":"lot",
+    "visitor_parking":1,
+    "abbreviation":"",
+    "location":{
+      "latitude":"29.717282",
+      "longitude":"-95.410874"
     }
   }
 ]

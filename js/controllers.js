@@ -62,11 +62,14 @@ mapApp.controller('SearchCtrl', function($scope, $http, $window, $timeout) {
             for (var i = 0; i < mapElements.length; i++) {
                 var mapElement = mapElements[i];
                 if (mapElement.type === "lot" && mapElement.visitor_parking > 0) {
+                    // case for class 1 (normal visitor parking lots).
                     if (mapElement.visitor_parking === 1) {
                         placeMarker(mapElement)
                     }
+                    // case for class 2 (time-restricted visitor parking lots).
                     else if (mapElement.visitor_parking === 2) {
                         var currentDate = new Date();
+                        // logic for time-restricted visitor parking lots.
                         if ((currentDate.getDay() === 0 || currentDate.getDay() === 6) || 
                             (currentDate.getHours() > 17 || currentDate.getHours() < 8)) {
                             placeMarker(mapElement);
