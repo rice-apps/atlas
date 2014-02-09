@@ -130,7 +130,7 @@ mapApp.controller('SearchCtrl', function($scope, $http, $window, $timeout) {
 
         $scope.searchText = "";
 
-        map.setZoom(18);
+        map.setZoom(5);
         var latLng = new google.maps.LatLng(building.location.latitude, building.location.longitude);
         map.panTo(latLng);
 
