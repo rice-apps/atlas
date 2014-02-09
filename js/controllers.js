@@ -120,6 +120,9 @@ mapApp.controller('SearchCtrl', function($scope, $http, $window, $timeout) {
 
     // function for focusing on a building.
     $scope.focusBuilding = function(building) {
+        // hide keyboard so that the user will have a centered pin.
+        $('searchBox').blur();
+
         // first remove all markers.
         removeAllMarkers();
 
