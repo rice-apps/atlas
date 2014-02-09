@@ -7,9 +7,6 @@ mapApp.controller('SearchCtrl', function($scope, $http, $window, $timeout) {
 
         // makes sure that the height is always equal to the height for the device.
         $('body').css({"height":document.documentElement.clientHeight});
-        $(window).resize(function() {
-            $('body').css({"height":document.documentElement.clientHeight});
-        });
     };
 
     // elements on the map. Initialized using campus_data.json.
