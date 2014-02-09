@@ -30,11 +30,6 @@ mapApp.controller('SearchCtrl', function($scope, $http, $window, $timeout) {
     // init the open status for the search results.
     $scope.open = true;
 
-    // function that shows search results.
-    $scope.showSearchResults = function() {
-        $scope.open = true;
-    }
-
     // function that clears input from input box and selects the input.
     $scope.clearInput = function() {
         $scope.searchText = "";
@@ -48,7 +43,7 @@ mapApp.controller('SearchCtrl', function($scope, $http, $window, $timeout) {
         if (clickedElement.target.id !== 'searchBox') {
             $scope.open = false;
         }
-        else {
+        else if ($scope.searchText.length > 0) {
             $scope.open = true;
         }
     }
@@ -192,8 +187,8 @@ mapApp.controller('SearchCtrl', function($scope, $http, $window, $timeout) {
             // get search results for what someone types in.
             $scope.searchResults = searcher.search(newValue);
 
-            // if newValue is empty string, do not show results.
-            if (newValue.length < 1) {
+            // check to see if new value is an empty string
+            if (newValue === "") {
                 $scope.open = false;
             } else {
                 $scope.open = true;
