@@ -999,16 +999,6 @@
     }
   },
   {
-    "name":"West Lot 1",
-    "type":"lot",
-    "visitor_parking":1,
-    "abbreviation":"",
-    "location":{
-      "latitude":"29.715800",
-      "longitude":"-95.405955"
-    }
-  },
-  {
     "name":"West Lot 2",
     "type":"lot",
     "visitor_parking":0,
@@ -1115,6 +1105,16 @@
     "location":{
       "latitude":"29.717282",
       "longitude":"-95.410874"
+    }
+  },
+  {
+    "name":"West Lot 1",
+    "type":"lot",
+    "visitor_parking":1,
+    "abbreviation":"",
+    "location":{
+      "latitude":"29.715800",
+      "longitude":"-95.405955"
     }
   }
 ]
