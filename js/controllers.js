@@ -46,7 +46,7 @@ mapApp.controller('SearchCtrl', function($scope, $http, $window, $timeout) {
         if (clickedElement.target.id !== 'searchBox') {
             $scope.open = false;
         }
-        else if ($scope.searchText.length > 0) {
+        else if ($scope.searchText !== undefined && $scope.searchText.length > 0) {
             $scope.open = true;
         }
     }
