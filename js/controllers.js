@@ -189,7 +189,15 @@ mapApp.controller('SearchCtrl', function($scope, $http, $window, $timeout) {
     });
     $scope.$watch('searchText', function(newValue, oldValue) {
         if (searcher !== undefined) {
+            // get search results for what someone types in.
             $scope.searchResults = searcher.search(newValue);
+
+            // if newValue is empty string, do not show results.
+            if (newValue.length < 1) {
+                $scope.open = false;
+            } else {
+                $scope.open = true;
+            }
         }
     });
 
