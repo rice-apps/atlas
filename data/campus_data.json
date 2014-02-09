@@ -999,6 +999,15 @@
     }
   },
   {
+    "name":"Rice Coffeehouse",
+    "type":"building",
+    "abbreviation":"",
+    "location":{
+      "latitude":"29.717946",
+      "longitude":"-95.402323"
+    }
+  },
+  {
     "name":"West Lot 2",
     "type":"lot",
     "visitor_parking":0,
