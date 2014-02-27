@@ -3,6 +3,9 @@ Interactive Rice Map
 
 Welcome to the interactive Rice map, brought to you by Rice Apps!
 
+[Demo](http://rice-apps.github.io/rice-map)
+-------------------------------------------
+
 Purpose
 -------
 
