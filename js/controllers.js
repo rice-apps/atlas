@@ -210,7 +210,7 @@ mapApp.controller('SearchCtrl', function($scope, $http, $window, $timeout) {
     
     // Function to update buses and pull's data every 5 seconds.
     (function tick() {
-        $http.get('http://bus.rice.edu/json/buses.php').success(function (data) {
+        $http.get('http://rice-buses.herokuapp.com').success(function (data) {
             $scope.buses = data.d;
             $timeout(tick, 5000);
         });
