@@ -9,6 +9,15 @@ mapApp.controller('SearchCtrl', function($scope, $http, $window, $timeout) {
         $('body').css({"height":document.documentElement.clientHeight});
     };
 
+    // constants for bus icons
+    var graduateApartmentsShoppingShuttleImage = "img/buses/Graduate Apartments Shopping Shuttle.png";
+    var graduateApartmentsImage = "img/buses/Graduate Apartments.png";
+    var greaterLoopImage = "img/buses/Greater Loop.png";
+    var innerLoopImage = "img/buses/Inner Loop.png";
+    var nightEscortServicesImage = "img/buses/Night Escort Services.png";
+    var riceVillageApartmentsImage = "img/buses/Rice Village Apartments.png";
+    var undergraduateShoppingShuttleImage = "img/buses/Undergraduate Shopping Shuttle.png";
+
     // elements on the map. Initialized using campus_data.json.
     var mapElements;
 
@@ -215,6 +224,13 @@ mapApp.controller('SearchCtrl', function($scope, $http, $window, $timeout) {
             $timeout(tick, 5000);
         });
     })();
+
+    /**
+     * Redraws buses on map.
+     */
+    function redrawBuses() {
+
+    }
 
     /**
      * Add code for initializing the map.
