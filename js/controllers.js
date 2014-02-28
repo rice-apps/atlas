@@ -14,7 +14,8 @@ mapApp.controller('SearchCtrl', function($scope, $http, $window, $timeout) {
     var graduateApartmentsImage = "img/buses/Graduate Apartments.png";
     var greaterLoopImage = "img/buses/Greater Loop.png";
     var innerLoopImage = "img/buses/Inner Loop.png";
-    var nightEscortServicesImage = "img/buses/Night Escort Services.png";
+    var nightEscortServiceImage = "img/buses/Night Escort Service.png";
+    var riceVillageImage = "img/buses/Rice Village.png";
     var riceVillageApartmentsImage = "img/buses/Rice Village Apartments.png";
     var undergraduateShoppingShuttleImage = "img/buses/Undergraduate Shopping Shuttle.png";
 
@@ -254,8 +255,29 @@ mapApp.controller('SearchCtrl', function($scope, $http, $window, $timeout) {
 
             // get the right icon for the bus.
             switch(type) {
+                case "Graduate Apartments":
+                    image = graduateApartmentsImage;
+                    break;
+                case "Graduate Apartments Shopping Shuttle":
+                    image = graduateApartmentsShoppingShuttleImage;
+                    break;
+                case "Greater Loop":
+                    image = greaterLoopImage;
+                    break;
+                case "Inner Loop":
+                    image = innerLoopImage;
+                    break;
                 case "Night Escort Service":
-                    image = nightEscortServicesImage;
+                    image = nightEscortServiceImage;
+                    break;
+                case "Rice Village":
+                    image = riceVillageImage;
+                    break;
+                case "Rice Village Apartments":
+                    image = riceVillageApartmentsImage;
+                    break;
+                case "Undergraduate Shopping Shuttle":
+                    image = undergraduateShoppingShuttleImage;
                     break;
                 default:
                     image = innerLoopImage;
