@@ -18,6 +18,9 @@ mapApp.controller('SearchCtrl', function($scope, $http, $window, $timeout) {
     var riceVillageApartmentsImage = "img/buses/Rice Village Apartments.png";
     var undergraduateShoppingShuttleImage = "img/buses/Undergraduate Shopping Shuttle.png";
 
+    // array for bus markers
+    var busMarkers = [];
+
     // elements on the map. Initialized using campus_data.json.
     var mapElements;
 
@@ -221,6 +224,10 @@ mapApp.controller('SearchCtrl', function($scope, $http, $window, $timeout) {
     (function tick() {
         $http.get('http://rice-buses.herokuapp.com').success(function (data) {
             $scope.buses = data.d;
+
+            // redraw the buses
+            redrawBuses();
+
             $timeout(tick, 5000);
         });
     })();
@@ -229,7 +236,40 @@ mapApp.controller('SearchCtrl', function($scope, $http, $window, $timeout) {
      * Redraws buses on map.
      */
     function redrawBuses() {
+        // delete all the bus markers.
+        for (var i = 0; i < busMarkers.length; i++) {
+            busMarkers[i].setMap(null);
+        }
+        busMarkers = [];
 
+        // create all the bus markers.
+        for (var i = 0; i < $scope.buses.length; i++) {
+            var bus = $scope.buses[i];
+
+            // get the marker attributes.
+            var type = bus.Name;
+            var busLatLng = new google.maps.LatLng(bus.Latitude, bus.Longitude);
+            var image = "";
+
+
+            // get the right icon for the bus.
+            switch(type) {
+                case "Night Escort Service":
+                    image = nightEscortServicesImage;
+                    break;
+                default:
+                    image = innerLoopImage;
+            }
+
+            // create the marker and add it to the list of bus markers.
+            var busMarker = new google.maps.Marker({
+                position: busLatLng,
+                map: map,
+                icon: image
+            });
+
+            busMarkers.push(busMarker);
+        }
     }
 
     /**
