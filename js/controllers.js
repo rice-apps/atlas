@@ -19,8 +19,10 @@ mapApp.controller('SearchCtrl', function($scope, $http, $window, $timeout) {
     var riceVillageApartmentsImage = "img/buses/Rice Village Apartments.png";
     var undergraduateShoppingShuttleImage = "img/buses/Undergraduate Shopping Shuttle.png";
 
-    // array for bus markers
-    var busMarkers = [];
+    // dictionary that maps latlng's to bus markers
+    var busMarkersDict = {};
+    // dictionary that maps latlng's to bus infoWindow's.
+    var busInfoWindowsDict = {};
 
     // elements on the map. Initialized using campus_data.json.
     var mapElements;
@@ -70,10 +72,10 @@ mapApp.controller('SearchCtrl', function($scope, $http, $window, $timeout) {
     // function that gets called when the "Visitor Lots" button is pressed. Zooms out and shows available visitor lots.
     $scope.toggleVisitorLots = function() {
         if ($scope.visitorLotsShown) {
-            removeAllMarkers();
+            removeAllBuildingMarkers();
         }
         else {
-            removeAllMarkers();
+            removeAllBuildingMarkers();
 
             for (var i = 0; i < mapElements.length; i++) {
                 var mapElement = mapElements[i];
@@ -146,7 +148,7 @@ mapApp.controller('SearchCtrl', function($scope, $http, $window, $timeout) {
         $('searchBox').blur();
 
         // first remove all markers.
-        removeAllMarkers();
+        removeAllBuildingMarkers();
 
         $scope.searchText = "";
 
@@ -176,7 +178,10 @@ mapApp.controller('SearchCtrl', function($scope, $http, $window, $timeout) {
 
             // add entry to latLngDict.
             latLngDict[latLng] = {"marker":marker, "infoWindow":infoWindow};
-            google.maps.event.addListener(marker, 'click', function(target){
+            google.maps.event.addListener(marker, 'click', function(target) {
+                // close all the open info windows.
+                closeAllInfoWindows();
+
                 var dictEntry = latLngDict[target.latLng];
                 dictEntry.infoWindow.open(map, dictEntry.marker);
             }); 
@@ -237,11 +242,7 @@ mapApp.controller('SearchCtrl', function($scope, $http, $window, $timeout) {
      * Redraws buses on map.
      */
     function redrawBuses() {
-        // delete all the bus markers.
-        for (var i = 0; i < busMarkers.length; i++) {
-            busMarkers[i].setMap(null);
-        }
-        busMarkers = [];
+        removeAllBusMarkers();
 
         // create all the bus markers.
         for (var i = 0; i < $scope.buses.length; i++) {
@@ -289,8 +290,20 @@ mapApp.controller('SearchCtrl', function($scope, $http, $window, $timeout) {
                 map: map,
                 icon: image
             });
+            busMarkersDict[busLatLng] = busMarker;
 
-            busMarkers.push(busMarker);
+            // create the info window and add an event listener.
+            var infoWindow = new google.maps.InfoWindow({
+                content: type
+            });
+            busInfoWindowsDict[busLatLng] = infoWindow;
+
+            google.maps.event.addListener(busMarker, 'click', function(target) {
+                // close all the info windows.
+                closeAllInfoWindows();
+                
+                busInfoWindowsDict[target.latLng].open(map, busMarkersDict[target.latLng]);
+            }); 
         }
     }
 
@@ -317,18 +330,43 @@ mapApp.controller('SearchCtrl', function($scope, $http, $window, $timeout) {
         for (var latLng in latLngDict) {
             latLngDict[latLng].infoWindow.close();
         }
+        closeAllBusInfoWindows();
     }
 
     /**
      * Removes all markers from the map.
      */
-    function removeAllMarkers() {
+    function removeAllBuildingMarkers() {
+        closeAllInfoWindows();
+
         $scope.visitorLotsShown = false;
 
         for (var latLng in latLngDict) {
             latLngDict[latLng].marker.setMap(null);
             delete latLngDict[latLng];
         }
+    }
+
+    /**
+     * Closes all bus info windows on map.
+     */
+    function closeAllBusInfoWindows() {
+        for (var latLng in busMarkersDict) {
+            busInfoWindowsDict[latLng].close();
+        }
+    }
+
+    /**
+     * Removes all bus markers from the map.
+     */
+    function removeAllBusMarkers() {
+        for (var latLng in busMarkersDict) {
+            busMarkersDict[latLng].setMap(null);
+            delete busMarkersDict[latLng];
+        }
+
+        busMarkersDict = {}
+        busInfoWindowsDict = {};
     }
 
 });
