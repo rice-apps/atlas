@@ -19,6 +19,11 @@ mapApp.controller('SearchCtrl', function($scope, $http, $window, $timeout) {
     var riceVillageApartmentsImage = "img/buses/Rice Village Apartments.png";
     var undergraduateShoppingShuttleImage = "img/buses/Undergraduate Shopping Shuttle.png";
 
+    // dictionary that maps a bus SessionId to an object that has a marker and an infoWindow
+    var idToBusMarkerDict = {};
+    // dictionary that maps a laptop to an object that has a marker and an infoWindow
+    var latLngToBusDict = {};
+
     // dictionary that maps latlng's to bus markers
     var busMarkersDict = {};
     // dictionary that maps latlng's to bus infoWindow's.
@@ -229,82 +234,117 @@ mapApp.controller('SearchCtrl', function($scope, $http, $window, $timeout) {
     // Function to update buses and pull's data every 5 seconds.
     (function tick() {
         $http.get('http://rice-buses.herokuapp.com').success(function (data) {
-            $scope.buses = data.d;
-
             // redraw the buses
-            redrawBuses();
+            refreshBuses(data.d);
 
             $timeout(tick, 5000);
         });
     })();
 
     /**
-     * Redraws buses on map.
+     * Refreshes buses on map according to new data.
      */
-    function redrawBuses() {
-        removeAllBusMarkers();
+    function refreshBuses(data) {
+        // check to see if data has removed a bus we knew about.
+        for (var sessionID in idToBusMarkerDict) {
+            var busRemains = false;
 
-        // create all the bus markers.
-        for (var i = 0; i < $scope.buses.length; i++) {
-            var bus = $scope.buses[i];
-
-            // get the marker attributes.
-            var type = bus.Name;
-            var busLatLng = new google.maps.LatLng(bus.Latitude, bus.Longitude);
-            var image = "";
-
-
-            // get the right icon for the bus.
-            switch(type) {
-                case "Graduate Apartments":
-                    image = graduateApartmentsImage;
+            for (var i = 0; i < data.length; i++) {
+                var bus = data[i];
+                if (bus.SessionID === sessionID) {
+                    busRemains = true;
                     break;
-                case "Graduate Apartments Shopping Shuttle":
-                    image = graduateApartmentsShoppingShuttleImage;
-                    break;
-                case "Greater Loop":
-                    image = greaterLoopImage;
-                    break;
-                case "Inner Loop":
-                    image = innerLoopImage;
-                    break;
-                case "Night Escort Service":
-                    image = nightEscortServiceImage;
-                    break;
-                case "Rice Village":
-                    image = riceVillageImage;
-                    break;
-                case "Rice Village Apartments":
-                    image = riceVillageApartmentsImage;
-                    break;
-                case "Undergraduate Shopping Shuttle":
-                    image = undergraduateShoppingShuttleImage;
-                    break;
-                default:
-                    image = innerLoopImage;
+                }
             }
 
-            // create the marker and add it to the list of bus markers.
-            var busMarker = new google.maps.Marker({
-                position: busLatLng,
-                map: map,
-                icon: image
-            });
-            busMarkersDict[busLatLng] = busMarker;
-
-            // create the info window and add an event listener.
-            var infoWindow = new google.maps.InfoWindow({
-                content: type
-            });
-            busInfoWindowsDict[busLatLng] = infoWindow;
-
-            google.maps.event.addListener(busMarker, 'click', function(target) {
-                // close all the info windows.
-                closeAllInfoWindows();
-                
-                busInfoWindowsDict[target.latLng].open(map, busMarkersDict[target.latLng]);
-            }); 
+            // if the bus has retired, then delete it.
+            if (!busRemains) {
+                deleteBus(sessionID);
+            }
         }
+
+        // check to see if data contains a new bus.
+        for (var i = 0; i < data.length; i++) {
+            var bus = data[i];
+
+            var busLatLng = new google.maps.LatLng(bus.Latitude, bus.Longitude);
+
+            // if the bus is new, add it
+            if (!(bus.SessionID in idToBusMarkerDict)) {
+                createBus(bus.SessionID, busLatLng, bus.Name);
+            }
+            // otherwise, just change the latlng
+            else {
+                // change the key in the latLngToBusDict
+                var oldLatLng = idToBusMarkerDict[bus.SessionID].getPosition();
+                latLngToBusDict[busLatLng] = latLngToBusDict[oldLatLng];
+
+                // change the position of the marker.
+                idToBusMarkerDict[bus.SessionID].setPosition(busLatLng);
+            }
+        }
+    }
+
+    // Creates a marker from a new sessionID and latLng, adds it to the latLngToBusDict.
+    function createBus(sessionID, latLng, type) {
+        var image = ''
+ 
+        switch(type) {
+            case "Graduate Apartments":
+                image = graduateApartmentsImage;
+                break;
+            case "Graduate Apartments Shopping Shuttle":
+                image = graduateApartmentsShoppingShuttleImage;
+                break;
+            case "Greater Loop":
+                image = greaterLoopImage;
+                break;
+            case "Inner Loop":
+                image = innerLoopImage;
+                break;
+            case "Night Escort Service":
+                image = nightEscortServiceImage;
+                break;
+            case "Rice Village":
+                image = riceVillageImage;
+                break;
+            case "Rice Village Apartments":
+                image = riceVillageApartmentsImage;
+                break;
+            case "Undergraduate Shopping Shuttle":
+                image = undergraduateShoppingShuttleImage;
+                break;
+            default:
+                image = innerLoopImage;
+            }
+ 
+        var busMarker = new google.maps.Marker({
+            position: latLng,
+            map: map,
+            icon: image,
+            type: type
+        });
+ 
+        var infoWindow = new google.maps.InfoWindow({
+            content: type
+        });
+ 
+        idToBusMarkerDict[sessionID] = busMarker
+        latLngToBusDict[latLng] = {'marker':busMarker, 'infoWindow':infoWindow}
+
+        google.maps.event.addListener(busMarker, 'click', function(target) {
+            // close all the info windows.
+            closeAllInfoWindows();
+            
+            latLngToBusDict[target.latLng]['infoWindow'].open(map, latLngToBusDict[target.latLng].marker);
+        }); 
+    }
+ 
+    // Removes a bus from the map and deletes it if the sessionID no longer exists.
+    function deleteBus(sessionID){
+        idToBusMarkerDict[sessionID].setMap(null);
+        delete latLngToBusDict[idToBusMarkerDict[sessionID].position];
+        delete idToBusMarkerDict[sessionID];
     }
 
     /**
@@ -351,22 +391,9 @@ mapApp.controller('SearchCtrl', function($scope, $http, $window, $timeout) {
      * Closes all bus info windows on map.
      */
     function closeAllBusInfoWindows() {
-        for (var latLng in busMarkersDict) {
-            busInfoWindowsDict[latLng].close();
+        for (var latLng in latLngToBusDict) {
+            latLngToBusDict[latLng]['infoWindow'].close();
         }
-    }
-
-    /**
-     * Removes all bus markers from the map.
-     */
-    function removeAllBusMarkers() {
-        for (var latLng in busMarkersDict) {
-            busMarkersDict[latLng].setMap(null);
-            delete busMarkersDict[latLng];
-        }
-
-        busMarkersDict = {}
-        busInfoWindowsDict = {};
     }
 
 });
