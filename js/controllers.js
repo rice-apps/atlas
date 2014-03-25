@@ -1,6 +1,8 @@
-var mapApp = angular.module('mapApp', []);
+var mapApp = angular.module('mapApp', [], function($locationProvider) {
+    $locationProvider.html5Mode(true);
+});
 
-mapApp.controller('SearchCtrl', function($scope, $http, $window, $timeout) {
+mapApp.controller('SearchCtrl', function($scope, $http, $window, $timeout, $location) {
     // init function for body.
     $scope.init = function() {
         initializeMap();
