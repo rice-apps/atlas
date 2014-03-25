@@ -113,8 +113,19 @@ mapApp.controller('SearchCtrl', function($scope, $http, $window, $timeout, $loca
 
     // function that gets called when the My Location button is clicked, and show the user's locaiton on the map and pans to your location.
     $scope.showMyLocation = function() {
-        // Makes the marker to show where you are.
-        var myLocMarker = new google.maps.Marker({
+        //sets the marker at your location and pans the screen to it.
+        if (navigator.geolocation) navigator.geolocation.getCurrentPosition(function(pos) {
+            var myLoc = new google.maps.LatLng(pos.coords.latitude, pos.coords.longitude);
+            createPersonMarker(myLoc);
+        }, function(error) {
+            // ...
+        });
+    }
+
+    // function that creates a little marker representing a person/their location.
+    function createPersonMarker(latLng) {
+        // Creates the marker to designate the position of a person.
+        var personLocMarker = new google.maps.Marker({
             clickable: false,
             icon: new google.maps.MarkerImage('//maps.gstatic.com/mapfiles/mobile/mobileimgs2.png',
                                                     new google.maps.Size(22,22),
@@ -124,14 +135,9 @@ mapApp.controller('SearchCtrl', function($scope, $http, $window, $timeout, $loca
             zIndex: 999,
             map: map
         });
-        //sets the marker at your location and pans the screen to it.
-        if (navigator.geolocation) navigator.geolocation.getCurrentPosition(function(pos) {
-            var myLoc = new google.maps.LatLng(pos.coords.latitude, pos.coords.longitude);
-            myLocMarker.setPosition(myLoc);
-            map.panTo(myLoc);
-        }, function(error) {
-            // ...
-        });
+
+        personLocMarker.setPosition(latLng);
+        map.panTo(latLng);
     }
 
     // event where a building was selected by a keypress..
