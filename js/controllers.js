@@ -7,6 +7,7 @@ mapApp.controller('SearchCtrl', function($scope, $http, $window, $timeout, $loca
     $scope.init = function() {
         initializeMap();
 
+
         // makes sure that the height is always equal to the height for the device.
         $('body').css({"height":document.documentElement.clientHeight});
     };
@@ -172,6 +173,33 @@ mapApp.controller('SearchCtrl', function($scope, $http, $window, $timeout, $loca
         placeMarker(building)
     };
 
+    function initWithGetParams() {
+        // checks the URL for anything that needs to be toggled on, including buildings, lots, or a person's location.
+        var params = $location.search();
+        if (params.building !== undefined) {
+            for (building_index in mapElements) {
+                var building = mapElements[building_index];
+                if (params.building === building.name) {
+                    $scope.focusBuilding(building)
+                }
+            }
+        }
+        else if (params.lots === 'true') {
+            $scope.toggleVisitorLots()
+        }
+        if (params.loc !== undefined) {
+            try {
+                var latLngObject = JSON.parse(params.loc);
+                var myLoc = new google.maps.LatLng(latLngObject.latitude, latLngObject.longitude);
+                createPersonMarker(myLoc)
+            }
+            catch (e) {
+                console.log("Invalid value for parameter \"loc\" specified")
+            }
+
+        }
+    }
+
     // places a marker on the map for a map element.
     function placeMarker(mapElement) {
         // check whether we've made the maker yet. If not, make it.
@@ -224,6 +252,8 @@ mapApp.controller('SearchCtrl', function($scope, $http, $window, $timeout, $loca
         searcher = new Fuse(result.data, options);
 
         mapElements = result.data;
+        initWithGetParams();
+
     });
     $scope.$watch('searchText', function(newValue, oldValue) {
         if (searcher !== undefined) {
