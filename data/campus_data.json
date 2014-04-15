@@ -1015,7 +1015,13 @@
     "location":{
       "latitude":"29.717501",
       "longitude":"-95.406808"
-    }
+    },
+    "area": [
+      {"latitude":"29.716126", "longitude":"-95.407752"},
+      {"latitude":"29.716778", "longitude":"-95.406051"},
+      {"latitude":"29.718456", "longitude":"-95.406915"},
+      {"latitude":"29.718176", "longitude":"-95.407543"}
+    ]
   },
   {
     "name":"West Lot 3",
@@ -1025,7 +1031,15 @@
     "location":{
       "latitude":"29.717235",
       "longitude":"-95.407698"
-    }
+    },
+    "area": [
+      {"latitude":"29.716126", "longitude":"-95.407741"},
+      {"latitude":"29.716485", "longitude":"-95.406818"},
+      {"latitude":"29.718213", "longitude":"-95.407655"},
+      {"latitude":"29.718535", "longitude":"-95.406947"},
+      {"latitude":"29.719154", "longitude":"-95.407264"},
+      {"latitude":"29.718526", "longitude":"-95.408964"}
+    ]
   },
   {
     "name":"West Lot 4",
@@ -1035,7 +1049,14 @@
     "location":{
       "latitude":"29.715310",
       "longitude":"-95.407087"
-    }
+    },
+    "area": [
+      {"latitude":"29.714854", "longitude":"-95.408497"},
+      {"latitude":"29.714221", "longitude":"-95.406250"},
+      {"latitude":"29.714826", "longitude":"-95.405992"},
+      {"latitude":"29.716401", "longitude":"-95.406808"},
+      {"latitude":"29.715938", "longitude":"-95.407966"}
+    ]
   },
   {
     "name":"West Lot 5",
@@ -1045,7 +1066,13 @@
     "location":{
       "latitude":"29.714384",
       "longitude":"-95.408146"
-    }
+    },
+    "area": [
+      {"latitude":"29.714165", "longitude":"-95.408814"},
+      {"latitude":"29.713792", "longitude":"-95.407682"},
+      {"latitude":"29.714463", "longitude":"-95.407392"},
+      {"latitude":"29.714822", "longitude":"-95.408514"}
+    ]
   },
   {
     "name":"North Annex Lot",
@@ -1055,7 +1082,13 @@
     "location":{
       "latitude":"29.719764",
       "longitude":"-95.404437"
-    }
+    },
+    "area": [
+      {"latitude":"29.719339", "longitude":"-95.404657"},
+      {"latitude":"29.719607", "longitude":"-95.403951"},
+      {"latitude":"29.720173", "longitude":"-95.404233"},
+      {"latitude":"29.719906", "longitude":"-95.404952"}
+    ]
   },
   {
     "name":"North Lot",
@@ -1065,7 +1098,15 @@
     "location":{
       "latitude":"29.720491",
       "longitude":"-95.402784"
-    }
+    },
+    "area": [
+      {"latitude":"29.720031", "longitude":"-95.403895"},
+      {"latitude":"29.720019", "longitude":"-95.403694"},
+      {"latitude":"29.719849", "longitude":"-95.403541"},
+      {"latitude":"29.720671", "longitude":"-95.401437"},
+      {"latitude":"29.721314", "longitude":"-95.401739"},
+      {"latitude":"29.720382", "longitude":"-95.404083"}
+    ]
   },
   {
     "name":"Central Campus Garage",
@@ -1084,7 +1125,15 @@
     "location":{
       "latitude":"29.718823",
       "longitude":"-95.396778"
-    }
+    },
+    "area": [
+      {"latitude":"29.718335", "longitude":"-95.396945"},
+      {"latitude":"29.718475", "longitude":"-95.396548"},
+      {"latitude":"29.718714", "longitude":"-95.396673"},
+      {"latitude":"29.718821", "longitude":"-95.396406"},
+      {"latitude":"29.719015", "longitude":"-95.396506"},
+      {"latitude":"29.718749", "longitude":"-95.397171"}
+    ]
   },
   {
     "name":"Lovett Lot",
@@ -1094,7 +1143,29 @@
     "location":{
       "latitude":"29.717193",
       "longitude":"-95.397492"
-    }
+    },
+    "area": [
+      {"latitude":"29.716616", "longitude":"-95.397600"},
+      {"latitude":"29.717044", "longitude":"-95.397348"},
+      {"latitude":"29.717177", "longitude":"-95.397055"},
+      {"latitude":"29.717534", "longitude":"-95.396591"},
+      {"latitude":"29.717906", "longitude":"-95.396596"},
+      {"latitude":"29.718018", "longitude":"-95.396319"},
+      {"latitude":"29.718465", "longitude":"-95.396542"},
+      {"latitude":"29.718403", "longitude":"-95.396721"},
+      {"latitude":"29.718163", "longitude":"-95.396614"},
+      {"latitude":"29.718059", "longitude":"-95.396865"},
+      {"latitude":"29.718358", "longitude":"-95.397022"},
+      {"latitude":"29.718285", "longitude":"-95.397203"},
+      {"latitude":"29.717938", "longitude":"-95.397065"},
+      {"latitude":"29.717791", "longitude":"-95.397002"},
+      {"latitude":"29.717848", "longitude":"-95.396735"},
+      {"latitude":"29.717664", "longitude":"-95.396705"},
+      {"latitude":"29.717430", "longitude":"-95.396897"},
+      {"latitude":"29.717322", "longitude":"-95.397175"},
+      {"latitude":"29.717515", "longitude":"-95.397346"},
+      {"latitude":"29.717287", "longitude":"-95.397956"}
+    ]
   },
   {
     "name":"Lovett Lot Visitor Parking",
@@ -1104,7 +1175,13 @@
     "location":{
       "latitude":"29.719836",
       "longitude":"-95.397342"
-    }
+    },
+    "area": [
+      {"latitude":"29.719614", "longitude":"-95.397683"},
+      {"latitude":"29.719924", "longitude":"-95.396912"},
+      {"latitude":"29.720110", "longitude":"-95.397018"},
+      {"latitude":"29.719806", "longitude":"-95.397785"}
+    ]
   },
   {
     "name":"Greenbriar Lot",
@@ -1114,7 +1191,13 @@
     "location":{
       "latitude":"29.717282",
       "longitude":"-95.410874"
-    }
+    },
+    "area": [
+      {"latitude":"29.715115", "longitude":"-95.412671"},
+      {"latitude":"29.714659", "longitude":"-95.410426"},
+      {"latitude":"29.717965", "longitude":"-95.410451"},
+      {"latitude":"29.717480", "longitude":"29.717480"}
+    ]
   },
   {
     "name":"West Lot 1",
@@ -1124,6 +1207,12 @@
     "location":{
       "latitude":"29.715800",
       "longitude":"-95.405955"
-    }
+    },
+    "area": [
+      {"latitude":"29.714869", "longitude":"-95.405895"},
+      {"latitude":"29.715157", "longitude":"-95.405186"},
+      {"latitude":"29.716760", "longitude":"-95.406005"},
+      {"latitude":"29.716483", "longitude":"-95.406725"}
+    ]
   }
 ]
