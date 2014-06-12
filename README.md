@@ -3,7 +3,6 @@ Interactive Rice Map
 
 Welcome to the interactive Rice map, brought to you by Rice Apps!
 
-[Demo](http://rice-apps.github.io/rice-map)
 -------------------------------------------
 
 Rice Map's mission is to provide students at Rice with useful campus information such as building locations, classes, places to eat, parking, etc.
