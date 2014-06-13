@@ -1,0 +1,466 @@
+[
+   {
+      "type":"academic-building",
+      "name":"M.D. Anderson Hall"
+   },
+   {
+      "type":"academic-building",
+      "name":"James A. III Baker Hall"
+   },
+   {
+      "type":"academic-building",
+      "name":"BioScience Research Collaborative"
+   },
+   {
+      "type":"academic-building",
+      "name":"Brockman Hall for Physics"
+   },
+   {
+      "type":"academic-building",
+      "name":"Alice Pratt Brown Hall"
+   },
+   {
+      "type":"academic-building",
+      "name":"George R Brown Hall"
+   },
+   {
+      "type":"academic-building",
+      "name":"Herman Brown Hall for Mathematical Sciences"
+   },
+   {
+      "type":"academic-building",
+      "name":"Dell Butcher Hall"
+   },
+   {
+      "type":"academic-building",
+      "name":"Martel Center for Continuing Studies"
+   },
+   {
+      "type":"academic-building",
+      "name":"Anne and Charles Duncan Hall"
+   },
+   {
+      "type":"academic-building",
+      "name":"Facilities Engineering and Planning Building"
+   },
+   {
+      "type":"academic-building",
+      "name":"Fondren Library"
+   },
+   {
+      "type":"academic-building",
+      "name":"Hamman Hall"
+   },
+   {
+      "type":"academic-building",
+      "name":"Robert R. Herring Hall"
+   },
+   {
+      "type":"academic-building",
+      "name":"Herzstein Hall"
+   },
+   {
+      "type":"academic-building",
+      "name":"Peter and Nancy Huff House"
+   },
+   {
+      "type":"academic-building",
+      "name":"Humanities Building"
+   },
+   {
+      "type":"academic-building",
+      "name":"Keck Hall"
+   },
+   {
+      "type":"academic-building",
+      "name":"Lovett Hall"
+   },
+   {
+      "type":"academic-building",
+      "name":"Janice and Robert McNair Hall"
+   },
+   {
+      "type":"academic-building",
+      "name":"Mechanical Engineering Building"
+   },
+   {
+      "type":"academic-building",
+      "name":"Media Center"
+   },
+   {
+      "type":"academic-building",
+      "name":"Mudd Computer Science Building"
+   },
+   {
+      "type":"academic-building",
+      "name":"Oshman Engineering Design Kitchen"
+   },
+   {
+      "type":"academic-building",
+      "name":"Rayzor Hall"
+   },
+   {
+      "type":"academic-building",
+      "name":"Rice Children\u2019s Campus"
+   },
+   {
+      "type":"academic-building",
+      "name":"Sewall Hall"
+   },
+   {
+      "type":"academic-building",
+      "name":"Space Science and Technology Building"
+   },
+   {
+      "type":"academic-building",
+      "name":"Youngkin Center"
+   },
+   {
+      "type":"academic-school",
+      "name":"School of Architecture"
+   },
+   {
+      "type":"academic-school",
+      "name":"Jesse H. Jones Graduate School of Business"
+   },
+   {
+      "type":"academic-school",
+      "name":"Susanne M. Glasscock School of Continuing Studies"
+   },
+   {
+      "type":"academic-school",
+      "name":"George R. Brown School of Engineering"
+   },
+   {
+      "type":"academic-school",
+      "name":"School of Humanities"
+   },
+   {
+      "type":"academic-school",
+      "name":"The Shepherd School of Music"
+   },
+   {
+      "type":"academic-school",
+      "name":"Wiess School of Natural Sciences"
+   },
+   {
+      "type":"academic-school",
+      "name":"School of Social Sciences"
+   },
+   {
+      "type":"apartments",
+      "name":"Rice Graduate Apartments"
+   },
+   {
+      "type":"apartments",
+      "name":"Rice Village Apartments"
+   },
+   {
+      "type":"athletic-facility",
+      "name":"John L. Cox Fitness Center"
+   },
+   {
+      "type":"athletic-facility",
+      "name":"Barbara and David Gibbs Recreation and Wellness Center"
+   },
+   {
+      "type":"athletic-facility",
+      "name":"Jake Hess Tennis Stadium"
+   },
+   {
+      "type":"athletic-facility",
+      "name":"Holloway Field"
+   },
+   {
+      "type":"athletic-facility",
+      "name":"Reckling Park at Cameron Field"
+   },
+   {
+      "type":"athletic-facility",
+      "name":"Rice Stadium"
+   },
+   {
+      "type":"athletic-facility",
+      "name":"Morton L. Rich Student Health Center"
+   },
+   {
+      "type":"athletic-facility",
+      "name":"Tudor Fieldhouse"
+   },
+   {
+      "type":"athletic-facility",
+      "name":"Intramural Field 1"
+   },
+   {
+      "type":"athletic-facility",
+      "name":"O' Connor Field"
+   },
+   {
+      "type":"athletic-facility",
+      "name":"Intramural Field 2"
+   },
+   {
+      "type":"athletic-facility",
+      "name":"Intramural Field 3"
+   },
+   {
+      "type":"athletic-facility",
+      "name":"Intramural Field 5"
+   },
+   {
+      "type":"athletic-facility",
+      "name":"Intramural Field 6"
+   },
+   {
+      "type":"athletic-facility",
+      "name":"Intramural Field 7"
+   },
+   {
+      "type":"athletic-facility",
+      "name":"Track / Soccer Stadium"
+   },
+   {
+      "type":"building",
+      "name":"Allen Business Center"
+   },
+   {
+      "type":"building",
+      "name":"Robert and Agnes Cohen House"
+   },
+   {
+      "type":"building",
+      "name":"Greenhouse"
+   },
+   {
+      "type":"building",
+      "name":"Housing and Dining"
+   },
+   {
+      "type":"building",
+      "name":"Rice University Police Department"
+   },
+   {
+      "type":"building",
+      "name":"South Plant"
+   },
+   {
+      "type":"building",
+      "name":"Wiess President\u2019s House"
+   },
+   {
+      "type":"building",
+      "name":"Raymond and Susan Brochstein Pavilion"
+   },
+   {
+      "type":"building",
+      "name":"East Servery"
+   },
+   {
+      "type":"building",
+      "name":"North Servery"
+   },
+   {
+      "type":"building",
+      "name":"South Servery"
+   },
+   {
+      "type":"building",
+      "name":"West Servery"
+   },
+   {
+      "type":"lab",
+      "name":"Abercrombie Engineering Laboratory"
+   },
+   {
+      "type":"lab",
+      "name":"M.D. Anderson Biological Laboratories"
+   },
+   {
+      "type":"lab",
+      "name":"Keith-Wiess Geological Laboratories"
+   },
+   {
+      "type":"lab",
+      "name":"Mechanical Laboratory"
+   },
+   {
+      "type":"lab",
+      "name":"Ryon Engineering Laboratory"
+   },
+   {
+      "type":"landmark",
+      "name":"Founder's Court"
+   },
+   {
+      "type":"parking-lot",
+      "name":"Alice Pratt Brown Hall Lot"
+   },
+   {
+      "type":"parking-lot",
+      "name":"Baker College Housing & Dining Lot"
+   },
+   {
+      "type":"parking-lot",
+      "name":"Biology Geology Lot"
+   },
+   {
+      "type":"parking-lot",
+      "name":"BioScience Research Collaborative Garage"
+   },
+   {
+      "type":"parking-lot",
+      "name":"Campanile Lot"
+   },
+   {
+      "type":"parking-lot",
+      "name":"Central Campus Garage"
+   },
+   {
+      "type":"parking-lot",
+      "name":"Engineering and Planning Lot Facilities"
+   },
+   {
+      "type":"parking-lot",
+      "name":"Greenbriar Lot"
+   },
+   {
+      "type":"parking-lot",
+      "name":"Greenbriar Annex"
+   },
+   {
+      "type":"parking-lot",
+      "name":"Hess Court Lot"
+   },
+   {
+      "type":"parking-lot",
+      "name":"Keck Lot"
+   },
+   {
+      "type":"parking-lot",
+      "name":"Lovett Lot"
+   },
+   {
+      "type":"parking-lot",
+      "name":"North Lot"
+   },
+   {
+      "type":"parking-lot",
+      "name":"North Annex Lot"
+   },
+   {
+      "type":"parking-lot",
+      "name":"North Colleges Residents Lot"
+   },
+   {
+      "type":"parking-lot",
+      "name":"South Colleges Residents Lot"
+   },
+   {
+      "type":"parking-lot",
+      "name":"South Stadium Lot"
+   },
+   {
+      "type":"parking-lot",
+      "name":"West Lot"
+   },
+   {
+      "type":"masters-house",
+      "name":"Baker College Masters House"
+   },
+   {
+      "type":"masters-house",
+      "name":"Brown College Masters House"
+   },
+   {
+      "type":"masters-house",
+      "name":"Duncan College Masters House"
+   },
+   {
+      "type":"masters-house",
+      "name":"Hanszen College Masters House"
+   },
+   {
+      "type":"masters-house",
+      "name":"Jones College Masters House"
+   },
+   {
+      "type":"masters-house",
+      "name":"Lovett College Masters House"
+   },
+   {
+      "type":"masters-house",
+      "name":"Martel College Masters House"
+   },
+   {
+      "type":"masters-house",
+      "name":"Sid Richardson College Masters House"
+   },
+   {
+      "type":"masters-house",
+      "name":"Will Rice College Masters House"
+   },
+   {
+      "type":"masters-house",
+      "name":"McMurtry College Masters House"
+   },
+   {
+      "type":"masters-house",
+      "name":"Wilson House"
+   },
+   {
+      "type":"residential-college",
+      "name":"Baker College"
+   },
+   {
+      "type":"residential-college",
+      "name":"Margarett Root Brown College"
+   },
+   {
+      "type":"residential-college",
+      "name":"Duncan College"
+   },
+   {
+      "type":"residential-college",
+      "name":"Hanszen College"
+   },
+   {
+      "type":"residential-college",
+      "name":"Mary Gibbs Jones College"
+   },
+   {
+      "type":"residential-college",
+      "name":"Edgar Odell Lovett College"
+   },
+   {
+      "type":"residential-college",
+      "name":"Martel College"
+   },
+   {
+      "type":"residential-college",
+      "name":"Burton and Deedee McMurtry College"
+   },
+   {
+      "type":"residential-college",
+      "name":"Sid W. Richardson College"
+   },
+   {
+      "type":"residential-college",
+      "name":"Wiess College"
+   },
+   {
+      "type":"residential-college",
+      "name":"Will Rice College"
+   },
+   {
+      "type":"student-life",
+      "name":"Ley Student Center"
+   },
+   {
+      "type":"student-life",
+      "name":"Rice Memorial Center"
+   },
+   {
+      "type":"student-life",
+      "name":"Rice Memorial Chapel"
+   }
+]
