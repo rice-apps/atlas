@@ -56,7 +56,53 @@ def translate_to_parse(place):
   out["location"] = {"_type":"GeoPoint",
                      "latitude":float(place["location"]["latitue"]),
                      "longitude":float(place["location"]["longitude"]}  
-  return out
+  assign_type(out)
+
+def levenshtein(s1, s2):
+  """
+  Given two strings s1 and s2, returns the levenshtein
+  distance between the two strings.
+  Credit: http://en.wikibooks.org/wiki/Algorithm_Implementation/Strings/Levenshtein_distance
+  """
+
+  if len(s1) < len(s2):
+    return levenshtein(s2, s1)
+ 
+  # len(s1) >= len(s2)
+  if len(s2) == 0:
+    return len(s1)
+ 
+  previous_row = xrange(len(s2) + 1)
+  for i, c1 in enumerate(s1):
+    current_row = [i + 1]
+    for j, c2 in enumerate(s2):
+      insertions = previous_row[j + 1] + 1 # j+1 instead of j since previous_row and current_row are one character longer
+      deletions = current_row[j] + 1       # than s2
+      substitutions = previous_row[j] + (c1 != c2)
+      current_row.append(min(insertions, deletions, substitutions))
+    previous_row = current_row
+ 
+  return previous_row[-1]
+
+
+
+def assign_type(obj):
+  """
+  Given a dictionary objs, iterates through objs, matching the name of
+  each object in obj to a name-type pair in the types (from types.json)
+  by levenshtein distance and assigning the matching type value to obj
+  """
+ 
+  json_text = open("types.json").read()
+  types = json.loads(json_text)
+ 
+  optimal_type = ""
+  optimal_score = float('inf')
+  for type_pair in types:
+    score = levenshtein(type_pair["name"], obj["name"])
+    if score < optimal_score: optimal_type = type_pair["type"]
+  obj["type"] = optimal_type
+ 
 
 
 def main():
