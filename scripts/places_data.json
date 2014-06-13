@@ -1,0 +1,1218 @@
+[
+  {
+    "name":"Abercrombie Engineering Laboratory",
+    "type":"building",
+    "abbreviation":"AEL",
+    "location":{
+      "latitude":"29.720835",
+      "longitude":"-95.399238"
+    }
+  },
+  {
+    "name":"Allen Business Center",
+    "type":"building",
+    "abbreviation":"",
+    "location":{
+      "latitude":"29.717634",
+      "longitude":"-95.397844"
+    }
+  },
+  {
+    "name":"President's Office",
+    "type":"building",
+    "abbreviation":"",
+    "location":{
+      "latitude":"29.717634",
+      "longitude":"-95.397844"
+    }
+  },
+  {
+    "name":"Anderson Biological Laboratories, M.D.",
+    "type":"building",
+    "abbreviation":"ABL",
+    "location":{
+      "latitude":"29.718644",
+      "longitude":"-95.402363"
+    }
+  },
+  {
+    "name":"Anderson Hall, M.D.",
+    "type":"building",
+    "abbreviation":"ANH",
+    "location":{
+      "latitude":"29.718839",
+      "longitude":"-95.399724"
+    }
+  },
+  {
+    "name":"Dean of Architecture",
+    "type":"building",
+    "abbreviation":"",
+    "location":{
+      "latitude":"29.718839",
+      "longitude":"-95.399724"
+    }
+  },
+  {
+    "name":"Baker College",
+    "type":"building",
+    "abbreviation":"",
+    "location":{
+      "latitude":"29.716976",
+      "longitude":"-95.399289"
+    }
+  },
+  {
+    "name":"Baker College Masters House",
+    "type":"building",
+    "abbreviation":"",
+    "location":{
+      "latitude":"29.71698",
+      "longitude":"-95.399835"
+    }
+  },
+  {
+    "name":"Baker Hall, James A. III",
+    "type":"building",
+    "abbreviation":"BKH",
+    "location":{
+      "latitude":"29.716633",
+      "longitude":"-95.402638"
+    }
+  },
+  {
+    "name":"Dean of Social Sciences",
+    "type":"building",
+    "abbreviation":"",
+    "location":{
+      "latitude":"29.716633",
+      "longitude":"-95.402638"
+    }
+  },
+  {
+    "name":"James A. Baker III Institute for Public Policy",
+    "type":"building",
+    "abbreviation":"",
+    "location":{
+      "latitude":"29.716633",
+      "longitude":"-95.402638"
+    }
+  },
+  {
+    "name":"BioScience Research Collaborative",
+    "type":"building",
+    "abbreviation":"BRC",
+    "location":{
+      "latitude":"29.71104",
+      "longitude":"-95.402063"
+    }
+  },
+  {
+    "name":"Booth Centennial Pavilion, Suzanne Deal",
+    "type":"building",
+    "abbreviation":"",
+    "location":{
+      "latitude":"29.716473",
+      "longitude":"-95.404238"
+    }
+  },
+  {
+    "name":"James Turrell\u2018s \"Twilight\" Epiphany Skyspace",
+    "type":"building",
+    "abbreviation":"",
+    "location":{
+      "latitude":"29.716473",
+      "longitude":"-95.404238"
+    }
+  },
+  {
+    "name":"Brochstein Pavilion, Raymond and Susan",
+    "type":"building",
+    "abbreviation":"",
+    "location":{
+      "latitude":"29.717843",
+      "longitude":"-95.400826"
+    }
+  },
+  {
+    "name":"Brockman Hall for Physics",
+    "type":"building",
+    "abbreviation":"BRK",
+    "location":{
+      "latitude":"29.719743",
+      "longitude":"-95.40162"
+    }
+  },
+  {
+    "name":"Brown College, Margarett Root",
+    "type":"building",
+    "abbreviation":"BNC",
+    "location":{
+      "latitude":"29.721425",
+      "longitude":"-95.396001"
+    }
+  },
+  {
+    "name":"Brown College Masters House",
+    "type":"building",
+    "abbreviation":"",
+    "location":{
+      "latitude":"29.721066",
+      "longitude":"-95.396017"
+    }
+  },
+  {
+    "name":"Brown Hall, Alice Pratt",
+    "type":"building",
+    "abbreviation":"APB",
+    "location":{
+      "latitude":"29.716184",
+      "longitude":"-95.405019"
+    }
+  },
+  {
+    "name":"Dean of Shepherd School of Music",
+    "type":"building",
+    "abbreviation":"",
+    "location":{
+      "latitude":"29.716184",
+      "longitude":"-95.405019"
+    }
+  },
+  {
+    "name":"Brown Hall, George R",
+    "type":"building",
+    "abbreviation":"GRB",
+    "location":{
+      "latitude":"29.7191",
+      "longitude":"-95.401301"
+    }
+  },
+  {
+    "name":"Dean of Wiess School of Natural Sciences",
+    "type":"building",
+    "abbreviation":"",
+    "location":{
+      "latitude":"29.7191",
+      "longitude":"-95.401301"
+    }
+  },
+  {
+    "name":"Herman Brown Hall for Mathematical Sciences",
+    "type":"building",
+    "abbreviation":"HBH",
+    "location":{
+      "latitude":"29.719942",
+      "longitude":"-95.400848"
+    }
+  },
+  {
+    "name":"Butcher Hall, Dell",
+    "type":"building",
+    "abbreviation":"DBH",
+    "location":{
+      "latitude":"29.719958",
+      "longitude":"-95.40084"
+    }
+  },
+  {
+    "name":"Cohen House, Robert and Agnes",
+    "type":"building",
+    "abbreviation":"COH",
+    "location":{
+      "latitude":"29.717802",
+      "longitude":"-95.397179"
+    }
+  },
+  {
+    "name":"Continuing Studies, Martel Center for",
+    "type":"building",
+    "abbreviation":"",
+    "location":{
+      "latitude":"29.713384",
+      "longitude":"-95.405743"
+    }
+  },
+  {
+    "name":"Dean of Susanne M. Glasscock School of Continuing Studies",
+    "type":"building",
+    "abbreviation":"",
+    "location":{
+      "latitude":"29.713384",
+      "longitude":"-95.405743"
+    }
+  },
+  {
+    "name":"Cox Fitness Center, John L.",
+    "type":"building",
+    "abbreviation":"",
+    "location":{
+      "latitude":"29.715178",
+      "longitude":"-95.408892"
+    }
+  },
+  {
+    "name":"Duncan College",
+    "type":"building",
+    "abbreviation":"DCC",
+    "location":{
+      "latitude":"29.721812",
+      "longitude":"-95.398474"
+    }
+  },
+  {
+    "name":"Duncan College Masters House",
+    "type":"building",
+    "abbreviation":"",
+    "location":{
+      "latitude":"29.721336",
+      "longitude":"-95.398738"
+    }
+  },
+  {
+    "name":"Duncan Hall, Anne and Charles",
+    "type":"building",
+    "abbreviation":"DCH",
+    "location":{
+      "latitude":"29.72013",
+      "longitude":"-95.398785"
+    }
+  },
+  {
+    "name":"Dean of George R. Brown School of Engineering",
+    "type":"building",
+    "abbreviation":"",
+    "location":{
+      "latitude":"29.72013",
+      "longitude":"-95.398785"
+    }
+  },
+  {
+    "name":"Facilities Engineering and Planning Building",
+    "type":"building",
+    "abbreviation":"",
+    "location":{
+      "latitude":"29.72184",
+      "longitude":"-95.399654"
+    }
+  },
+  {
+    "name":"Fondren Library",
+    "type":"building",
+    "abbreviation":"FON",
+    "location":{
+      "latitude":"29.718155",
+      "longitude":"-95.400121"
+    }
+  },
+  {
+    "name":"Gibbs Recreation and Wellness Center, Barbara and David",
+    "type":"building",
+    "abbreviation":"GRW",
+    "location":{
+      "latitude":"29.718155",
+      "longitude":"-95.403747"
+    }
+  },
+  {
+    "name":"Greenbriar Building",
+    "type":"building",
+    "abbreviation":"",
+    "location":{
+      "latitude":"29.716059",
+      "longitude":"-95.412907"
+    }
+  },
+  {
+    "name":"Greenhouse",
+    "type":"building",
+    "abbreviation":"",
+    "location":{
+      "latitude":"29.718799",
+      "longitude":"-95.402922"
+    }
+  },
+  {
+    "name":"Hamman Hall",
+    "type":"building",
+    "abbreviation":"HAM",
+    "location":{
+      "latitude":"29.720146",
+      "longitude":"-95.401812"
+    }
+  },
+  {
+    "name":"Hanszen College",
+    "type":"building",
+    "abbreviation":"HNZ",
+    "location":{
+      "latitude":"29.715761",
+      "longitude":"-95.400215"
+    }
+  },
+  {
+    "name":"Hanszen College Masters House",
+    "type":"building",
+    "abbreviation":"",
+    "location":{
+      "latitude":"29.715219",
+      "longitude":"-95.399653"
+    }
+  },
+  {
+    "name":"Herring Hall, Robert R.",
+    "type":"building",
+    "abbreviation":"HRG",
+    "location":{
+      "latitude":"29.716981",
+      "longitude":"-95.401108"
+    }
+  },
+  {
+    "name":"Herzstein Hall",
+    "type":"building",
+    "abbreviation":"HRZ",
+    "location":{
+      "latitude":"29.719296",
+      "longitude":"-95.39842"
+    }
+  },
+  {
+    "name":"Hess Tennis Stadium, Jake",
+    "type":"building",
+    "abbreviation":"",
+    "location":{
+      "latitude":"29.71446",
+      "longitude":"-95.405239"
+    }
+  },
+  {
+    "name":"Holloway Field",
+    "type":"building",
+    "abbreviation":"",
+    "location":{
+      "latitude":"29.712844",
+      "longitude":"-95.402049"
+    }
+  },
+  {
+    "name":"Wendel D. Ley Track",
+    "type":"building",
+    "abbreviation":"",
+    "location":{
+      "latitude":"29.712844",
+      "longitude":"-95.402049"
+    }
+  },
+  {
+    "name":"Housing and Dining",
+    "type":"building",
+    "abbreviation":"",
+    "location":{
+      "latitude":"29.716796",
+      "longitude":"-95.400404"
+    }
+  },
+  {
+    "name":"Huff House, Peter and Nancy",
+    "type":"building",
+    "abbreviation":"",
+    "location":{
+      "latitude":"29.720574",
+      "longitude":"-95.396279"
+    }
+  },
+  {
+    "name":"Alumni Affairs",
+    "type":"building",
+    "abbreviation":"",
+    "location":{
+      "latitude":"29.720574",
+      "longitude":"-95.396279"
+    }
+  },
+  {
+    "name":"Center for Student Professional Development",
+    "type":"building",
+    "abbreviation":"",
+    "location":{
+      "latitude":"29.720574",
+      "longitude":"-95.396279"
+    }
+  },
+  {
+    "name":"Humanities Building",
+    "type":"building",
+    "abbreviation":"HUM",
+    "location":{
+      "latitude":"29.717587",
+      "longitude":"-95.399668"
+    }
+  },
+  {
+    "name":"Dean of Humanities",
+    "type":"building",
+    "abbreviation":"",
+    "location":{
+      "latitude":"29.717587",
+      "longitude":"-95.399668"
+    }
+  },
+  {
+    "name":"Jones College, Mary Gibbs",
+    "type":"building",
+    "abbreviation":"",
+    "location":{
+      "latitude":"29.721627",
+      "longitude":"-95.397191"
+    }
+  },
+  {
+    "name":"Jones College Masters House ",
+    "type":"building",
+    "abbreviation":"",
+    "location":{
+      "latitude":"29.72131",
+      "longitude":"-95.397341"
+    }
+  },
+  {
+    "name":"Keck Hall",
+    "type":"building",
+    "abbreviation":"KCK",
+    "location":{
+      "latitude":"29.719661",
+      "longitude":"-95.399985"
+    }
+  },
+  {
+    "name":"Keith-Wiess Geological Laboratories",
+    "type":"building",
+    "abbreviation":"KWG",
+    "location":{
+      "latitude":"29.719307",
+      "longitude":"-95.402432"
+    }
+  },
+  {
+    "name":"Ley Student Center",
+    "type":"building",
+    "abbreviation":"LEY",
+    "location":{
+      "latitude":"29.717909",
+      "longitude":"-95.402367"
+    }
+  },
+  {
+    "name":"Lovett College, Edgar Odell",
+    "type":"building",
+    "abbreviation":"",
+    "location":{
+      "latitude":"29.716558",
+      "longitude":"-95.398044"
+    }
+  },
+  {
+    "name":"Lovett College Masters House",
+    "type":"building",
+    "abbreviation":"",
+    "location":{
+      "latitude":"29.716223",
+      "longitude":"-95.397915"
+    }
+  },
+  {
+    "name":"Lovett Hall",
+    "type":"building",
+    "abbreviation":"",
+    "location":{
+      "latitude":"29.719009",
+      "longitude":"-95.397808"
+    }
+  },
+  {
+    "name":"Admission Office",
+    "type":"building",
+    "abbreviation":"",
+    "location":{
+      "latitude":"29.719009",
+      "longitude":"-95.397808"
+    }
+  },
+  {
+    "name":"Welcome Center",
+    "type":"building",
+    "abbreviation":"",
+    "location":{
+      "latitude":"29.719009",
+      "longitude":"-95.397808"
+    }
+  },
+  {
+    "name":"Martel College",
+    "type":"building",
+    "abbreviation":"MLC",
+    "location":{
+      "latitude":"29.722112",
+      "longitude":"-95.397689"
+    }
+  },
+  {
+    "name":"Martel College Masters House",
+    "type":"building",
+    "abbreviation":"",
+    "location":{
+      "latitude":"29.722447",
+      "longitude":"-95.398183"
+    }
+  },
+  {
+    "name":"McMurtry College, Burton and Deedee",
+    "type":"building",
+    "abbreviation":"",
+    "location":{
+      "latitude":"29.720509",
+      "longitude":"-95.39784"
+    }
+  },
+  {
+    "name":"McMurtry College Masters House",
+    "type":"building",
+    "abbreviation":"",
+    "location":{
+      "latitude":"29.720777",
+      "longitude":"-95.398395"
+    }
+  },
+  {
+    "name":"McNair Hall, Janice and Robert",
+    "type":"building",
+    "abbreviation":"MCN",
+    "location":{
+      "latitude":"29.717565",
+      "longitude":"-95.403168"
+    }
+  },
+  {
+    "name":"Dean of Jesse H. Jones Graduate School of Business",
+    "type":"building",
+    "abbreviation":"",
+    "location":{
+      "latitude":"29.717565",
+      "longitude":"-95.403168"
+    }
+  },
+  {
+    "name":"Mechanical Engineering Building",
+    "type":"building",
+    "abbreviation":"MEB",
+    "location":{
+      "latitude":"29.72017",
+      "longitude":"-95.400333"
+    }
+  },
+  {
+    "name":"Mechanical Laboratory",
+    "type":"building",
+    "abbreviation":"MEL",
+    "location":{
+      "latitude":"29.720901",
+      "longitude":"-95.400038"
+    }
+  },
+  {
+    "name":"Media Center",
+    "type":"building",
+    "abbreviation":"MED",
+    "location":{
+      "latitude":"29.713674",
+      "longitude":"-95.405695"
+    }
+  },
+  {
+    "name":"Mudd Computer Science Building",
+    "type":"building",
+    "abbreviation":"MUD",
+    "location":{
+      "latitude":"29.720448",
+      "longitude":"-95.401159"
+    }
+  },
+  {
+    "name":"North Servery",
+    "type":"building",
+    "abbreviation":"NSV",
+    "location":{
+      "latitude":"29.721883",
+      "longitude":"-95.396546"
+    }
+  },
+  {
+    "name":"Oshman Engineering Design Kitchen",
+    "type":"building",
+    "abbreviation":"OED",
+    "location":{
+      "latitude":"29.721128",
+      "longitude":"-95.401309"
+    }
+  },
+  {
+    "name":"Rayzor Hall",
+    "type":"building",
+    "abbreviation":"RZR",
+    "location":{
+      "latitude":"29.718022",
+      "longitude":"-95.399035"
+    }
+  },
+  {
+    "name":"Reckling Park at Cameron Field",
+    "type":"building",
+    "abbreviation":"",
+    "location":{
+      "latitude":"29.714094",
+      "longitude":"-95.404284"
+    }
+  },
+  {
+    "name":"Rice Children\u2019s Campus",
+    "type":"building",
+    "abbreviation":"",
+    "location":{
+      "latitude":"29.716486",
+      "longitude":"-95.414339"
+    }
+  },
+  {
+    "name":"Rice Memorial Center",
+    "type":"building",
+    "abbreviation":"RMC",
+    "location":{
+      "latitude":"29.717883",
+      "longitude":"-95.402033"
+    }
+  },
+  {
+    "name":"Campus Bookstore",
+    "type":"building",
+    "abbreviation":"",
+    "location":{
+      "latitude":"29.717883",
+      "longitude":"-95.402033"
+    }
+  },
+  {
+    "name":"Rice Memorial Chapel",
+    "type":"building",
+    "abbreviation":"",
+    "location":{
+      "latitude":"29.718134",
+      "longitude":"-95.40139"
+    }
+  },
+  {
+    "name":"Rice Stadium",
+    "type":"building",
+    "abbreviation":"STA",
+    "location":{
+      "latitude":"29.716289",
+      "longitude":"-95.409318"
+    }
+  },
+  {
+    "name":"Rice University Police Department",
+    "type":"building",
+    "abbreviation":"",
+    "location":{
+      "latitude":"29.713828",
+      "longitude":"-95.407014"
+    }
+  },
+  {
+    "name":"Rich Student Health Center, Morton L.",
+    "type":"building",
+    "abbreviation":"",
+    "location":{
+      "latitude":"29.721283",
+      "longitude":"-95.395593"
+    }
+  },
+  {
+    "name":"Sid W. Richardson College",
+    "type":"building",
+    "abbreviation":"",
+    "location":{
+      "latitude":"29.715162",
+      "longitude":"-95.398915"
+    }
+  },
+  {
+    "name":"Richardson College Masters House",
+    "type":"building",
+    "abbreviation":"",
+    "location":{
+      "latitude":"29.715169",
+      "longitude":"-95.398684"
+    }
+  },
+  {
+    "name":"Ryon Engineering Laboratory",
+    "type":"building",
+    "abbreviation":"RYN",
+    "location":{
+      "latitude":"29.720713",
+      "longitude":"-95.400635"
+    }
+  },
+  {
+    "name":"Seibel Servery, Abe and Annie",
+    "type":"building",
+    "abbreviation":"",
+    "location":{
+      "latitude":"29.716158",
+      "longitude":"-95.398241"
+    }
+  },
+  {
+    "name":"Sewall Hall",
+    "type":"building",
+    "abbreviation":"SEW",
+    "location":{
+      "latitude":"29.718372",
+      "longitude":"-95.397861"
+    }
+  },
+  {
+    "name":"Rice Art Gallery",
+    "type":"building",
+    "abbreviation":"",
+    "location":{
+      "latitude":"29.718302",
+      "longitude":"-95.397664"
+    }
+  },
+  {
+    "name":"South Plant",
+    "type":"building",
+    "abbreviation":"",
+    "location":{
+      "latitude":"29.714137",
+      "longitude":"-95.399743"
+    }
+  },
+  {
+    "name":"South Servery",
+    "type":"building",
+    "abbreviation":"SSV",
+    "location":{
+      "latitude":"29.715484",
+      "longitude":"-95.401024"
+    }
+  },
+  {
+    "name":"Space Science and Technology Building",
+    "type":"building",
+    "abbreviation":"SST",
+    "location":{
+      "latitude":"29.719879",
+      "longitude":"-95.402536"
+    }
+  },
+  {
+    "name":"Tudor Fieldhouse and Youngkin Center",
+    "type":"building",
+    "abbreviation":"TUD",
+    "location":{
+      "latitude":"29.715102",
+      "longitude":"-95.404138"
+    }
+  },
+  {
+    "name":"Autry Court",
+    "type":"building",
+    "abbreviation":"",
+    "location":{
+      "latitude":"29.715039",
+      "longitude":"-95.403698"
+    }
+  },
+  {
+    "name":"Fox Gymnasium",
+    "type":"building",
+    "abbreviation":"",
+    "location":{
+      "latitude":"29.714750",
+      "longitude":"-95.403357"
+    }
+  },
+  {
+    "name":"West Servery",
+    "type":"building",
+    "abbreviation":"WSV",
+    "location":{
+      "latitude":"29.721063",
+      "longitude":"-95.398481"
+    }
+  },
+  {
+    "name":"Wiess College",
+    "type":"building",
+    "abbreviation":"WSC",
+    "location":{
+      "latitude":"29.714992",
+      "longitude":"-95.400661"
+    }
+  },
+  {
+    "name":"Wiess President\u2019s House",
+    "type":"building",
+    "abbreviation":"",
+    "location":{
+      "latitude":"29.721302",
+      "longitude":"-95.393873"
+    }
+  },
+  {
+    "name":"Will Rice College",
+    "type":"building",
+    "abbreviation":"",
+    "location":{
+      "latitude":"29.716287",
+      "longitude":"-95.399023"
+    }
+  },
+  {
+    "name":"Will Rice College Masters House",
+    "type":"building",
+    "abbreviation":"",
+    "location":{
+      "latitude":"29.715570",
+      "longitude":"-95.398958"
+    }
+  },
+  {
+    "name":"Wilson House",
+    "type":"building",
+    "abbreviation":"",
+    "location":{
+      "latitude":"29.714761",
+      "longitude":"-95.399840"
+    }
+  },
+  {
+    "name":"Wiess College Masters",
+    "type":"building",
+    "abbreviation":"",
+    "location":{
+      "latitude":"29.714708",
+      "longitude":"-95.399807"
+    }
+  },
+  {
+    "name":"Architecture, School of",
+    "type":"building",
+    "abbreviation":"",
+    "location":{
+      "latitude":"29.718945",
+      "longitude":"-95.399827"
+    }
+  },
+  {
+    "name":"Business, Jesse H. Jones Graduate School of",
+    "type":"building",
+    "abbreviation":"",
+    "location":{
+      "latitude":"29.717629",
+      "longitude":"-95.403164"
+    }
+  },
+  {
+    "name":"Continuing Studies, Susanne M. Glasscock School of",
+    "type":"building",
+    "abbreviation":"",
+    "location":{
+      "latitude":"29.713375",
+      "longitude":"-95.405707"
+    }
+  },
+  {
+    "name":"Engineering, George R. Brown School of",
+    "type":"building",
+    "abbreviation":"",
+    "location":{
+      "latitude":"29.720128",
+      "longitude":"-95.398812"
+    }
+  },
+  {
+    "name":"Humanities, School of",
+    "type":"building",
+    "abbreviation":"",
+    "location":{
+      "latitude":"29.717615",
+      "longitude":"-95.399814"
+    }
+  },
+  {
+    "name":"Music, The Shepherd School of",
+    "type":"building",
+    "abbreviation":"",
+    "location":{
+      "latitude":"29.716230",
+      "longitude":"-95.404963"
+    }
+  },
+  {
+    "name":"Natural Sciences, Wiess School of",
+    "type":"building",
+    "abbreviation":"",
+    "location":{
+      "latitude":"29.719159",
+      "longitude":"-95.401316"
+    }
+  },
+  {
+    "name":"Social Sciences, School of",
+    "type":"building",
+    "abbreviation":"",
+    "location":{
+      "latitude":"29.716625",
+      "longitude":"-95.402552"
+    }
+  },
+  {
+    "name":"Rice Graduate Apartments",
+    "type":"building",
+    "abbreviation":"",
+    "location":{
+      "latitude":"29.725276",
+      "longitude":"-95.398329"
+    }
+  },
+  {
+    "name":"Rice Village Apartments",
+    "type":"building",
+    "abbreviation":"",
+    "location":{
+      "latitude":"29.714419",
+      "longitude":"-95.415888"
+    }
+  },
+  {
+    "name":"Rice Coffeehouse",
+    "type":"building",
+    "abbreviation":"",
+    "location":{
+      "latitude":"29.717946",
+      "longitude":"-95.402323"
+    }
+  },
+  {
+    "name":"West Lot 2",
+    "type":"lot",
+    "visitor_parking":0,
+    "abbreviation":"",
+    "location":{
+      "latitude":"29.717501",
+      "longitude":"-95.406808"
+    },
+    "area": [
+      {"latitude":"29.716126", "longitude":"-95.407752"},
+      {"latitude":"29.716778", "longitude":"-95.406051"},
+      {"latitude":"29.718456", "longitude":"-95.406915"},
+      {"latitude":"29.718176", "longitude":"-95.407543"}
+    ]
+  },
+  {
+    "name":"West Lot 3",
+    "type":"lot",
+    "visitor_parking":0,
+    "abbreviation":"",
+    "location":{
+      "latitude":"29.717235",
+      "longitude":"-95.407698"
+    },
+    "area": [
+      {"latitude":"29.716126", "longitude":"-95.407741"},
+      {"latitude":"29.716485", "longitude":"-95.406818"},
+      {"latitude":"29.718213", "longitude":"-95.407655"},
+      {"latitude":"29.718535", "longitude":"-95.406947"},
+      {"latitude":"29.719154", "longitude":"-95.407264"},
+      {"latitude":"29.718526", "longitude":"-95.408964"}
+    ]
+  },
+  {
+    "name":"West Lot 4",
+    "type":"lot",
+    "visitor_parking":0,
+    "abbreviation":"",
+    "location":{
+      "latitude":"29.715310",
+      "longitude":"-95.407087"
+    },
+    "area": [
+      {"latitude":"29.714854", "longitude":"-95.408497"},
+      {"latitude":"29.714221", "longitude":"-95.406250"},
+      {"latitude":"29.714826", "longitude":"-95.405992"},
+      {"latitude":"29.716401", "longitude":"-95.406808"},
+      {"latitude":"29.715938", "longitude":"-95.407966"}
+    ]
+  },
+  {
+    "name":"West Lot 5",
+    "type":"lot",
+    "visitor_parking":0,
+    "abbreviation":"",
+    "location":{
+      "latitude":"29.714384",
+      "longitude":"-95.408146"
+    },
+    "area": [
+      {"latitude":"29.714165", "longitude":"-95.408814"},
+      {"latitude":"29.713792", "longitude":"-95.407682"},
+      {"latitude":"29.714463", "longitude":"-95.407392"},
+      {"latitude":"29.714822", "longitude":"-95.408514"}
+    ]
+  },
+  {
+    "name":"North Annex Lot",
+    "type":"lot",
+    "visitor_parking":1,
+    "abbreviation":"",
+    "location":{
+      "latitude":"29.719764",
+      "longitude":"-95.404437"
+    },
+    "area": [
+      {"latitude":"29.719339", "longitude":"-95.404657"},
+      {"latitude":"29.719607", "longitude":"-95.403951"},
+      {"latitude":"29.720173", "longitude":"-95.404233"},
+      {"latitude":"29.719906", "longitude":"-95.404952"}
+    ]
+  },
+  {
+    "name":"North Lot",
+    "type":"lot",
+    "visitor_parking":2,
+    "abbreviation":"",
+    "location":{
+      "latitude":"29.720491",
+      "longitude":"-95.402784"
+    },
+    "area": [
+      {"latitude":"29.720031", "longitude":"-95.403895"},
+      {"latitude":"29.720019", "longitude":"-95.403694"},
+      {"latitude":"29.719849", "longitude":"-95.403541"},
+      {"latitude":"29.720671", "longitude":"-95.401437"},
+      {"latitude":"29.721314", "longitude":"-95.401739"},
+      {"latitude":"29.720382", "longitude":"-95.404083"}
+    ]
+  },
+  {
+    "name":"Central Campus Garage",
+    "type":"lot",
+    "abbreviation":"",
+    "location":{
+      "latitude":"29.717256",
+      "longitude":"-95.404230"
+    }
+  },
+  {
+    "name":"Founder's Court Visitor Lot",
+    "type":"lot",
+    "visitor_parking":1,
+    "abbreviation":"",
+    "location":{
+      "latitude":"29.718823",
+      "longitude":"-95.396778"
+    },
+    "area": [
+      {"latitude":"29.718335", "longitude":"-95.396945"},
+      {"latitude":"29.718475", "longitude":"-95.396548"},
+      {"latitude":"29.718714", "longitude":"-95.396673"},
+      {"latitude":"29.718821", "longitude":"-95.396406"},
+      {"latitude":"29.719015", "longitude":"-95.396506"},
+      {"latitude":"29.718749", "longitude":"-95.397171"}
+    ]
+  },
+  {
+    "name":"Lovett Lot",
+    "type":"lot",
+    "visitor_parking":0,
+    "abbreviation":"",
+    "location":{
+      "latitude":"29.717193",
+      "longitude":"-95.397492"
+    },
+    "area": [
+      {"latitude":"29.716616", "longitude":"-95.397600"},
+      {"latitude":"29.717044", "longitude":"-95.397348"},
+      {"latitude":"29.717177", "longitude":"-95.397055"},
+      {"latitude":"29.717534", "longitude":"-95.396591"},
+      {"latitude":"29.717906", "longitude":"-95.396596"},
+      {"latitude":"29.718018", "longitude":"-95.396319"},
+      {"latitude":"29.718465", "longitude":"-95.396542"},
+      {"latitude":"29.718403", "longitude":"-95.396721"},
+      {"latitude":"29.718163", "longitude":"-95.396614"},
+      {"latitude":"29.718059", "longitude":"-95.396865"},
+      {"latitude":"29.718358", "longitude":"-95.397022"},
+      {"latitude":"29.718285", "longitude":"-95.397203"},
+      {"latitude":"29.717938", "longitude":"-95.397065"},
+      {"latitude":"29.717791", "longitude":"-95.397002"},
+      {"latitude":"29.717848", "longitude":"-95.396735"},
+      {"latitude":"29.717664", "longitude":"-95.396705"},
+      {"latitude":"29.717430", "longitude":"-95.396897"},
+      {"latitude":"29.717322", "longitude":"-95.397175"},
+      {"latitude":"29.717515", "longitude":"-95.397346"},
+      {"latitude":"29.717287", "longitude":"-95.397956"}
+    ]
+  },
+  {
+    "name":"Lovett Lot Visitor Parking",
+    "type":"lot",
+    "visitor_parking":2,
+    "abbreviation":"",
+    "location":{
+      "latitude":"29.719836",
+      "longitude":"-95.397342"
+    },
+    "area": [
+      {"latitude":"29.719614", "longitude":"-95.397683"},
+      {"latitude":"29.719924", "longitude":"-95.396912"},
+      {"latitude":"29.720110", "longitude":"-95.397018"},
+      {"latitude":"29.719806", "longitude":"-95.397785"}
+    ]
+  },
+  {
+    "name":"Greenbriar Lot",
+    "type":"lot",
+    "visitor_parking":1,
+    "abbreviation":"",
+    "location":{
+      "latitude":"29.717282",
+      "longitude":"-95.410874"
+    },
+    "area": [
+      {"latitude":"29.715115", "longitude":"-95.412671"},
+      {"latitude":"29.714659", "longitude":"-95.410426"},
+      {"latitude":"29.717965", "longitude":"-95.410451"},
+      {"latitude":"29.717480", "longitude":"29.717480"}
+    ]
+  },
+  {
+    "name":"West Lot 1",
+    "type":"lot",
+    "visitor_parking":1,
+    "abbreviation":"",
+    "location":{
+      "latitude":"29.715800",
+      "longitude":"-95.405955"
+    },
+    "area": [
+      {"latitude":"29.714869", "longitude":"-95.405895"},
+      {"latitude":"29.715157", "longitude":"-95.405186"},
+      {"latitude":"29.716760", "longitude":"-95.406005"},
+      {"latitude":"29.716483", "longitude":"-95.406725"}
+    ]
+  }
+]
