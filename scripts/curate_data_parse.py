@@ -5,6 +5,7 @@ in the Parse Rice Maps Data store.
 Input File: places_data.json
 Output File: places_data_parse.json
 """
+import json
 
 
 def read_data(f_name):
@@ -12,14 +13,16 @@ def read_data(f_name):
   Given an input file name f_name, reads the JSON data inside returns as
   Python data object.
   """
-  pass
+  f = open(f_name)
+  json_data = json.loads(f.read())
+  return json_data
 
 def write_data(f_name, data):
   """
   Given an output data object, writes as JSON to the specified output file
   name f_name.
   """
-  pass
+  json_data = json.dump(data, f_name)
 
 def translate_to_parse(place):
   """
@@ -45,7 +48,16 @@ def translate_to_parse(place):
     "geometryType": "GeoPoint"
   }
   """
-  pass
+
+  out = {}
+  out["name"] = place["name"]
+  out["types"] = []
+  out["symbol"] = place["abbreviation"]
+  out["location"] = {"_type":"GeoPoint",
+                     "latitude":float(place["location"]["latitue"]),
+                     "longitude":float(place["location"]["longitude"]}  
+  return out
+
 
 def main():
   input_data = read_data('places_data.json')
