@@ -23,10 +23,22 @@ def write_data(f_name, data):
   Given an output data object, writes as JSON to the specified output file
   name f_name.
   """
-  json_data = json.dumps(data)
+  json_data = json.dumps(data, indent=2)
   out = open(f_name, 'w')
   out.write(json_data)
   out.close()
+
+
+def rotate_name(name):
+  """
+  Converts a string of the form: McMurtry College, Burton and Deedee
+  to Burton and Deedee McMurtry College
+  """
+  if ',' not in name:
+    return name
+  tokens = name.split(',')
+  tokens.reverse()
+  return ' '.join([t.strip() for t in tokens])
 
 
 def translate_to_parse(place):
@@ -55,13 +67,15 @@ def translate_to_parse(place):
   """
 
   out = {}
-  out["name"] = place["name"]
+  out["name"] = rotate_name(place["name"])
   out["types"] = []
-  out["symbol"] = place["abbreviation"]
+  if place["abbreviation"]:
+    out["symbol"] = place["abbreviation"]
   out["location"] = {"__type":"GeoPoint",
                      "latitude":float(place["location"]["latitude"]),
                      "longitude":float(place["location"]["longitude"])}  
   assign_type(out)
+  return out
 
 def levenshtein(s1, s2):
   """
@@ -105,7 +119,9 @@ def assign_type(obj):
   optimal_score = float('inf')
   for type_pair in types:
     score = levenshtein(type_pair["name"], obj["name"])
-    if score < optimal_score: optimal_type = type_pair["type"]
+    if score < optimal_score: 
+      optimal_type = type_pair["type"]
+      optimal_score = score
   obj["type"] = optimal_type
  
 
