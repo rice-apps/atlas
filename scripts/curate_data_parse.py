@@ -13,8 +13,9 @@ def read_data(f_name):
   Given an input file name f_name, reads the JSON data inside returns as
   Python data object.
   """
-  f = open(f_name)
+  f = open(f_name, 'r')
   json_data = json.loads(f.read())
+  f.close()
   return json_data
 
 def write_data(f_name, data):
@@ -22,7 +23,11 @@ def write_data(f_name, data):
   Given an output data object, writes as JSON to the specified output file
   name f_name.
   """
-  json_data = json.dump(data, f_name)
+  json_data = json.dumps(data)
+  out = open(f_name, 'w')
+  out.write(json_data)
+  out.close()
+
 
 def translate_to_parse(place):
   """
@@ -53,9 +58,9 @@ def translate_to_parse(place):
   out["name"] = place["name"]
   out["types"] = []
   out["symbol"] = place["abbreviation"]
-  out["location"] = {"_type":"GeoPoint",
-                     "latitude":float(place["location"]["latitue"]),
-                     "longitude":float(place["location"]["longitude"]}  
+  out["location"] = {"__type":"GeoPoint",
+                     "latitude":float(place["location"]["latitude"]),
+                     "longitude":float(place["location"]["longitude"])}  
   assign_type(out)
 
 def levenshtein(s1, s2):
@@ -109,3 +114,6 @@ def main():
   input_data = read_data('places_data.json')
   output_data = [translate_to_parse(place) for place in input_data]
   write_data('places_data_parse.json', output_data)
+
+if __name__ == '__main__':
+  main()
