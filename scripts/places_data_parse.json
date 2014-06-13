@@ -1,9 +1,10 @@
 [
   {
     "symbol": "AEL", 
-    "type": "lab", 
     "name": "Abercrombie Engineering Laboratory", 
-    "types": [], 
+    "types": [
+      "lab"
+    ], 
     "location": {
       "latitude": 29.720835, 
       "__type": "GeoPoint", 
@@ -11,9 +12,10 @@
     }
   }, 
   {
-    "type": "building", 
     "name": "Allen Business Center", 
-    "types": [], 
+    "types": [
+      "building"
+    ], 
     "location": {
       "latitude": 29.717634, 
       "__type": "GeoPoint", 
@@ -21,9 +23,10 @@
     }
   }, 
   {
-    "type": "building", 
     "name": "President's Office", 
-    "types": [], 
+    "types": [
+      "building"
+    ], 
     "location": {
       "latitude": 29.717634, 
       "__type": "GeoPoint", 
@@ -32,9 +35,10 @@
   }, 
   {
     "symbol": "ABL", 
-    "type": "lab", 
     "name": "M.D. Anderson Biological Laboratories", 
-    "types": [], 
+    "types": [
+      "lab"
+    ], 
     "location": {
       "latitude": 29.718644, 
       "__type": "GeoPoint", 
@@ -43,9 +47,10 @@
   }, 
   {
     "symbol": "ANH", 
-    "type": "academic-building", 
     "name": "M.D. Anderson Hall", 
-    "types": [], 
+    "types": [
+      "academic-building"
+    ], 
     "location": {
       "latitude": 29.718839, 
       "__type": "GeoPoint", 
@@ -53,9 +58,10 @@
     }
   }, 
   {
-    "type": "academic-school", 
     "name": "Dean of Architecture", 
-    "types": [], 
+    "types": [
+      "academic-school"
+    ], 
     "location": {
       "latitude": 29.718839, 
       "__type": "GeoPoint", 
@@ -63,9 +69,10 @@
     }
   }, 
   {
-    "type": "residential-college", 
     "name": "Baker College", 
-    "types": [], 
+    "types": [
+      "residential-college"
+    ], 
     "location": {
       "latitude": 29.716976, 
       "__type": "GeoPoint", 
@@ -73,9 +80,10 @@
     }
   }, 
   {
-    "type": "masters-house", 
     "name": "Baker College Masters House", 
-    "types": [], 
+    "types": [
+      "masters-house"
+    ], 
     "location": {
       "latitude": 29.71698, 
       "__type": "GeoPoint", 
@@ -84,9 +92,10 @@
   }, 
   {
     "symbol": "BKH", 
-    "type": "academic-building", 
     "name": "James A. III Baker Hall", 
-    "types": [], 
+    "types": [
+      "academic-building"
+    ], 
     "location": {
       "latitude": 29.716633, 
       "__type": "GeoPoint", 
@@ -94,9 +103,10 @@
     }
   }, 
   {
-    "type": "academic-school", 
     "name": "Dean of Social Sciences", 
-    "types": [], 
+    "types": [
+      "academic-school"
+    ], 
     "location": {
       "latitude": 29.716633, 
       "__type": "GeoPoint", 
@@ -104,9 +114,10 @@
     }
   }, 
   {
-    "type": "academic-building", 
     "name": "James A. Baker III Institute for Public Policy", 
-    "types": [], 
+    "types": [
+      "academic-building"
+    ], 
     "location": {
       "latitude": 29.716633, 
       "__type": "GeoPoint", 
@@ -115,9 +126,10 @@
   }, 
   {
     "symbol": "BRC", 
-    "type": "academic-building", 
     "name": "BioScience Research Collaborative", 
-    "types": [], 
+    "types": [
+      "academic-building"
+    ], 
     "location": {
       "latitude": 29.71104, 
       "__type": "GeoPoint", 
@@ -125,9 +137,10 @@
     }
   }, 
   {
-    "type": "building", 
     "name": "Suzanne Deal Booth Centennial Pavilion", 
-    "types": [], 
+    "types": [
+      "building"
+    ], 
     "location": {
       "latitude": 29.716473, 
       "__type": "GeoPoint", 
@@ -135,9 +148,10 @@
     }
   }, 
   {
-    "type": "athletic-facility", 
     "name": "James Turrell\u2018s \"Twilight\" Epiphany Skyspace", 
-    "types": [], 
+    "types": [
+      "athletic-facility"
+    ], 
     "location": {
       "latitude": 29.716473, 
       "__type": "GeoPoint", 
@@ -145,9 +159,10 @@
     }
   }, 
   {
-    "type": "building", 
     "name": "Raymond and Susan Brochstein Pavilion", 
-    "types": [], 
+    "types": [
+      "building"
+    ], 
     "location": {
       "latitude": 29.717843, 
       "__type": "GeoPoint", 
@@ -156,9 +171,10 @@
   }, 
   {
     "symbol": "BRK", 
-    "type": "academic-building", 
     "name": "Brockman Hall for Physics", 
-    "types": [], 
+    "types": [
+      "academic-building"
+    ], 
     "location": {
       "latitude": 29.719743, 
       "__type": "GeoPoint", 
@@ -167,9 +183,10 @@
   }, 
   {
     "symbol": "BNC", 
-    "type": "residential-college", 
     "name": "Margarett Root Brown College", 
-    "types": [], 
+    "types": [
+      "residential-college"
+    ], 
     "location": {
       "latitude": 29.721425, 
       "__type": "GeoPoint", 
@@ -177,9 +194,10 @@
     }
   }, 
   {
-    "type": "masters-house", 
     "name": "Brown College Masters House", 
-    "types": [], 
+    "types": [
+      "masters-house"
+    ], 
     "location": {
       "latitude": 29.721066, 
       "__type": "GeoPoint", 
@@ -188,9 +206,10 @@
   }, 
   {
     "symbol": "APB", 
-    "type": "academic-building", 
     "name": "Alice Pratt Brown Hall", 
-    "types": [], 
+    "types": [
+      "academic-building"
+    ], 
     "location": {
       "latitude": 29.716184, 
       "__type": "GeoPoint", 
@@ -198,9 +217,10 @@
     }
   }, 
   {
-    "type": "academic-school", 
     "name": "Dean of Shepherd School of Music", 
-    "types": [], 
+    "types": [
+      "academic-school"
+    ], 
     "location": {
       "latitude": 29.716184, 
       "__type": "GeoPoint", 
@@ -209,9 +229,10 @@
   }, 
   {
     "symbol": "GRB", 
-    "type": "academic-building", 
     "name": "George R Brown Hall", 
-    "types": [], 
+    "types": [
+      "academic-building"
+    ], 
     "location": {
       "latitude": 29.7191, 
       "__type": "GeoPoint", 
@@ -219,9 +240,10 @@
     }
   }, 
   {
-    "type": "academic-school", 
     "name": "Dean of Wiess School of Natural Sciences", 
-    "types": [], 
+    "types": [
+      "academic-school"
+    ], 
     "location": {
       "latitude": 29.7191, 
       "__type": "GeoPoint", 
@@ -230,9 +252,10 @@
   }, 
   {
     "symbol": "HBH", 
-    "type": "academic-building", 
     "name": "Herman Brown Hall for Mathematical Sciences", 
-    "types": [], 
+    "types": [
+      "academic-building"
+    ], 
     "location": {
       "latitude": 29.719942, 
       "__type": "GeoPoint", 
@@ -241,9 +264,10 @@
   }, 
   {
     "symbol": "DBH", 
-    "type": "academic-building", 
     "name": "Dell Butcher Hall", 
-    "types": [], 
+    "types": [
+      "academic-building"
+    ], 
     "location": {
       "latitude": 29.719958, 
       "__type": "GeoPoint", 
@@ -252,9 +276,10 @@
   }, 
   {
     "symbol": "COH", 
-    "type": "building", 
     "name": "Robert and Agnes Cohen House", 
-    "types": [], 
+    "types": [
+      "building"
+    ], 
     "location": {
       "latitude": 29.717802, 
       "__type": "GeoPoint", 
@@ -262,9 +287,10 @@
     }
   }, 
   {
-    "type": "academic-building", 
     "name": "Martel Center for Continuing Studies", 
-    "types": [], 
+    "types": [
+      "academic-building"
+    ], 
     "location": {
       "latitude": 29.713384, 
       "__type": "GeoPoint", 
@@ -272,9 +298,10 @@
     }
   }, 
   {
-    "type": "academic-school", 
     "name": "Dean of Susanne M. Glasscock School of Continuing Studies", 
-    "types": [], 
+    "types": [
+      "academic-school"
+    ], 
     "location": {
       "latitude": 29.713384, 
       "__type": "GeoPoint", 
@@ -282,9 +309,10 @@
     }
   }, 
   {
-    "type": "athletic-facility", 
     "name": "John L. Cox Fitness Center", 
-    "types": [], 
+    "types": [
+      "athletic-facility"
+    ], 
     "location": {
       "latitude": 29.715178, 
       "__type": "GeoPoint", 
@@ -293,9 +321,10 @@
   }, 
   {
     "symbol": "DCC", 
-    "type": "residential-college", 
     "name": "Duncan College", 
-    "types": [], 
+    "types": [
+      "residential-college"
+    ], 
     "location": {
       "latitude": 29.721812, 
       "__type": "GeoPoint", 
@@ -303,9 +332,10 @@
     }
   }, 
   {
-    "type": "masters-house", 
     "name": "Duncan College Masters House", 
-    "types": [], 
+    "types": [
+      "masters-house"
+    ], 
     "location": {
       "latitude": 29.721336, 
       "__type": "GeoPoint", 
@@ -314,9 +344,10 @@
   }, 
   {
     "symbol": "DCH", 
-    "type": "academic-building", 
     "name": "Anne and Charles Duncan Hall", 
-    "types": [], 
+    "types": [
+      "academic-building"
+    ], 
     "location": {
       "latitude": 29.72013, 
       "__type": "GeoPoint", 
@@ -324,9 +355,10 @@
     }
   }, 
   {
-    "type": "academic-school", 
     "name": "Dean of George R. Brown School of Engineering", 
-    "types": [], 
+    "types": [
+      "academic-school"
+    ], 
     "location": {
       "latitude": 29.72013, 
       "__type": "GeoPoint", 
@@ -334,9 +366,10 @@
     }
   }, 
   {
-    "type": "academic-building", 
     "name": "Facilities Engineering and Planning Building", 
-    "types": [], 
+    "types": [
+      "academic-building"
+    ], 
     "location": {
       "latitude": 29.72184, 
       "__type": "GeoPoint", 
@@ -345,9 +378,10 @@
   }, 
   {
     "symbol": "FON", 
-    "type": "academic-building", 
     "name": "Fondren Library", 
-    "types": [], 
+    "types": [
+      "academic-building"
+    ], 
     "location": {
       "latitude": 29.718155, 
       "__type": "GeoPoint", 
@@ -356,9 +390,10 @@
   }, 
   {
     "symbol": "GRW", 
-    "type": "athletic-facility", 
     "name": "Barbara and David Gibbs Recreation and Wellness Center", 
-    "types": [], 
+    "types": [
+      "athletic-facility"
+    ], 
     "location": {
       "latitude": 29.718155, 
       "__type": "GeoPoint", 
@@ -366,9 +401,10 @@
     }
   }, 
   {
-    "type": "academic-building", 
     "name": "Greenbriar Building", 
-    "types": [], 
+    "types": [
+      "academic-building"
+    ], 
     "location": {
       "latitude": 29.716059, 
       "__type": "GeoPoint", 
@@ -376,9 +412,10 @@
     }
   }, 
   {
-    "type": "building", 
     "name": "Greenhouse", 
-    "types": [], 
+    "types": [
+      "building"
+    ], 
     "location": {
       "latitude": 29.718799, 
       "__type": "GeoPoint", 
@@ -387,9 +424,10 @@
   }, 
   {
     "symbol": "HAM", 
-    "type": "academic-building", 
     "name": "Hamman Hall", 
-    "types": [], 
+    "types": [
+      "academic-building"
+    ], 
     "location": {
       "latitude": 29.720146, 
       "__type": "GeoPoint", 
@@ -398,9 +436,10 @@
   }, 
   {
     "symbol": "HNZ", 
-    "type": "residential-college", 
     "name": "Hanszen College", 
-    "types": [], 
+    "types": [
+      "residential-college"
+    ], 
     "location": {
       "latitude": 29.715761, 
       "__type": "GeoPoint", 
@@ -408,9 +447,10 @@
     }
   }, 
   {
-    "type": "masters-house", 
     "name": "Hanszen College Masters House", 
-    "types": [], 
+    "types": [
+      "masters-house"
+    ], 
     "location": {
       "latitude": 29.715219, 
       "__type": "GeoPoint", 
@@ -419,9 +459,10 @@
   }, 
   {
     "symbol": "HRG", 
-    "type": "academic-building", 
     "name": "Robert R. Herring Hall", 
-    "types": [], 
+    "types": [
+      "academic-building"
+    ], 
     "location": {
       "latitude": 29.716981, 
       "__type": "GeoPoint", 
@@ -430,9 +471,10 @@
   }, 
   {
     "symbol": "HRZ", 
-    "type": "academic-building", 
     "name": "Herzstein Hall", 
-    "types": [], 
+    "types": [
+      "academic-building"
+    ], 
     "location": {
       "latitude": 29.719296, 
       "__type": "GeoPoint", 
@@ -440,9 +482,10 @@
     }
   }, 
   {
-    "type": "athletic-facility", 
     "name": "Jake Hess Tennis Stadium", 
-    "types": [], 
+    "types": [
+      "athletic-facility"
+    ], 
     "location": {
       "latitude": 29.71446, 
       "__type": "GeoPoint", 
@@ -450,9 +493,10 @@
     }
   }, 
   {
-    "type": "athletic-facility", 
     "name": "Holloway Field", 
-    "types": [], 
+    "types": [
+      "athletic-facility"
+    ], 
     "location": {
       "latitude": 29.712844, 
       "__type": "GeoPoint", 
@@ -460,9 +504,10 @@
     }
   }, 
   {
-    "type": "academic-building", 
     "name": "Wendel D. Ley Track", 
-    "types": [], 
+    "types": [
+      "academic-building"
+    ], 
     "location": {
       "latitude": 29.712844, 
       "__type": "GeoPoint", 
@@ -470,9 +515,10 @@
     }
   }, 
   {
-    "type": "building", 
     "name": "Housing and Dining", 
-    "types": [], 
+    "types": [
+      "building"
+    ], 
     "location": {
       "latitude": 29.716796, 
       "__type": "GeoPoint", 
@@ -480,9 +526,10 @@
     }
   }, 
   {
-    "type": "academic-building", 
     "name": "Peter and Nancy Huff House", 
-    "types": [], 
+    "types": [
+      "academic-building"
+    ], 
     "location": {
       "latitude": 29.720574, 
       "__type": "GeoPoint", 
@@ -490,9 +537,10 @@
     }
   }, 
   {
-    "type": "academic-building", 
     "name": "Alumni Affairs", 
-    "types": [], 
+    "types": [
+      "academic-building"
+    ], 
     "location": {
       "latitude": 29.720574, 
       "__type": "GeoPoint", 
@@ -500,9 +548,10 @@
     }
   }, 
   {
-    "type": "building", 
     "name": "Center for Student Professional Development", 
-    "types": [], 
+    "types": [
+      "building"
+    ], 
     "location": {
       "latitude": 29.720574, 
       "__type": "GeoPoint", 
@@ -511,9 +560,10 @@
   }, 
   {
     "symbol": "HUM", 
-    "type": "academic-building", 
     "name": "Humanities Building", 
-    "types": [], 
+    "types": [
+      "academic-building"
+    ], 
     "location": {
       "latitude": 29.717587, 
       "__type": "GeoPoint", 
@@ -521,9 +571,10 @@
     }
   }, 
   {
-    "type": "academic-school", 
     "name": "Dean of Humanities", 
-    "types": [], 
+    "types": [
+      "academic-school"
+    ], 
     "location": {
       "latitude": 29.717587, 
       "__type": "GeoPoint", 
@@ -531,9 +582,10 @@
     }
   }, 
   {
-    "type": "residential-college", 
     "name": "Mary Gibbs Jones College", 
-    "types": [], 
+    "types": [
+      "residential-college"
+    ], 
     "location": {
       "latitude": 29.721627, 
       "__type": "GeoPoint", 
@@ -541,9 +593,10 @@
     }
   }, 
   {
-    "type": "masters-house", 
     "name": "Jones College Masters House ", 
-    "types": [], 
+    "types": [
+      "masters-house"
+    ], 
     "location": {
       "latitude": 29.72131, 
       "__type": "GeoPoint", 
@@ -552,9 +605,10 @@
   }, 
   {
     "symbol": "KCK", 
-    "type": "academic-building", 
     "name": "Keck Hall", 
-    "types": [], 
+    "types": [
+      "academic-building"
+    ], 
     "location": {
       "latitude": 29.719661, 
       "__type": "GeoPoint", 
@@ -563,9 +617,10 @@
   }, 
   {
     "symbol": "KWG", 
-    "type": "lab", 
     "name": "Keith-Wiess Geological Laboratories", 
-    "types": [], 
+    "types": [
+      "lab"
+    ], 
     "location": {
       "latitude": 29.719307, 
       "__type": "GeoPoint", 
@@ -574,9 +629,10 @@
   }, 
   {
     "symbol": "LEY", 
-    "type": "student-life", 
     "name": "Ley Student Center", 
-    "types": [], 
+    "types": [
+      "student-life"
+    ], 
     "location": {
       "latitude": 29.717909, 
       "__type": "GeoPoint", 
@@ -584,9 +640,10 @@
     }
   }, 
   {
-    "type": "residential-college", 
     "name": "Edgar Odell Lovett College", 
-    "types": [], 
+    "types": [
+      "residential-college"
+    ], 
     "location": {
       "latitude": 29.716558, 
       "__type": "GeoPoint", 
@@ -594,9 +651,10 @@
     }
   }, 
   {
-    "type": "masters-house", 
     "name": "Lovett College Masters House", 
-    "types": [], 
+    "types": [
+      "masters-house"
+    ], 
     "location": {
       "latitude": 29.716223, 
       "__type": "GeoPoint", 
@@ -604,9 +662,10 @@
     }
   }, 
   {
-    "type": "academic-building", 
     "name": "Lovett Hall", 
-    "types": [], 
+    "types": [
+      "academic-building"
+    ], 
     "location": {
       "latitude": 29.719009, 
       "__type": "GeoPoint", 
@@ -614,9 +673,10 @@
     }
   }, 
   {
-    "type": "masters-house", 
     "name": "Admission Office", 
-    "types": [], 
+    "types": [
+      "masters-house"
+    ], 
     "location": {
       "latitude": 29.719009, 
       "__type": "GeoPoint", 
@@ -624,9 +684,10 @@
     }
   }, 
   {
-    "type": "academic-building", 
     "name": "Welcome Center", 
-    "types": [], 
+    "types": [
+      "academic-building"
+    ], 
     "location": {
       "latitude": 29.719009, 
       "__type": "GeoPoint", 
@@ -635,9 +696,10 @@
   }, 
   {
     "symbol": "MLC", 
-    "type": "residential-college", 
     "name": "Martel College", 
-    "types": [], 
+    "types": [
+      "residential-college"
+    ], 
     "location": {
       "latitude": 29.722112, 
       "__type": "GeoPoint", 
@@ -645,9 +707,10 @@
     }
   }, 
   {
-    "type": "masters-house", 
     "name": "Martel College Masters House", 
-    "types": [], 
+    "types": [
+      "masters-house"
+    ], 
     "location": {
       "latitude": 29.722447, 
       "__type": "GeoPoint", 
@@ -655,9 +718,10 @@
     }
   }, 
   {
-    "type": "residential-college", 
     "name": "Burton and Deedee McMurtry College", 
-    "types": [], 
+    "types": [
+      "residential-college"
+    ], 
     "location": {
       "latitude": 29.720509, 
       "__type": "GeoPoint", 
@@ -665,9 +729,10 @@
     }
   }, 
   {
-    "type": "masters-house", 
     "name": "McMurtry College Masters House", 
-    "types": [], 
+    "types": [
+      "masters-house"
+    ], 
     "location": {
       "latitude": 29.720777, 
       "__type": "GeoPoint", 
@@ -676,9 +741,10 @@
   }, 
   {
     "symbol": "MCN", 
-    "type": "academic-building", 
     "name": "Janice and Robert McNair Hall", 
-    "types": [], 
+    "types": [
+      "academic-building"
+    ], 
     "location": {
       "latitude": 29.717565, 
       "__type": "GeoPoint", 
@@ -686,9 +752,10 @@
     }
   }, 
   {
-    "type": "academic-school", 
     "name": "Dean of Jesse H. Jones Graduate School of Business", 
-    "types": [], 
+    "types": [
+      "academic-school"
+    ], 
     "location": {
       "latitude": 29.717565, 
       "__type": "GeoPoint", 
@@ -697,9 +764,10 @@
   }, 
   {
     "symbol": "MEB", 
-    "type": "academic-building", 
     "name": "Mechanical Engineering Building", 
-    "types": [], 
+    "types": [
+      "academic-building"
+    ], 
     "location": {
       "latitude": 29.72017, 
       "__type": "GeoPoint", 
@@ -708,9 +776,10 @@
   }, 
   {
     "symbol": "MEL", 
-    "type": "lab", 
     "name": "Mechanical Laboratory", 
-    "types": [], 
+    "types": [
+      "lab"
+    ], 
     "location": {
       "latitude": 29.720901, 
       "__type": "GeoPoint", 
@@ -719,9 +788,10 @@
   }, 
   {
     "symbol": "MED", 
-    "type": "academic-building", 
     "name": "Media Center", 
-    "types": [], 
+    "types": [
+      "academic-building"
+    ], 
     "location": {
       "latitude": 29.713674, 
       "__type": "GeoPoint", 
@@ -730,9 +800,10 @@
   }, 
   {
     "symbol": "MUD", 
-    "type": "academic-building", 
     "name": "Mudd Computer Science Building", 
-    "types": [], 
+    "types": [
+      "academic-building"
+    ], 
     "location": {
       "latitude": 29.720448, 
       "__type": "GeoPoint", 
@@ -741,9 +812,10 @@
   }, 
   {
     "symbol": "NSV", 
-    "type": "building", 
     "name": "North Servery", 
-    "types": [], 
+    "types": [
+      "building"
+    ], 
     "location": {
       "latitude": 29.721883, 
       "__type": "GeoPoint", 
@@ -752,9 +824,10 @@
   }, 
   {
     "symbol": "OED", 
-    "type": "academic-building", 
     "name": "Oshman Engineering Design Kitchen", 
-    "types": [], 
+    "types": [
+      "academic-building"
+    ], 
     "location": {
       "latitude": 29.721128, 
       "__type": "GeoPoint", 
@@ -763,9 +836,10 @@
   }, 
   {
     "symbol": "RZR", 
-    "type": "academic-building", 
     "name": "Rayzor Hall", 
-    "types": [], 
+    "types": [
+      "academic-building"
+    ], 
     "location": {
       "latitude": 29.718022, 
       "__type": "GeoPoint", 
@@ -773,9 +847,10 @@
     }
   }, 
   {
-    "type": "athletic-facility", 
     "name": "Reckling Park at Cameron Field", 
-    "types": [], 
+    "types": [
+      "athletic-facility"
+    ], 
     "location": {
       "latitude": 29.714094, 
       "__type": "GeoPoint", 
@@ -783,9 +858,10 @@
     }
   }, 
   {
-    "type": "academic-building", 
     "name": "Rice Children\u2019s Campus", 
-    "types": [], 
+    "types": [
+      "academic-building"
+    ], 
     "location": {
       "latitude": 29.716486, 
       "__type": "GeoPoint", 
@@ -794,9 +870,10 @@
   }, 
   {
     "symbol": "RMC", 
-    "type": "student-life", 
     "name": "Rice Memorial Center", 
-    "types": [], 
+    "types": [
+      "student-life"
+    ], 
     "location": {
       "latitude": 29.717883, 
       "__type": "GeoPoint", 
@@ -804,9 +881,10 @@
     }
   }, 
   {
-    "type": "parking-lot", 
     "name": "Campus Bookstore", 
-    "types": [], 
+    "types": [
+      "parking-lot"
+    ], 
     "location": {
       "latitude": 29.717883, 
       "__type": "GeoPoint", 
@@ -814,9 +892,10 @@
     }
   }, 
   {
-    "type": "student-life", 
     "name": "Rice Memorial Chapel", 
-    "types": [], 
+    "types": [
+      "student-life"
+    ], 
     "location": {
       "latitude": 29.718134, 
       "__type": "GeoPoint", 
@@ -825,9 +904,10 @@
   }, 
   {
     "symbol": "STA", 
-    "type": "athletic-facility", 
     "name": "Rice Stadium", 
-    "types": [], 
+    "types": [
+      "athletic-facility"
+    ], 
     "location": {
       "latitude": 29.716289, 
       "__type": "GeoPoint", 
@@ -835,9 +915,10 @@
     }
   }, 
   {
-    "type": "building", 
     "name": "Rice University Police Department", 
-    "types": [], 
+    "types": [
+      "building"
+    ], 
     "location": {
       "latitude": 29.713828, 
       "__type": "GeoPoint", 
@@ -845,9 +926,10 @@
     }
   }, 
   {
-    "type": "athletic-facility", 
     "name": "Morton L. Rich Student Health Center", 
-    "types": [], 
+    "types": [
+      "athletic-facility"
+    ], 
     "location": {
       "latitude": 29.721283, 
       "__type": "GeoPoint", 
@@ -855,9 +937,10 @@
     }
   }, 
   {
-    "type": "residential-college", 
     "name": "Sid W. Richardson College", 
-    "types": [], 
+    "types": [
+      "residential-college"
+    ], 
     "location": {
       "latitude": 29.715162, 
       "__type": "GeoPoint", 
@@ -865,9 +948,10 @@
     }
   }, 
   {
-    "type": "masters-house", 
     "name": "Richardson College Masters House", 
-    "types": [], 
+    "types": [
+      "masters-house"
+    ], 
     "location": {
       "latitude": 29.715169, 
       "__type": "GeoPoint", 
@@ -876,9 +960,10 @@
   }, 
   {
     "symbol": "RYN", 
-    "type": "lab", 
     "name": "Ryon Engineering Laboratory", 
-    "types": [], 
+    "types": [
+      "lab"
+    ], 
     "location": {
       "latitude": 29.720713, 
       "__type": "GeoPoint", 
@@ -886,9 +971,10 @@
     }
   }, 
   {
-    "type": "building", 
     "name": "Abe and Annie Seibel Servery", 
-    "types": [], 
+    "types": [
+      "building"
+    ], 
     "location": {
       "latitude": 29.716158, 
       "__type": "GeoPoint", 
@@ -897,9 +983,10 @@
   }, 
   {
     "symbol": "SEW", 
-    "type": "academic-building", 
     "name": "Sewall Hall", 
-    "types": [], 
+    "types": [
+      "academic-building"
+    ], 
     "location": {
       "latitude": 29.718372, 
       "__type": "GeoPoint", 
@@ -907,9 +994,10 @@
     }
   }, 
   {
-    "type": "athletic-facility", 
     "name": "Rice Art Gallery", 
-    "types": [], 
+    "types": [
+      "athletic-facility"
+    ], 
     "location": {
       "latitude": 29.718302, 
       "__type": "GeoPoint", 
@@ -917,9 +1005,10 @@
     }
   }, 
   {
-    "type": "building", 
     "name": "South Plant", 
-    "types": [], 
+    "types": [
+      "building"
+    ], 
     "location": {
       "latitude": 29.714137, 
       "__type": "GeoPoint", 
@@ -928,9 +1017,10 @@
   }, 
   {
     "symbol": "SSV", 
-    "type": "building", 
     "name": "South Servery", 
-    "types": [], 
+    "types": [
+      "building"
+    ], 
     "location": {
       "latitude": 29.715484, 
       "__type": "GeoPoint", 
@@ -939,9 +1029,10 @@
   }, 
   {
     "symbol": "SST", 
-    "type": "academic-building", 
     "name": "Space Science and Technology Building", 
-    "types": [], 
+    "types": [
+      "academic-building"
+    ], 
     "location": {
       "latitude": 29.719879, 
       "__type": "GeoPoint", 
@@ -950,9 +1041,10 @@
   }, 
   {
     "symbol": "TUD", 
-    "type": "athletic-facility", 
     "name": "Tudor Fieldhouse and Youngkin Center", 
-    "types": [], 
+    "types": [
+      "athletic-facility"
+    ], 
     "location": {
       "latitude": 29.715102, 
       "__type": "GeoPoint", 
@@ -960,9 +1052,10 @@
     }
   }, 
   {
-    "type": "landmark", 
     "name": "Autry Court", 
-    "types": [], 
+    "types": [
+      "landmark"
+    ], 
     "location": {
       "latitude": 29.715039, 
       "__type": "GeoPoint", 
@@ -970,9 +1063,10 @@
     }
   }, 
   {
-    "type": "athletic-facility", 
     "name": "Fox Gymnasium", 
-    "types": [], 
+    "types": [
+      "athletic-facility"
+    ], 
     "location": {
       "latitude": 29.71475, 
       "__type": "GeoPoint", 
@@ -981,9 +1075,10 @@
   }, 
   {
     "symbol": "WSV", 
-    "type": "building", 
     "name": "West Servery", 
-    "types": [], 
+    "types": [
+      "building"
+    ], 
     "location": {
       "latitude": 29.721063, 
       "__type": "GeoPoint", 
@@ -992,9 +1087,10 @@
   }, 
   {
     "symbol": "WSC", 
-    "type": "residential-college", 
     "name": "Wiess College", 
-    "types": [], 
+    "types": [
+      "residential-college"
+    ], 
     "location": {
       "latitude": 29.714992, 
       "__type": "GeoPoint", 
@@ -1002,9 +1098,10 @@
     }
   }, 
   {
-    "type": "building", 
     "name": "Wiess President\u2019s House", 
-    "types": [], 
+    "types": [
+      "building"
+    ], 
     "location": {
       "latitude": 29.721302, 
       "__type": "GeoPoint", 
@@ -1012,9 +1109,10 @@
     }
   }, 
   {
-    "type": "residential-college", 
     "name": "Will Rice College", 
-    "types": [], 
+    "types": [
+      "residential-college"
+    ], 
     "location": {
       "latitude": 29.716287, 
       "__type": "GeoPoint", 
@@ -1022,9 +1120,10 @@
     }
   }, 
   {
-    "type": "masters-house", 
     "name": "Will Rice College Masters House", 
-    "types": [], 
+    "types": [
+      "masters-house"
+    ], 
     "location": {
       "latitude": 29.71557, 
       "__type": "GeoPoint", 
@@ -1032,9 +1131,10 @@
     }
   }, 
   {
-    "type": "masters-house", 
     "name": "Wilson House", 
-    "types": [], 
+    "types": [
+      "masters-house"
+    ], 
     "location": {
       "latitude": 29.714761, 
       "__type": "GeoPoint", 
@@ -1042,9 +1142,10 @@
     }
   }, 
   {
-    "type": "residential-college", 
     "name": "Wiess College Masters", 
-    "types": [], 
+    "types": [
+      "residential-college"
+    ], 
     "location": {
       "latitude": 29.714708, 
       "__type": "GeoPoint", 
@@ -1052,9 +1153,10 @@
     }
   }, 
   {
-    "type": "academic-school", 
     "name": "School of Architecture", 
-    "types": [], 
+    "types": [
+      "academic-school"
+    ], 
     "location": {
       "latitude": 29.718945, 
       "__type": "GeoPoint", 
@@ -1062,9 +1164,10 @@
     }
   }, 
   {
-    "type": "academic-school", 
     "name": "Jesse H. Jones Graduate School of Business", 
-    "types": [], 
+    "types": [
+      "academic-school"
+    ], 
     "location": {
       "latitude": 29.717629, 
       "__type": "GeoPoint", 
@@ -1072,9 +1175,10 @@
     }
   }, 
   {
-    "type": "academic-school", 
     "name": "Susanne M. Glasscock School of Continuing Studies", 
-    "types": [], 
+    "types": [
+      "academic-school"
+    ], 
     "location": {
       "latitude": 29.713375, 
       "__type": "GeoPoint", 
@@ -1082,9 +1186,10 @@
     }
   }, 
   {
-    "type": "academic-school", 
     "name": "George R. Brown School of Engineering", 
-    "types": [], 
+    "types": [
+      "academic-school"
+    ], 
     "location": {
       "latitude": 29.720128, 
       "__type": "GeoPoint", 
@@ -1092,9 +1197,10 @@
     }
   }, 
   {
-    "type": "academic-school", 
     "name": "School of Humanities", 
-    "types": [], 
+    "types": [
+      "academic-school"
+    ], 
     "location": {
       "latitude": 29.717615, 
       "__type": "GeoPoint", 
@@ -1102,9 +1208,10 @@
     }
   }, 
   {
-    "type": "academic-school", 
     "name": "The Shepherd School of Music", 
-    "types": [], 
+    "types": [
+      "academic-school"
+    ], 
     "location": {
       "latitude": 29.71623, 
       "__type": "GeoPoint", 
@@ -1112,9 +1219,10 @@
     }
   }, 
   {
-    "type": "academic-school", 
     "name": "Wiess School of Natural Sciences", 
-    "types": [], 
+    "types": [
+      "academic-school"
+    ], 
     "location": {
       "latitude": 29.719159, 
       "__type": "GeoPoint", 
@@ -1122,9 +1230,10 @@
     }
   }, 
   {
-    "type": "academic-school", 
     "name": "School of Social Sciences", 
-    "types": [], 
+    "types": [
+      "academic-school"
+    ], 
     "location": {
       "latitude": 29.716625, 
       "__type": "GeoPoint", 
@@ -1132,9 +1241,10 @@
     }
   }, 
   {
-    "type": "apartments", 
     "name": "Rice Graduate Apartments", 
-    "types": [], 
+    "types": [
+      "apartments"
+    ], 
     "location": {
       "latitude": 29.725276, 
       "__type": "GeoPoint", 
@@ -1142,9 +1252,10 @@
     }
   }, 
   {
-    "type": "apartments", 
     "name": "Rice Village Apartments", 
-    "types": [], 
+    "types": [
+      "apartments"
+    ], 
     "location": {
       "latitude": 29.714419, 
       "__type": "GeoPoint", 
@@ -1152,9 +1263,10 @@
     }
   }, 
   {
-    "type": "building", 
     "name": "Rice Coffeehouse", 
-    "types": [], 
+    "types": [
+      "building"
+    ], 
     "location": {
       "latitude": 29.717946, 
       "__type": "GeoPoint", 
@@ -1162,9 +1274,10 @@
     }
   }, 
   {
-    "type": "parking-lot", 
     "name": "West Lot 2", 
-    "types": [], 
+    "types": [
+      "parking-lot"
+    ], 
     "location": {
       "latitude": 29.717501, 
       "__type": "GeoPoint", 
@@ -1172,9 +1285,10 @@
     }
   }, 
   {
-    "type": "parking-lot", 
     "name": "West Lot 3", 
-    "types": [], 
+    "types": [
+      "parking-lot"
+    ], 
     "location": {
       "latitude": 29.717235, 
       "__type": "GeoPoint", 
@@ -1182,9 +1296,10 @@
     }
   }, 
   {
-    "type": "parking-lot", 
     "name": "West Lot 4", 
-    "types": [], 
+    "types": [
+      "parking-lot"
+    ], 
     "location": {
       "latitude": 29.71531, 
       "__type": "GeoPoint", 
@@ -1192,9 +1307,10 @@
     }
   }, 
   {
-    "type": "parking-lot", 
     "name": "West Lot 5", 
-    "types": [], 
+    "types": [
+      "parking-lot"
+    ], 
     "location": {
       "latitude": 29.714384, 
       "__type": "GeoPoint", 
@@ -1202,9 +1318,10 @@
     }
   }, 
   {
-    "type": "parking-lot", 
     "name": "North Annex Lot", 
-    "types": [], 
+    "types": [
+      "parking-lot"
+    ], 
     "location": {
       "latitude": 29.719764, 
       "__type": "GeoPoint", 
@@ -1212,9 +1329,10 @@
     }
   }, 
   {
-    "type": "parking-lot", 
     "name": "North Lot", 
-    "types": [], 
+    "types": [
+      "parking-lot"
+    ], 
     "location": {
       "latitude": 29.720491, 
       "__type": "GeoPoint", 
@@ -1222,9 +1340,10 @@
     }
   }, 
   {
-    "type": "parking-lot", 
     "name": "Central Campus Garage", 
-    "types": [], 
+    "types": [
+      "parking-lot"
+    ], 
     "location": {
       "latitude": 29.717256, 
       "__type": "GeoPoint", 
@@ -1232,9 +1351,10 @@
     }
   }, 
   {
-    "type": "landmark", 
     "name": "Founder's Court Visitor Lot", 
-    "types": [], 
+    "types": [
+      "landmark"
+    ], 
     "location": {
       "latitude": 29.718823, 
       "__type": "GeoPoint", 
@@ -1242,9 +1362,10 @@
     }
   }, 
   {
-    "type": "parking-lot", 
     "name": "Lovett Lot", 
-    "types": [], 
+    "types": [
+      "parking-lot"
+    ], 
     "location": {
       "latitude": 29.717193, 
       "__type": "GeoPoint", 
@@ -1252,9 +1373,10 @@
     }
   }, 
   {
-    "type": "parking-lot", 
     "name": "Lovett Lot Visitor Parking", 
-    "types": [], 
+    "types": [
+      "parking-lot"
+    ], 
     "location": {
       "latitude": 29.719836, 
       "__type": "GeoPoint", 
@@ -1262,9 +1384,10 @@
     }
   }, 
   {
-    "type": "parking-lot", 
     "name": "Greenbriar Lot", 
-    "types": [], 
+    "types": [
+      "parking-lot"
+    ], 
     "location": {
       "latitude": 29.717282, 
       "__type": "GeoPoint", 
@@ -1272,9 +1395,10 @@
     }
   }, 
   {
-    "type": "parking-lot", 
     "name": "West Lot 1", 
-    "types": [], 
+    "types": [
+      "parking-lot"
+    ], 
     "location": {
       "latitude": 29.7158, 
       "__type": "GeoPoint", 

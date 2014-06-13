@@ -122,7 +122,7 @@ def assign_type(obj):
     if score < optimal_score: 
       optimal_type = type_pair["type"]
       optimal_score = score
-  obj["type"] = optimal_type
+  obj["types"].append(optimal_type)
  
 
 
