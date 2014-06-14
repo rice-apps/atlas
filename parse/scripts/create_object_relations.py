@@ -19,8 +19,8 @@ def curl(child, parent, parse_app_id, rest_api_key):
   connection.connect()
   
   connection.request(
-    'POST',
-    '/1/classes/Place' + child,
+    'PUT',
+    '/1/classes/Place/' + child,
     json.dumps({"containedWithin":{"__op":"AddRelation","objects":[{"__type":"Pointer","className":"Place","objectId":parent}]}}),
     {
       "X-Parse-Application-Id": parse_app_id,
@@ -36,8 +36,8 @@ def curl(child, parent, parse_app_id, rest_api_key):
 
 def main():
   print sys.argv
-  parse_app_id = sys.argv[0] 
-  rest_api_key = sys.argv[1]
+  parse_app_id = sys.argv[1] 
+  rest_api_key = sys.argv[2]
  
   # Contains objectId of parents mapped to list of objectIds of children
   parent_child_dict = {
