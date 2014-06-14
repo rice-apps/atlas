@@ -1,22 +1,15 @@
-
-// Use Parse.Cloud.define to define as many cloud functions as you want.
-// For example:
-Parse.Cloud.define("hello", function(request, response) {
-  response.success("Hello world!");
-});
-
+/*
+ * Provides Cloud Functions for Rice Maps.
+ */
 Parse.Cloud.define("placesSearch", function(request, response) {
-  var query = new Parse.Query("Place");
+  console.log("Search Query: " + request.params.query);
 
   // Ensure that each token in the query string is contained within
   // the keywords field
+  var query = new Parse.Query("Place");
   var tokens = request.params.query.split(' ');
-  console.log(tokens);
-  for (var i = 0; i < tokens.length; ++i) {
-    // TODO: Change 'name' to 'keywords' once keywords are populated
-    // TODO Fix problem, only last token gets added as a constraint
-    query.contains("name", tokens[i]);
-  }
+  var regex = new RegExp(tokens.join("[\\w*\\s*]*"), "i");
+  query.matches("name", regex);
 
   query.find({
     success: function(results) {
