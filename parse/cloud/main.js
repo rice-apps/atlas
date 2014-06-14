@@ -1,3 +1,5 @@
+require('cloud/app.js');
+
 /*
  * Provides Cloud Functions for Rice Maps.
  */
