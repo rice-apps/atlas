@@ -15,7 +15,7 @@ def curl(child, parent, parse_app_id, rest_api_key):
   relation of the child.
   """
 
-  connection = httplin.HTTPSConnection('api.parse.com', 443)
+  connection = httplib.HTTPSConnection('api.parse.com', 443)
   connection.connect()
   
   connection.request(
@@ -36,7 +36,8 @@ def curl(child, parent, parse_app_id, rest_api_key):
 
 def main():
   print sys.argv
-  parse_app_id, rest_api_key = argv
+  parse_app_id = sys.argv[0] 
+  rest_api_key = sys.argv[1]
  
   # Contains objectId of parents mapped to list of objectIds of children
   parent_child_dict = {
@@ -60,8 +61,8 @@ def main():
   
   results = []
   
-  for parent, child_list in parent_child_dict:
-  	for child in child_list:
+  for parent in parent_child_dict:
+  	for child in parent_child_dict[parent]:
   		results.append(curl(child, parent, parse_app_id, rest_api_key))
         
   f_out = open('relation_results.json', 'w')
