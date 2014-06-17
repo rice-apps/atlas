@@ -1,47 +1,43 @@
 <!DOCTYPE html>
-<html ng-app="mapApp">
+<html ng-app="mapApp" lang="en">
 <head>
-    <title>Rice Map</title>
-
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-
-    <link href="css/bootstrap.min.css" rel="stylesheet" media="screen">
-    <link href="css/style.css" rel="stylesheet" media="screen">
-
-    <link rel="shortcut icon" href="favicon.ico">
+  <title>Atlas</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <link href="css/bootstrap.min.css" rel="stylesheet" media="screen">
+  <link href="css/style.css" rel="stylesheet">
 </head>
-<body ng-controller="SearchCtrl" ng-click="hideSearchResults($event)" ng-init="init()">
-    <div class="top-panel">
-        <button ng-click="toggleVisitorLots()" ng-class="{'pushed-button': visitorLotsShown}" class="btn btn-default visitor-lots-button" >
-            Visitor Lots
+<body>
+  <!-- Navbar -->
+  <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+    <div class="container">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
         </button>
-        <button ng-click="showMyLocation()" class="btn btn-default my-loc-button" >
-            My Location
-        </button>
-        
-        <div class="search-box">
-            <i class="left-search-icon glyphicon glyphicon-search"></i>
-            <input id="searchBox" class="form-control search-box-input" ng-model="searchText" ng-keypress="buildingSelectedByKeyPress($event)" ng-focus="showSearchResults()" ng-blur="open == false">
-            <i ng-click="clearInput()" class="glyphicon glyphicon-remove clear-input-button"></i>
-        </div>
-
-        <div class="results">
-            <ul class="lookahead" ng-class="{shown: open, hidden: !open}">
-                <li class="lookahead-element" ng-class="{firstSearchResult: $first}" ng-repeat="result in searchResults | limitTo:4" require focus ng-click="focusBuilding(result)">
-                    <a href="">{{result.abbreviation}} {{result.name}}</a>
-                </li>
-            </ul>
-        </div>
+        <a class="navbar-brand" href="#">Atlas</a>
+      </div>
+      <div class="collapse navbar-collapse">
+        <p class="navbar-text navbar-right">
+          <a href="http://riceapps.org" class="navbar-link">A Project of Rice Apps</a>
+        </p>
+      </div>
     </div>
+  </div>
+  <div class="header-placeholder"></div>
+  <div class="input-group input-group-lg">
+    <input type="text" class="form-control" placeholder="What are you looking for?">
 
-    <div id="map-canvas"></div>
+    <a href="#" class="input-group-addon">
+      <span class="glyphicon glyphicon-search"></span>
+    </a>
+  </div>
 
-    <script src="js/fuse.min.js"></script>
-    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
-    <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.0/angular.min.js"></script>
-
-    <script src="js/controllers.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+  <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.0/angular.min.js"></script>
+  <script src="js/controllers.js"></script>
 </body>
 </html>

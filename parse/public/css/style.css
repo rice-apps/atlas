@@ -1,103 +1,55 @@
-html, body, #map-canvas {
-  width: 100%;
-  /*height: 100%;*/
-  margin: 0px;
-  padding: 0px;
+
+/* Reset the container */
+.container .navbar-header,
+.container .navbar-collapse {
+  margin-right: 0;
+  margin-left: 0;
 }
 
-#map-canvas {
-  height: 100%;
+/* Always float the navbar header */
+.navbar-header {
+  float: left;
 }
 
-/**
- * Lookahead
- */
-.lookahead {
-  background: #ffffff;
-  border-radius: 0px;
-  padding: 0;
-  position: absolute;
-  z-index: 1000;
-  list-style-type: none;
+/* Undo the collapsing navbar */
+.navbar-collapse {
+  display: block !important;
+  height: auto !important;
+  padding-bottom: 0;
+  overflow: visible !important;
 }
 
-.lookahead-element {
-  float: none; 
-  border-top: 1px solid #6b727c;
-  border-bottom: 1px solid #575f6a;
-  position: relative;
+.navbar-toggle {
+  display: none;
+}
+.navbar-collapse {
+  border-top: 0;
 }
 
-.firstSearchResult {
-  background-color: #dddddd;
+.navbar-brand {
+  margin-left: -15px;
 }
 
-.lookahead-element a {
-  display: block;
-  text-decoration: none;
-  padding: 10px 30px;
+/* Always apply the floated nav */
+.navbar-nav {
+  float: left;
+  margin: 0;
+}
+.navbar-nav > li {
+  float: left;
+}
+.navbar-nav > li > a {
+  padding: 15px;
 }
 
-.searchResults.shown {
-  visibility: visible;
+/* Redeclare since we override the float above */
+.navbar-right {
+  float: right;
 }
 
-.searchResults.shown {
-  visibility: hidden;
-}
-
-/**
- * Top Panel
- */
-.top-panel {
-  width: 100%;
-  position: absolute;
-  z-index: 1;
-}
-
-.search-box {
-  display: inline-block;
-  padding-right: 200px;
-  width: 100%;
-}
-
-.my-loc-button {
-  display: inline-block;
-  background-color: #ffffff !important;
-  position: absolute;
-  width: 100px;
-  right: 0;
-}
-
-.visitor-lots-button {
-  display: inline-block;
-  background-color: #ffffff !important;
-  position: absolute;
-  width: 100px;
-  right: 100px;
-}
-
-.clear-input-button {
-  display: inline-block;
-  position: absolute;
-  cursor: pointer;
-  right: 215px;
-}
-
-.pushed-button {
-  background-color: #ebebeb !important;
-}
-
-.left-search-icon {
-  position: absolute;
-}
-
-.search-box-input {
-  width: 100%;
-  padding-left: 30px;
-}
-
-.search-box i {
-  position: absolute;
-  padding: 10px 10px;
+/* This fills up the space of the fixed top navbar so that 
+   the top of the page doesn't hide underneath the navbar  */
+.header-placeholder {
+  height: 50px;
+  margin-bottom: 15px;
 }
