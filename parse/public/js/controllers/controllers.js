@@ -2,6 +2,14 @@ var mapApp = angular.module('mapApp', [], function($locationProvider) {
     $locationProvider.html5Mode(true);
 });
 
+mapApp.controller('MainCtrl', function() {
+	
+	
+	
+	
+});
+
+
 mapApp.controller('SearchCtrl', function($scope, $http, $window, $timeout, $location) {
     // init function for body.
     $scope.init = function() {
