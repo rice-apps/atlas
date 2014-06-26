@@ -53,3 +53,15 @@
   height: 50px;
   margin-bottom: 15px;
 }
+
+#list {
+  padding-top: 25px;
+  padding-bottom: 25px;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+div.input-group {
+  padding-left: 15px;
+  padding-right: 15px;
+}
