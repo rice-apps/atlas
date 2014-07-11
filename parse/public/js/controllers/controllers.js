@@ -4,7 +4,8 @@ var mapApp = angular.module('mapApp', [], function($locationProvider) {
 
 mapApp.controller('MainCtrl', function() {
 	
-	
+
+
 	
 	
 });
@@ -14,7 +15,6 @@ mapApp.controller('SearchCtrl', function($scope, $http, $window, $timeout, $loca
     // init function for body.
     $scope.init = function() {
         initializeMap();
-
 
         // makes sure that the height is always equal to the height for the device.
         $('body').css({"height":document.documentElement.clientHeight});
@@ -42,9 +42,6 @@ mapApp.controller('SearchCtrl', function($scope, $http, $window, $timeout, $loca
 
     // elements on the map. Initialized using campus_data.json.
     var mapElements;
-
-    // declare Fuse searcher
-    var searcher;
 
     // declare the google map.
     var map;
@@ -252,29 +249,17 @@ mapApp.controller('SearchCtrl', function($scope, $http, $window, $timeout, $loca
 
     // load in the campus data json via a HTTP GET request.
     $http.get('data/campus_data.json').then(function(result) {
-        // set the fuse searcher.
-        var options = {
-          keys: ['name', 'abbreviation']
-        }
-
-        searcher = new Fuse(result.data, options);
-
-        mapElements = result.data;
-        initWithGetParams();
-
-    });
-    $scope.$watch('searchText', function(newValue, oldValue) {
-        if (searcher !== undefined) {
-            // get search results for what someone types in.
-            $scope.searchResults = searcher.search(newValue);
-
-            // check to see if new value is an empty string
-            if (newValue === "") {
-                $scope.open = false;
-            } else {
-                $scope.open = true;
-            }
-        }
+        $('.typeahead').typeahead({
+          highlight: true,
+          minLength: 1
+        },
+        {
+          name: 'places',
+          displayKey: 'value',
+          //TODO: Figure out how to use the Parse search function
+          //TODO: Figure out how to make the typeahead suggestions act as links
+          //source: Parse.cloud.run("placesSearch")
+        });
     });
     
     // Function to update buses and pull's data every 5 seconds.
