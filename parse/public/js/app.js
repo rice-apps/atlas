@@ -2,8 +2,8 @@
 
 var atlasApp = angular.module('atlasApp', ['ngRoute']);
 
-atlasApp.config(function($routeprovider) {
-    $routeprovider
+atlasApp.config(function($routeProvider) {
+    $routeProvider
       .when('/', {
         templateUrl: '/views/main.html',
         controller: 'MainCtrl'
