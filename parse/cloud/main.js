@@ -1,4 +1,5 @@
 require('cloud/app.js');
+require('cloud/fuse.min.js');
 
 /*
  * Provides Cloud Functions for Rice Maps.
