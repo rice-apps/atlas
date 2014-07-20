@@ -1,21 +1,53 @@
-
-<html>
-  <head>
-    <title>My ParseApp site</title>
-    <style>
-    body { font-family: Helvetica, Arial, sans-serif; }
-    div { width: 800px; height: 400px; margin: 40px auto; padding: 20px; border: 2px solid #5298fc; }
-    h1 { font-size: 30px; margin: 0; }
-    p { margin: 40px 0; }
-    em { font-family: monospace; }
-    a { color: #5298fc; text-decoration: none; }
-    </style>
-  </head>
-  <body>
-    <div>
-      <h1>Congratulations! You're already hosting with Parse.</h1>
-      <p>To get started, edit this file at <em>public/index.html</em> and start adding static content.</p>
-      <p>If you want something a bit more dynamic, delete this file and check out <a href="https://parse.com/docs/hosting_guide#webapp">our hosting docs</a>.</p>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Atlas</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <link href="css/bootstrap.min.css" rel="stylesheet" media="screen">
+  <link href="css/style.css" rel="stylesheet">
+</head>
+<body ng-app="atlasApp">
+  <!-- Navbar -->
+  <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+    <div class="container">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="#">Atlas</a>
+      </div>
+      <div class="collapse navbar-collapse">
+        <p class="navbar-text navbar-right">
+          <a href="http://riceapps.org" class="navbar-link">A Project of Rice Apps</a>
+        </p>
+      </div>
     </div>
-  </body>
+  </div>
+  <div class="header-placeholder"></div>
+
+  <div ng-view="">
+    <!-- Page View Goes Here -->
+  </div>
+
+  <!-- Parse SDK -->
+  <script src="//www.parsecdn.com/js/parse-1.2.19.min.js"></script>
+
+  <!-- Bootstrap Core Javascript (requires jQuery) -->
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+  <script src="/js/lib/bootstrap.min.js"></script>
+
+  <!-- AngularJS -->
+  <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.18/angular.js"></script>
+
+  <!-- AngularJS Libraries -->
+  <script src="//cdnjs.cloudflare.com/ajax/libs/angular.js/1.2.16/angular-route.min.js"></script>
+  <script src="/js/lib/ui-bootstrap-tpls-0.11.0.js"></script>
+
+  <!-- AngularJS Modules -->
+  <script src="/js/app.js"></script>
+  <script src="/js/controllers/main.js"></script>
+</body>
 </html>
