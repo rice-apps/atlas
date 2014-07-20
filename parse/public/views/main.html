@@ -4,7 +4,7 @@
     type="text"
     class="form-control"
     ng-model="searchText"
-    typeahead="place as place.name for place in searchPlaces($viewValue)"
+    typeahead="place as place.attributes.name for place in searchPlaces($viewValue)"
     typeahead-loading="loadingLocations"
     placeholder="What are you looking for?">
   <a href="#" class="input-group-addon">
