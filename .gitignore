@@ -1,4 +1,4 @@
 .orig
 .DS_Store
 .pyc
-global.json  # contains app master key
+parse/config/global.json
