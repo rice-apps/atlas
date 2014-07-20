@@ -14,7 +14,7 @@ atlasApp.config(function($routeProvider) {
 });
 
 atlasApp.run(function($rootScope) {
-  var prod = true;
+  var prod = false;
   if (prod) {
     Parse.initialize(
       "Hs7BvAGhMU9B4g757NZ0YAT0kOtxQ1hM78bQGu2y",
@@ -27,6 +27,6 @@ atlasApp.run(function($rootScope) {
     );
   }
 
+  console.log('Atlas App initialized.');
 });
 
-console.log('Atlas App loaded.');
