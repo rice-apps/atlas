@@ -21,7 +21,7 @@ def curl(child, parent, parse_app_id, rest_api_key):
   connection.request(
     'PUT',
     '/1/classes/Place/' + child,
-    json.dumps({"containedWithin":{"__op":"AddRelation","objects":[{"__type":"Pointer","className":"Place","objectId":parent}]}}),
+    json.dumps({"parentPlace": {"__type":"Pointer","className":"Place","objectId":parent}}),
     {
       "X-Parse-Application-Id": parse_app_id,
       "X-Parse-REST-API-Key": rest_api_key,  

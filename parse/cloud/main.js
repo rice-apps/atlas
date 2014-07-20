@@ -8,10 +8,13 @@ Parse.Cloud.define("placesSearch", function(request, response) {
 
   // Ensure that each token in the query string is contained within
   // the keywords field
-  var query = new Parse.Query("Place");
+  var Place = Parse.Object.extend("Place");
+  var query = new Parse.Query(Place);
   var tokens = request.params.query.split(' ');
   var regex = new RegExp(tokens.join("[\\w*\\s*]*"), "i");
+
   query.matches("name", regex);
+  query.include("parentPlace");
 
   query.find({
     success: function(results) {
