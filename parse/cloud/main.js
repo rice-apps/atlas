@@ -6,19 +6,22 @@ require('cloud/app.js');
 Parse.Cloud.define("placesSearch", function(request, response) {
   console.log("Search Query: " + request.params.query);
 
-  // Ensure that each token in the query string is contained within
-  // the keywords field
+  // Define Parse cloud query that retrieves all Place objects and matches them to a search
   var query = new Parse.Query("Place");
-  var tokens = request.params.query.split(' ');
-  var regex = new RegExp(tokens.join("[\\w*\\s*]*"), "i");
-  query.matches("name", regex);
-
   query.find({
     success: function(results) {
-      response.success(results);
+      // Perform Fuse.js fuzzy search on all Place objects
+      var options = {
+        keys: ['name', 'symbol']
+      }
+      searcher = new Fuse(results, options);
+      matches = searcher.search(request.params.query)
+
+      response.success(matches);
     },
     error: function(error) {
       response.error(error);
     }
   });
+
 });
