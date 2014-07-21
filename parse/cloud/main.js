@@ -11,13 +11,17 @@ Parse.Cloud.define("placesSearch", function(request, response) {
   var query = new Parse.Query("Place");
   query.find({
     success: function(results) {
+      // Converts Parse objects to json so Fuse can use them
+      var places = results.map(function(obj){
+        return obj.toJSON();
+      });
       // Perform Fuse.js fuzzy search on all Place objects
       var options = {
         keys: ['name', 'symbol']
       }
-      searcher = new Fuse(results, options);
-      matches = searcher.search(request.params.query)
 
+      var searcher = new Fuse(places, options);
+      var matches = searcher.search(request.params.query);
       response.success(matches);
     },
     error: function(error) {
