@@ -1,4 +1,5 @@
 require('cloud/app.js');
+var Fuse = require('cloud/fuse.min.js');
 
 /*
  * Provides Cloud Functions for Rice Maps.
@@ -6,19 +7,27 @@ require('cloud/app.js');
 Parse.Cloud.define("placesSearch", function(request, response) {
   console.log("Search Query: " + request.params.query);
 
-  // Ensure that each token in the query string is contained within
-  // the keywords field
+  // Define Parse cloud query that retrieves all Place objects and matches them to a search
   var query = new Parse.Query("Place");
-  var tokens = request.params.query.split(' ');
-  var regex = new RegExp(tokens.join("[\\w*\\s*]*"), "i");
-  query.matches("name", regex);
-
+  query.limit(200);
   query.find({
     success: function(results) {
-      response.success(results);
+      // Converts Parse objects to json so Fuse can use them
+      var places = results.map(function(obj){
+        return obj.toJSON();
+      });
+      // Perform Fuse.js fuzzy search on all Place objects
+      var options = {
+        keys: ['name', 'symbol']
+      }
+
+      var searcher = new Fuse(places, options);
+      var matches = searcher.search(request.params.query);
+      response.success(matches.slice(0, 10));
     },
     error: function(error) {
       response.error(error);
     }
   });
+
 });
