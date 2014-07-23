@@ -27,5 +27,4 @@ Parse.Cloud.define("placesSearch", function(request, response) {
       response.error(error);
     }
   });
-
 });
