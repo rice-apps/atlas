@@ -27,8 +27,10 @@
 }
 
 .navbar-brand {
-  margin-left: -15px;
+  margin-left: 2px;
 }
+
+.navbar .container { height: 60px; }
 
 /* Always apply the floated nav */
 .navbar-nav {

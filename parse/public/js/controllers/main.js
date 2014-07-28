@@ -1,31 +1,38 @@
 'use strict';
 
-angular.module('atlasApp')
-  .controller('MainCtrl', function($scope, $http, $q) {
-    console.log('Main Controller Initialized');
+angular.module('atlasApp').controller('MainCtrl', 
+  function($location, $routeParams, $scope, $http, $q, cfpLoadingBar) {
 
     $scope.searchResults = [];
 
+    /**
+     * Provides autocomplete suggestions as you type the query
+     */
     $scope.autocomplete = function(query) {
       return Parse.Cloud.run("placeAutocomplete", {query: query});
     };
 
+    /**
+     * Used to request a search with the provided query
+     */
     $scope.search = function(query) {
-      console.log("Performing search");
+      $location.url('/search?q=' + query);
+    }
+
+    /**
+     * Performs the actual search and provides the results
+     */
+    $scope._search = function(query) {
+      cfpLoadingBar.start();
       Parse.Cloud.run("placeSearch", {query: query}).then(function(res) {
-        $scope.$apply(function() {
-          $scope.searchResults = res;
-          console.log("Updated $scope.searchResults");
-          console.log($scope.searchResults);
-        });
+        $scope.searchResults = res;
+        cfpLoadingBar.complete();
       });
     };
 
-    $scope.searchEnter = function(keyEvent, query) {
-      if (keyEvent.which == 13) { // Enter pressed
-        console.log("Enter pressed");
-        $scope.search(query);
-      }
+    if ($routeParams.q) {   // If url contains search query, perform search
+      $scope.query = $routeParams.q;
+      $scope._search($routeParams.q);
     }
 
   });
