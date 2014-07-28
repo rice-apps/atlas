@@ -3,12 +3,16 @@
   <input 
     type="text"
     class="form-control"
-    ng-model="searchText"
-    typeahead="place as place.attributes.name for place in placeAutocomplete($viewValue)"
+    ng-model="query"
+    typeahead="res as res.attributes.name for res in autocomplete($viewValue)"
     typeahead-loading="loadingLocations"
     placeholder="What are you looking for?">
-  <a href="#" class="input-group-addon">
+  <a ng-click="search(query)" class="input-group-addon">
     <span class="glyphicon glyphicon-search"></span>
   </a>
 </div>
-  <pre>Model: {{ searchText | json }}</pre>
+
+<!-- Search Results -->
+<div>
+  <pre>Search Results: {{ searchResults | limitTo:5 | json }}</pre>
+</div>
