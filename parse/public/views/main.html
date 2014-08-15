@@ -3,12 +3,28 @@
   <input 
     type="text"
     class="form-control"
-    ng-model="searchText"
-    typeahead="place as place.name for place in searchPlaces($viewValue)"
+    ng-model="query"
+    typeahead="res as res.attributes.name for res in autocomplete($viewValue)"
     typeahead-loading="loadingLocations"
     placeholder="What are you looking for?">
-  <a href="#" class="input-group-addon">
+  <a href="/#/search?q={{query}}" class="input-group-addon">
     <span class="glyphicon glyphicon-search"></span>
   </a>
 </div>
-  <pre>Model: {{ searchText | json }}</pre>
+
+<!-- Search Results -->
+<div class="results-panel">
+  <ol class="media-list">
+    <li class="media" ng-repeat="result in searchResults">
+      <span class="pull-left glyphicon glyphicon-map-marker"></span>
+      </a>
+      <div class="media-body">
+        <h4 class="media-heading">
+          <a href="/#/place/{{ result.id }}">
+            {{ result.attributes.name }}
+          </a>
+        </h4>
+      </div>
+    </li>
+  </ol>
+</div>

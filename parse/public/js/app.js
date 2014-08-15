@@ -1,10 +1,17 @@
 'use strict';
 
-var atlasApp = angular.module('atlasApp', ['ngRoute', 'ui.bootstrap']);
+var atlasApp = angular.module('atlasApp',
+  // App dependencies
+  ['ngRoute', 'ui.bootstrap', 'cfp.loadingBar']
+);
 
 atlasApp.config(function($routeProvider) {
   $routeProvider
     .when('/', {
+      templateUrl: '/views/main.html',
+      controller: 'MainCtrl'
+    })
+    .when('/search', {
       templateUrl: '/views/main.html',
       controller: 'MainCtrl'
     })

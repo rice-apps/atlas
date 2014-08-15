@@ -1,11 +1,39 @@
 'use strict';
 
-angular.module('atlasApp')
-  .controller('MainCtrl', function($scope, $http, $q) {
-    console.log('Main Controller Initialized');
+angular.module('atlasApp').controller('MainCtrl', 
+  function($location, $routeParams, $scope, $http, $q, cfpLoadingBar) {
 
-    $scope.searchPlaces = function(query) {
-      return Parse.Cloud.run("placesSearch", {query: query});
+    $scope.searchResults = [];
+
+    /**
+     * Provides autocomplete suggestions as you type the query
+     */
+    $scope.autocomplete = function(query) {
+      return Parse.Cloud.run("placeAutocomplete", {query: query});
     };
+
+    /**
+     * Used to request a search with the provided query
+     */
+    $scope.search = function(query) {
+      $location.url('/search?q=' + query);
+    }
+
+    /**
+     * Performs the actual search and provides the results
+     */
+    $scope._search = function(query) {
+      cfpLoadingBar.start();
+      Parse.Cloud.run("placeSearch", {query: query}).then(function(res) {
+        $scope.searchResults = res;
+        console.log($scope.searchResults);
+        cfpLoadingBar.complete();
+      });
+    };
+
+    if ($routeParams.q) {   // If url contains search query, perform search
+      $scope.query = $routeParams.q;
+      $scope._search($routeParams.q);
+    }
 
   });
