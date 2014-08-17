@@ -6,6 +6,7 @@ angular.module('atlasApp').controller('PlaceCtrl', function(
   $scope,
   $http,
   $q,
+  $timeout,
   cfpLoadingBar
 ) {
 
@@ -13,6 +14,7 @@ angular.module('atlasApp').controller('PlaceCtrl', function(
    * The map center coordinates of Rice University.
    */
   $scope.mapCenter = new google.maps.LatLng(29.717384, -95.403171);
+
 
   $scope.Place = Parse.Object.extend('Place');
 
@@ -23,6 +25,7 @@ angular.module('atlasApp').controller('PlaceCtrl', function(
     $scope.resizeView();
     $(window).resize($scope.resizeView);
     $scope.initMap();
+    $scope.geoMarker = new GeolocationMarker($scope.map);
 
     // Fetch the place from Parse
     var placeID = $routeParams.placeID
@@ -36,28 +39,6 @@ angular.module('atlasApp').controller('PlaceCtrl', function(
       });
     }
 
-    // Plot user location on the map
-    var userMarker = new google.maps.Marker({
-      clickable: false,
-      icon: '/img/user-location-marker.png',
-      shadow: null,
-      zIndex: 999,
-      map: $scope.map
-    });
-
-    if (navigator.geolocation) {
-      navigator.geolocation.getCurrentPosition(function(pos) {
-        var userLoc = new google.maps.LatLng(
-          pos.coords.latitude,
-          pos.coords.longitude
-        );
-        console.log("User Location: ");
-        console.log(userLoc);
-        userMarker.setPosition(userLoc);
-      }, function(error) {
-        console.log('Error getting user location: ' + error);
-      });
-    }
   }
 
   /**
