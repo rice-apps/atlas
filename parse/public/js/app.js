@@ -1,9 +1,12 @@
 'use strict';
 
-var atlasApp = angular.module('atlasApp',
-  // App dependencies
-  ['ngRoute', 'ui.bootstrap', 'cfp.loadingBar']
-);
+var atlasApp = angular.module('atlasApp', [
+  'ngRoute',
+  'ui.bootstrap',
+  'cfp.loadingBar',
+  'angulartics',
+  'angulartics.google.analytics'
+]);
 
 atlasApp.config(function($routeProvider) {
   $routeProvider
