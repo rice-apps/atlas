@@ -5,8 +5,9 @@
     class="form-control"
     ng-model="query"
     typeahead="res as res.attributes.name for res in autocomplete($viewValue)"
-    typeahead-loading="loadingLocations"
-    placeholder="What are you looking for?">
+    typeahead-on-select='onAutocompleteSelect($item, $model, $label)'
+    placeholder="What are you looking for?"
+  />
   <a href="/#/search?q={{query}}" class="input-group-addon">
     <span class="glyphicon glyphicon-search"></span>
   </a>
