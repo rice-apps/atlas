@@ -26,7 +26,6 @@ angular.module('atlasApp').controller('MainCtrl',
       cfpLoadingBar.start();
       Parse.Cloud.run("placeSearch", {query: query}).then(function(res) {
         $scope.searchResults = res;
-        console.log($scope.searchResults);
         cfpLoadingBar.complete();
       });
     };
@@ -36,4 +35,5 @@ angular.module('atlasApp').controller('MainCtrl',
       $scope._search($routeParams.q);
     }
 
-  });
+  }
+);

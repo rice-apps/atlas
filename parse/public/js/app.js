@@ -15,6 +15,10 @@ atlasApp.config(function($routeProvider) {
       templateUrl: '/views/main.html',
       controller: 'MainCtrl'
     })
+    .when('/place/:placeID', {
+      templateUrl: '/views/place.html',
+      controller: 'PlaceCtrl'
+    })
     .otherwise({
       redirectTo: '/'
     });
@@ -33,7 +37,5 @@ atlasApp.run(function($rootScope) {
       "dajAbPrS1zLC8bkvJQ77fXb6C7RfbYbu6uZbUb10"
     );
   }
-
-  console.log('Atlas App initialized.');
 });
 
