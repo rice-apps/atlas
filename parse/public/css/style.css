@@ -1,3 +1,6 @@
+/*******************************************************************************
+ *                          Site Wide Styling
+ ******************************************************************************/
 
 /* Reset the container */
 .container .navbar-header,
@@ -27,8 +30,10 @@
 }
 
 .navbar-brand {
-  margin-left: -15px;
+  margin-left: 2px;
 }
+
+.navbar .container { height: 60px; }
 
 /* Always apply the floated nav */
 .navbar-nav {
@@ -52,4 +57,48 @@
 .header-placeholder {
   height: 50px;
   margin-bottom: 15px;
+}
+
+/*******************************************************************************
+ *                              Main Page
+ ******************************************************************************/
+
+.results-panel {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  margin-left: 15px;
+  margin-right: 15px;
+}
+
+.results-panel .glyphicon {
+  font-size: 1.2em;
+}
+
+.results-panel .li {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+
+/*******************************************************************************
+ *                              Place Page
+ ******************************************************************************/
+
+#map-canvas {
+  height: 500px;
+}
+
+#info-bar {
+  padding-top: 10px;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+#info-bar .glyphicon {
+  font-size: 3em;
+  color: #555555;
+}
+
+#info-bar .label {
+  margin-right: 5px;
 }

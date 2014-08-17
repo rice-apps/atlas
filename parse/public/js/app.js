@@ -1,6 +1,9 @@
 'use strict';
 
-var atlasApp = angular.module('atlasApp', ['ngRoute', 'ui.bootstrap']);
+var atlasApp = angular.module('atlasApp',
+  // App dependencies
+  ['ngRoute', 'ui.bootstrap', 'cfp.loadingBar']
+);
 
 atlasApp.config(function($routeProvider) {
   $routeProvider
@@ -8,13 +11,21 @@ atlasApp.config(function($routeProvider) {
       templateUrl: '/views/main.html',
       controller: 'MainCtrl'
     })
+    .when('/search', {
+      templateUrl: '/views/main.html',
+      controller: 'MainCtrl'
+    })
+    .when('/place/:placeID', {
+      templateUrl: '/views/place.html',
+      controller: 'PlaceCtrl'
+    })
     .otherwise({
       redirectTo: '/'
     });
 });
 
 atlasApp.run(function($rootScope) {
-  var prod = true;
+  var prod = false;
   if (prod) {
     Parse.initialize(
       "Hs7BvAGhMU9B4g757NZ0YAT0kOtxQ1hM78bQGu2y",
@@ -26,7 +37,5 @@ atlasApp.run(function($rootScope) {
       "dajAbPrS1zLC8bkvJQ77fXb6C7RfbYbu6uZbUb10"
     );
   }
-
 });
 
-console.log('Atlas App loaded.');
