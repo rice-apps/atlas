@@ -76,6 +76,7 @@ angular.module('atlasApp').controller('PlaceCtrl', function(
       map: $scope.map,
       title: place.get('name')
     });
+    $scope.map.setCenter(position);
   };
 
   /**

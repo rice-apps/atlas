@@ -8,7 +8,13 @@
     typeahead-on-select='onAutocompleteSelect($item, $model, $label)'
     placeholder="What are you looking for?"
   />
-  <a href="/#/search?q={{query}}" class="input-group-addon">
+  <a 
+    href="/#/search?q={{query}}"
+    class="input-group-addon"
+    analytics-on="click"
+    analytics-event="Click Search Button"
+    analytics-category="Search"
+    >
     <span class="glyphicon glyphicon-search"></span>
   </a>
 </div>
@@ -21,7 +27,12 @@
       </a>
       <div class="media-body">
         <h4 class="media-heading">
-          <a href="/#/place/{{ result.id }}">
+          <a 
+            href="/#/place/{{ result.id }}"
+            analytics-on="click"
+            analytics-event="Click Search Result"
+            analytics-category="Search"
+          >
             {{ result.attributes.name }}
           </a>
         </h4>
