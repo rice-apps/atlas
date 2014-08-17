@@ -12,11 +12,15 @@ angular.module('atlasApp').controller('MainCtrl',
       return Parse.Cloud.run("placeAutocomplete", {query: query});
     };
 
+    $scope.onAutocompleteSelect = function(item, model, label) {
+      $scope.search(model.id);
+    }
+
     /**
      * Used to request a search with the provided query
      */
     $scope.search = function(query) {
-      $location.url('/search?q=' + query);
+      $location.url('/place/' + query);
     }
 
     /**
