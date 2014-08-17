@@ -6,7 +6,6 @@ angular.module('atlasApp').controller('PlaceCtrl', function(
   $scope,
   $http,
   $q,
-  $timeout,
   cfpLoadingBar
 ) {
 
@@ -33,6 +32,11 @@ angular.module('atlasApp').controller('PlaceCtrl', function(
       var query = new Parse.Query($scope.Place);
       query.get(placeID).then(function(place) {
         console.log(place);
+        window.place = place;
+        $scope.place = place;
+        $scope.$apply();
+        $('title').text('Atlas - ' + place.get('name'));
+        $scope.plotPlace(place);
       }, function(error) {
         alert("Error: " + error.message);
         console.log(error);
@@ -62,14 +66,27 @@ angular.module('atlasApp').controller('PlaceCtrl', function(
   };
 
   $scope.plotPlace = function(place) {
+    var position = new google.maps.LatLng(
+      place.get('location').latitude,
+      place.get('location').longitude
+    );
 
+    $scope.marker = new google.maps.Marker({
+      position: position,
+      map: $scope.map,
+      title: place.get('name')
+    });
   };
 
   /**
    * Resizes the view to fit within the bounds of the screen.
    */
   $scope.resizeView = function() {
-    $('body').css({height: $(window).height() - $('div.navbar').height() - 10})
+    var newHeight = 
+      $(window).height() 
+      - $('div.navbar').height() 
+      - 90;
+    $('#map-canvas').css({height: newHeight});
   };
 
   $scope.init();

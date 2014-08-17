@@ -59,10 +59,6 @@
   margin-bottom: 15px;
 }
 
-#page-view {
-  height: 100%;
-}
-
 /*******************************************************************************
  *                              Main Page
  ******************************************************************************/
@@ -89,5 +85,20 @@
  ******************************************************************************/
 
 #map-canvas {
-  height: 100%;
+  height: 500px;
+}
+
+#info-bar {
+  padding-top: 10px;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+#info-bar .glyphicon {
+  font-size: 3em;
+  color: #555555;
+}
+
+#info-bar .label {
+  margin-right: 5px;
 }

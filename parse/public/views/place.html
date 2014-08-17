@@ -1,9 +1,13 @@
-<!-- Map Canvas -->
 <div id="map-canvas"></div>
-<!-- <button
-  type="button"
-  class="btn btn-default"
-  ng-click="initMap()"
->
-  Load
-</button> -->
+<div id="info-bar" class="well">
+  <span class="pull-left glyphicon glyphicon-map-marker"></span>
+  <div class="media-body">
+    <h4 class="media-heading">{{ place.attributes.name }}</h4>
+    <span 
+      class="label label-default"
+      ng-repeat="type in place.attributes.types"
+    >
+      {{ type }}
+    </span>
+  </div>
+</div>
