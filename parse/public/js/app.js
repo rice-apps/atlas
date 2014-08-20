@@ -28,6 +28,7 @@ atlasApp.config(function($routeProvider) {
 });
 
 atlasApp.run(function($rootScope) {
+
   var prod = true;
   if (prod) {
     Parse.initialize(
