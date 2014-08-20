@@ -33,7 +33,9 @@
   margin-left: 2px;
 }
 
-.navbar .container { height: 60px; }
+.navbar .container { 
+  height: 50px; 
+}
 
 /* Always apply the floated nav */
 .navbar-nav {
@@ -56,12 +58,20 @@
    the top of the page doesn't hide underneath the navbar  */
 .header-placeholder {
   height: 50px;
-  margin-bottom: 15px;
 }
 
 /*******************************************************************************
  *                              Main Page
  ******************************************************************************/
+
+#search-bar {
+  margin: 5px;
+  z-index: 100;
+}
+
+.overlay {
+  position: absolute;
+}
 
 .results-panel {
   margin-top: 10px;
@@ -86,6 +96,7 @@
 
 #map-canvas {
   height: 500px;
+  z-index: 
 }
 
 #info-bar {
