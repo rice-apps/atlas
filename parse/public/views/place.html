@@ -9,7 +9,7 @@
     class="form-control"
     ng-model="query"
     typeahead="res as res.attributes.name for res in autocomplete($viewValue)"
-    typeahead-on-select='onAutocompleteSelect($item, $model, $label)'
+    typeahead-on-select="onAutocompleteSelect($item, $model, $label, 'PlaceCtrl')"
     placeholder="What are you looking for?"
   />
   <a 

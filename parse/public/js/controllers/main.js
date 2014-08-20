@@ -19,9 +19,9 @@ angular.module('atlasApp').controller('MainCtrl', function(
     return Parse.Cloud.run("placeAutocomplete", {query: query});
   };
 
-  $scope.onAutocompleteSelect = function(item, model, label) {
+  $scope.onAutocompleteSelect = function(item, model, label, from) {
     $analytics.eventTrack(
-      'Click Autocomplete Suggestion',
+      'Click Autocomplete Suggestion from ' + from,
       { category: 'Search' }
     );
     $scope.search(model.id);
