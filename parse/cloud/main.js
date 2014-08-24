@@ -57,4 +57,27 @@ Parse.Cloud.define("placeAutocomplete", function(request, response) {
       response.error(error);
     }
   });
+});
+
+Parse.Cloud.define("courseAutocomplete", function(request, response) {
+  console.log("Search Query: " + request.params.query);
+
+  // Define Parse cloud query that retrieves all Place objects and matches them to a search
+  var query = new Parse.Query("Course");
+  query.limit(200);
+  query.select("name");
+
+  query.find({
+    success: function(results) {
+      matches = []
+      for result in results:
+        if result.find(query) >= 0:
+          return matches.append(result)
+      response.success(matches.slice(0, 10));
+    },
+    error: function(error) {
+      response.error(error);
+    }
+  });
 })
+
