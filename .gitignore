@@ -1,4 +1,4 @@
 .orig
 .DS_Store
-.pyc
+*.pyc
 parse/config/global.json
