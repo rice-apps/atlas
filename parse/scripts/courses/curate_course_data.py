@@ -275,13 +275,13 @@ def put_child(course_id, section_id):
   course = json.loads(course_connection.getresponse().read())
   # Add Section id to Course's list
   if course and (section_url not in course["sections"]):
-    course["sections"].append(section_url)
+    course["sections"].append(section_id)
 
   # Persist new course
   course_connection.request(
     method='PUT',
     url=course_url,
-    body=json.dumps("course"),
+    body=json.dumps(course),
     headers={"X-Parse-Application-Id": app_id, "X-Parse-REST-API-Key": rest_api_key}
   )
 
