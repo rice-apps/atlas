@@ -1,13 +1,24 @@
-<div id="map-canvas"></div>
-<div id="info-bar" class="well">
-  <span class="pull-left glyphicon glyphicon-map-marker"></span>
-  <div class="media-body">
-    <h4 class="media-heading">{{ place.attributes.name }}</h4>
-    <span 
-      class="label label-default"
-      ng-repeat="type in place.attributes.types"
+<div 
+  id="search-bar"
+  ng-controller="MainCtrl"
+  class="input-group input-group-lg overlay"
+>
+  <input 
+    type="text"
+    class="form-control"
+    ng-model="query"
+    typeahead="res as res.attributes.name for res in autocomplete($viewValue)"
+    typeahead-on-select="onAutocompleteSelect($item, $model, $label, 'PlaceCtrl')"
+    placeholder="What are you looking for?"
+  />
+  <a 
+    href="/#/search?q={{query}}"
+    class="input-group-addon"
+    analytics-on="click"
+    analytics-event="Click Search Button"
+    analytics-category="Search"
     >
-      {{ type }}
-    </span>
-  </div>
+    <span class="glyphicon glyphicon-search"></span>
+  </a>
 </div>
+<div id="map-canvas"></div>
