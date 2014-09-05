@@ -104,14 +104,6 @@ angular.module('atlasApp').controller('BusCtrl', function(
         );
     }
 
-    // // function that clears input from input box and selects the input.
-    // $scope.clearInput = function() {
-    //     $scope.searchText = "";
-    //     $timeout(function() {
-    //         $('#searchBox').focus();
-    //     });
-    // }
-
     // function that gets called when the My Location button is clicked, and show the user's locaiton on the map and pans to your location.
     $scope.showMyLocation = function() {
         //sets the marker at your location and pans the screen to it.
@@ -226,7 +218,7 @@ angular.module('atlasApp').controller('BusCtrl', function(
             case "Undergraduate Shopping Shuttle":
                 image = $scope.undergraduateShoppingShuttleImage;
                 break;
-            default:s
+            default:
                 image = $scope.innerLoopImage;
             }
 
