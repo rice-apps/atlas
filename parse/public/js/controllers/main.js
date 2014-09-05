@@ -16,7 +16,9 @@ angular.module('atlasApp').controller('MainCtrl', function(
    * Provides autocomplete suggestions as you type the query
    */
   $scope.autocomplete = function(query) {
-    return Parse.Cloud.run("placeAutocomplete", {query: query});
+    var places = Parse.Cloud.run("placeAutocomplete", {query: query});
+    var courses = Parse.Cloud.run("courseAutocomplete", {query: query});
+    return places + courses
   };
 
   $scope.onAutocompleteSelect = function(item, model, label, from) {
