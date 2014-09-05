@@ -10,7 +10,14 @@ angular.module('atlasApp').controller('BusCtrl', function(
     ) {
 
     // Bus image we are going to use.
+    $scope.graduateApartmentsShoppingShuttleImage = "img/buses/Graduate Apartments Shopping Shuttle.png";
+    $scope.graduateApartmentsImage = "img/buses/Graduate Apartments.png";
+    $scope.greaterLoopImage = "img/buses/Greater Loop.png";
     $scope.innerLoopImage = "img/buses/Inner Loop.png";
+    $scope.nightEscortServiceImage = "img/buses/Night Escort Service.png";
+    $scope.riceVillageImage = "img/buses/Rice Village.png";
+    $scope.riceVillageApartmentsImage = "img/buses/Rice Village Apartments.png";
+    $scope.undergraduateShoppingShuttleImage = "img/buses/Undergraduate Shopping Shuttle.png";
 
     /**
     * The map center coordinates of Rice University.
@@ -62,9 +69,9 @@ angular.module('atlasApp').controller('BusCtrl', function(
         (function tick() {
         $http.get('http://rice-buses.herokuapp.com').success(function (data) {
             // redraw the buses
-            refreshBuses(data.d);
-
-            $timeout(tick, 5000);
+            $scope.refreshBuses(data.d);
+            console.log("Pulled in Data");
+            setTimeout(tick, $scope.refreshRate);
         });
     })();
     }
@@ -73,10 +80,7 @@ angular.module('atlasApp').controller('BusCtrl', function(
     * Resizes the view to fit within the bounds of the screen.
     */
     $scope.resizeView = function() {
-        $scope.newHeight = 
-        $(window).height() 
-        - $('div.navbar').height() 
-        - 90;
+        var newHeight = $(window).height() - $('div.navbar').height() - 90;
         $('#map-canvas').css({height: newHeight});
     };
 
@@ -86,7 +90,7 @@ angular.module('atlasApp').controller('BusCtrl', function(
     $scope.initializeMap = function() {
         console.log('Initializing');
         var mapOptions = {
-        zoom: 15,
+        zoom: 16,
         center: $scope.mapCenter,
         mapTypeId: google.maps.MapTypeId.ROADMAP,
         disableDefaultUI: true,
@@ -107,13 +111,13 @@ angular.module('atlasApp').controller('BusCtrl', function(
     //         $('#searchBox').focus();
     //     });
     // }
-    
+
     // function that gets called when the My Location button is clicked, and show the user's locaiton on the map and pans to your location.
     $scope.showMyLocation = function() {
         //sets the marker at your location and pans the screen to it.
         if (navigator.geolocation) navigator.geolocation.getCurrentPosition(function(pos) {
             var myLoc = new google.maps.LatLng(pos.coords.latitude, pos.coords.longitude);
-            createPersonMarker(myLoc);
+            $scope.createPersonMarker(myLoc);
         }, function(error) {
             // ...
         });
@@ -130,11 +134,11 @@ angular.module('atlasApp').controller('BusCtrl', function(
                                                     new google.maps.Point(11,11)),
             shadow: null,
             zIndex: 999,
-            map: map
+            map: $scope.map
         });
 
         personLocMarker.setPosition(latLng);
-        map.panTo(latLng);
+        $scope.map.panTo(latLng);
     }
 
     // removes a marker on the map for a map element.
@@ -143,8 +147,8 @@ angular.module('atlasApp').controller('BusCtrl', function(
         var latLng = new google.maps.LatLng(mapElement.location.latitude, mapElement.location.longitude);
         if (latLng in latLngDict) {
             // delete marker and entry in latLngDict.
-            latLngDict[latLng].marker.setMap(null);
-            delete latLngDict[latLng];
+            $scope.latLngDict[latLng].marker.setMap(null);
+            delete l$scope.atLngDict[latLng];
         }
     }
 
@@ -154,7 +158,7 @@ angular.module('atlasApp').controller('BusCtrl', function(
      */
      $scope.refreshBuses = function(data) {
         // check to see if data has removed a bus we knew about.
-        for (var sessionID in idToBusMarkerDict) {
+        for (var sessionID in $scope.idToBusMarkerDict) {
             var busRemains = false;
 
             for (var i = 0; i < data.length; i++) {
@@ -167,7 +171,7 @@ angular.module('atlasApp').controller('BusCtrl', function(
 
             // if the bus has retired, then delete it.
             if (!busRemains) {
-                deleteBus(sessionID);
+                $scope.deleteBus(sessionID);
             }
         }
 
@@ -178,17 +182,17 @@ angular.module('atlasApp').controller('BusCtrl', function(
             var busLatLng = new google.maps.LatLng(bus.Latitude, bus.Longitude);
 
             // if the bus is new, add it
-            if (!(bus.SessionID in idToBusMarkerDict)) {
-                createBus(bus.SessionID, busLatLng, bus.Name);
+            if (!(bus.SessionID in $scope.idToBusMarkerDict)) {
+                $scope.createBus(bus.SessionID, busLatLng, bus.Name);
             }
             // otherwise, just change the latlng
             else {
                 // change the key in the latLngToBusDict
-                var oldLatLng = idToBusMarkerDict[bus.SessionID].getPosition();
-                latLngToBusDict[busLatLng] = latLngToBusDict[oldLatLng];
+                var oldLatLng = $scope.idToBusMarkerDict[bus.SessionID].getPosition();
+                $scope.latLngToBusDict[busLatLng] = $scope.latLngToBusDict[oldLatLng];
 
                 // change the position of the marker.
-                idToBusMarkerDict[bus.SessionID].setPosition(busLatLng);
+                $scope.idToBusMarkerDict[bus.SessionID].setPosition(busLatLng);
             }
         }
     }
@@ -198,16 +202,37 @@ angular.module('atlasApp').controller('BusCtrl', function(
         var image = ''
  
         switch(type) {
-            case "Inner Loop":
-                image = innerLoopImage;
+            case "Graduate Apartments":
+                image = $scope.graduateApartmentsImage;
                 break;
-            default:
-                image = innerLoopImage;
+            case "Graduate Apartments Shopping Shuttle":
+                image = $scope.graduateApartmentsShoppingShuttleImage;
+                break;
+            case "Greater Loop":
+                image = $scope.greaterLoopImage;
+                break;
+            case "Inner Loop":
+                image = $scope.innerLoopImage;
+                break;
+            case "Night Escort Service":
+                image = $scope.nightEscortServiceImage;
+                break;
+            case "Rice Village":
+                image = $scope.riceVillageImage;
+                break;
+            case "Rice Village Apartments":
+                image = $scope.riceVillageApartmentsImage;
+                break;
+            case "Undergraduate Shopping Shuttle":
+                image = $scope.undergraduateShoppingShuttleImage;
+                break;
+            default:s
+                image = $scope.innerLoopImage;
             }
 
         var busMarker = new google.maps.Marker({
             position: latLng,
-            map: map,
+            map: $scope.map,
             icon: image,
             type: type
         });
@@ -216,22 +241,22 @@ angular.module('atlasApp').controller('BusCtrl', function(
             content: type
         });
  
-        idToBusMarkerDict[sessionID] = busMarker
-        latLngToBusDict[latLng] = {'marker':busMarker, 'infoWindow':infoWindow}
+        $scope.idToBusMarkerDict[sessionID] = busMarker
+        $scope.latLngToBusDict[latLng] = {'marker':busMarker, 'infoWindow':infoWindow}
 
         google.maps.event.addListener(busMarker, 'click', function(target) {
             // close all the info windows.
-            closeAllInfoWindows();
+            $scope.closeAllInfoWindows();
             
-            latLngToBusDict[target.latLng]['infoWindow'].open(map, latLngToBusDict[target.latLng].marker);
+            $scope.latLngToBusDict[target.latLng]['infoWindow'].open($scope.map, $scope.latLngToBusDict[target.latLng].marker);
         }); 
     }
 
     // Removes a bus from the map and deletes it if the sessionID no longer exists.
     $scope.deleteBus = function(sessionID){
-        idToBusMarkerDict[sessionID].setMap(null);
-        delete latLngToBusDict[idToBusMarkerDict[sessionID].position];
-        delete idToBusMarkerDict[sessionID];
+        $scope.idToBusMarkerDict[sessionID].setMap(null);
+        delete $scope.latLngToBusDict[idToBusMarkerDict[sessionID].position];
+        delete $scope.idToBusMarkerDict[sessionID];
     }
 
     /**
@@ -239,22 +264,22 @@ angular.module('atlasApp').controller('BusCtrl', function(
      */
     $scope.closeAllInfoWindows = function() {
         for (var latLng in latLngDict) {
-            latLngDict[latLng].infoWindow.close();
+            $scope.latLngDict[latLng].infoWindow.close();
         }
-        closeAllBusInfoWindows();
+        $scope.closeAllBusInfoWindows();
     }
 
     /**
      * Removes all markers from the map.
      */
     $scope.removeAllBuildingMarkers = function() {
-        closeAllInfoWindows();
+        $scope.closeAllInfoWindows();
 
-        $scope.visitorLotsShown = false;
+        // $scope.visitorLotsShown = false;
 
-        for (var latLng in latLngDict) {
-            latLngDict[latLng].marker.setMap(null);
-            delete latLngDict[latLng];
+        for (var latLng in $scope.latLngDict) {
+            $scope.latLngDict[latLng].marker.setMap(null);
+            delete $scope.latLngDict[latLng];
         }
     }
 
@@ -262,8 +287,8 @@ angular.module('atlasApp').controller('BusCtrl', function(
      * Closes all bus info windows on map.
      */
     $scope.closeAllBusInfoWindows = function() {
-        for (var latLng in latLngToBusDict) {
-            latLngToBusDict[latLng]['infoWindow'].close();
+        for (var latLng in $scope.latLngToBusDict) {
+            $scope.latLngToBusDict[latLng]['infoWindow'].close();
         }
     }
 
