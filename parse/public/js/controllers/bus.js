@@ -56,7 +56,8 @@ angular.module('atlasApp').controller('BusCtrl', function(
         $scope.resizeView();
         $(window).resize($scope.resizeView);
         $scope.geoMarker = new GeolocationMarker($scope.map);
-
+        $scope.initializeMap();
+        $scope.showMyLocation();
         // Function to update buses and pull's data every 5 seconds.
         (function tick() {
         $http.get('http://rice-buses.herokuapp.com').success(function (data) {
@@ -79,13 +80,34 @@ angular.module('atlasApp').controller('BusCtrl', function(
         $('#map-canvas').css({height: newHeight});
     };
 
-    // function that clears input from input box and selects the input.
-    $scope.clearInput = function() {
-        $scope.searchText = "";
-        $timeout(function() {
-            $('#searchBox').focus();
-        });
+    /**
+     * Add code for initializing the map.
+     */
+    $scope.initializeMap = function() {
+        console.log('Initializing');
+        var mapOptions = {
+        zoom: 15,
+        center: $scope.mapCenter,
+        mapTypeId: google.maps.MapTypeId.ROADMAP,
+        disableDefaultUI: true,
+        };
+
+        var mapCanvas = document.getElementById('map-canvas');
+        
+        $scope.map = new google.maps.Map(
+        mapCanvas,
+        mapOptions
+        );
     }
+
+    // // function that clears input from input box and selects the input.
+    // $scope.clearInput = function() {
+    //     $scope.searchText = "";
+    //     $timeout(function() {
+    //         $('#searchBox').focus();
+    //     });
+    // }
+    
     // function that gets called when the My Location button is clicked, and show the user's locaiton on the map and pans to your location.
     $scope.showMyLocation = function() {
         //sets the marker at your location and pans the screen to it.
@@ -210,22 +232,6 @@ angular.module('atlasApp').controller('BusCtrl', function(
         idToBusMarkerDict[sessionID].setMap(null);
         delete latLngToBusDict[idToBusMarkerDict[sessionID].position];
         delete idToBusMarkerDict[sessionID];
-    }
-
-    /**
-     * Add code for initializing the map.
-     */
-    $scope.initializeMap = function() {
-        var mapOptions = {
-          zoom: 15,
-          center: mapCenter,
-          mapTypeId: google.maps.MapTypeId.ROADMAP,
-          disableDefaultUI: true,
-          minZoom: 15,
-          maxZoom: 20
-        };
-        map = new google.maps.Map(document.getElementById('map-canvas'),
-            mapOptions);
     }
 
     /**
