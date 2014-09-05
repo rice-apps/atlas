@@ -41,7 +41,7 @@ angular.module('atlasApp').controller('BusCtrl', function(
   // declare the google map.
   $scope.map;
 
-  $scope.refreshRate = 5000;
+  $scope.refreshRate = 2500;
 
   // init the lat/lng dictionary. Maps a latLng to various things.
   var latLngDict = {};
@@ -79,7 +79,7 @@ angular.module('atlasApp').controller('BusCtrl', function(
   * Resizes the view to fit within the bounds of the screen.
   */
   $scope.resizeView = function() {
-    var newHeight = $(window).height() - $('div.navbar').height() - 90;
+    var newHeight = $(window).height() - $('div.navbar').height();
     $('#map-canvas').css({height: newHeight});
   };
 
