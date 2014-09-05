@@ -64,10 +64,7 @@
  *                              Main Page
  ******************************************************************************/
 
-#search-bar {
-  margin: 5px;
-  z-index: 100;
-}
+<<<<<<< HEAD
 #main-menu .btn{
   margin: 5px;
   width: inherit;
@@ -77,10 +74,16 @@
   margin-left: 5px;
   margin-right: 5px;
  }
+=======
+#search-bar {
+  margin: 5px;
+  z-index: 100;
+}
 
 .overlay {
   position: absolute;
 }
+>>>>>>> 6e7de9cc3b1d283818241411b89c26595b97e3c6
 
 .results-panel {
   margin-top: 10px;
