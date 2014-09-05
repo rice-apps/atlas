@@ -76,8 +76,10 @@ def parse_create_course(xml_course):
     "credit-hours",
     "distribution-group"
   ]
-  return pull_attributes_from_xml(xml_course, attrs)
+  course = pull_attributes_from_xml(xml_course, attrs)
+  course["sections"] = []
 
+  return course
 
 
 def parse_get_course(xml_course):
@@ -129,7 +131,7 @@ def upload_course(parse_course):
     {"X-Parse-Application-Id": app_id, "X-Parse-REST-API-Key": rest_api_key}
   )
   result = json.loads(connection.getresponse().read())
-  if result["error"]: 
+  if result.get("error"): 
     raise Exception("Could not get Parse authorization.")
   elif method == "POST":
     return result["objectId"]
@@ -149,28 +151,29 @@ def parse_create_section(xml_course):
     'crn',
     "start-time",
     "end-time",
-    "department",
     "meeting-days",
-    "location"
+    "location",
+    "section-number",
+    "instructor"
   ]
 
-  section = pull_attributes_from_xml(xml_course)
+  section = pull_attributes_from_xml(xml_course, attrs)
 
   section["places"] = []
 
   # Create Place attribute pointer based on location string
   # Get places from Parse
-  places = get_places()
+  places = get_places()["results"]
   # Get location info from section (of form ["BRK 101", "TBA"])
   all_locations = section["location"].split(", ")
   # Filter out TBA
   # TODO Maybe do something else with them
-  locations = [location for location in all_locations_unformatted if location != "TBA"]
+  locations = [location for location in all_locations if location != "TBA"]
 
   for location in locations:
     building_code = location.split(" ")[0]
     for place in places:
-      if place["symbol"] == building_code:
+      if place.get("symbol") and place["symbol"] == building_code:
         section["places"].append(place["objectId"])
         break;
 
@@ -182,9 +185,9 @@ def parse_get_section(xml_course):
   """
   Uses the information in the XML to find an existing Section in the parse database by doing a look up using crn
   """
-  parse_course = parse_create_course(xml_course)
+  parse_section = parse_create_section(xml_course)
   query_constraints = {
-    "crn": parse_course["crn"]
+    "crn": parse_section["crn"]
   }
   params = urllib.urlencode({"where": json.dumps(query_constraints)})
   connection = httplib.HTTPSConnection(PARSE_API_URL, PARSE_API_PORT)
@@ -223,7 +226,7 @@ def upload_section(parse_section):
     {"X-Parse-Application-Id": app_id, "X-Parse-REST-API-Key": rest_api_key}
   )
   result = json.loads(connection.getresponse().read())
-  if result["error"]: 
+  if result.get("error"): 
     print "Error: could not get Parse authorization."
   elif method == "POST":
     return result["objectId"]
@@ -242,12 +245,12 @@ def get_places():
     connection = httplib.HTTPSConnection(PARSE_API_URL, PARSE_API_PORT)
     connection.connect()
     connection.request(
-      'GET',
-      PLACES_ENDPOINT,
-      {"X-Parse-Application-Id": aapp_id, "X-Parse-REST-API-Key": rest_api_key}
+       method='GET',
+       url=PLACES_ENDPOINT,
+       headers={"X-Parse-Application-Id": app_id, "X-Parse-REST-API-Key": rest_api_key}
     )
+    places = json.loads(connection.getresponse().read())
 
-  places = json.loads(connection.getresponse().read())
   return places
 
 
@@ -265,22 +268,21 @@ def put_child(course_id, section_id):
   course_connection = httplib.HTTPSConnection(PARSE_API_URL, PARSE_API_PORT)
   course_connection.connect()
   course_connection.request(
-    'GET',
-    course_url,
-    {"X-Parse-Application-Id": aapp_id, "X-Parse-REST-API-Key": rest_api_key}
+    method='GET',
+    url=course_url,
+    headers={"X-Parse-Application-Id": app_id, "X-Parse-REST-API-Key": rest_api_key}
   )
-  course = json.loads(section_connection.getresponse().read())
-  
+  course = json.loads(course_connection.getresponse().read())
   # Add Section id to Course's list
-  if section_url not in course["sections"]:
+  if course and (section_url not in course["sections"]):
     course["sections"].append(section_url)
 
   # Persist new course
   course_connection.request(
-    'PUT',
-    course_url,
-    course,
-    {"X-Parse-Application-Id": aapp_id, "X-Parse-REST-API-Key": rest_api_key}
+    method='PUT',
+    url=course_url,
+    body=json.dumps("course"),
+    headers={"X-Parse-Application-Id": app_id, "X-Parse-REST-API-Key": rest_api_key}
   )
 
 
