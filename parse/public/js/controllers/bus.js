@@ -80,7 +80,7 @@ angular.module('atlasApp').controller('BusCtrl', function(
     * Resizes the view to fit within the bounds of the screen.
     */
     $scope.resizeView = function() {
-        var newHeight = $(window).height() - $('div.navbar').height() - 90;
+        var newHeight = $(window).height() - $('div.navbar').height();
         $('#map-canvas').css({height: newHeight});
     };
 
@@ -90,7 +90,7 @@ angular.module('atlasApp').controller('BusCtrl', function(
     $scope.initializeMap = function() {
         console.log('Initializing');
         var mapOptions = {
-        zoom: 16,
+        zoom: 15,
         center: $scope.mapCenter,
         mapTypeId: google.maps.MapTypeId.ROADMAP,
         disableDefaultUI: true,
@@ -226,7 +226,7 @@ angular.module('atlasApp').controller('BusCtrl', function(
             case "Undergraduate Shopping Shuttle":
                 image = $scope.undergraduateShoppingShuttleImage;
                 break;
-            default:s
+            default:
                 image = $scope.innerLoopImage;
             }
 

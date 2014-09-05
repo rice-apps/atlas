@@ -65,7 +65,12 @@
  *                              Main Page
  ******************************************************************************/
 
- #search-bar {
+#main-menu .btn{
+  margin: 5px;
+  width: inherit;
+}
+
+#search-bar {
   margin-left: 5px;
   margin-right: 5px;
  }
