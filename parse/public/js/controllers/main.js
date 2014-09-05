@@ -21,10 +21,9 @@ angular.module('atlasApp').controller('MainCtrl', function(
     return places + courses
   };
 
-
-  $scope.onAutocompleteSelect = function(item, model, label) {
+  $scope.onAutocompleteSelect = function(item, model, label, from) {
     $analytics.eventTrack(
-      'Click Autocomplete Suggestion',
+      'Click Autocomplete Suggestion from ' + from,
       { category: 'Search' }
     );
     $scope.search(model.id);

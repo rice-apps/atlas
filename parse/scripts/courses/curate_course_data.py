@@ -274,7 +274,7 @@ def put_child(course_id, section_id):
   )
   course = json.loads(course_connection.getresponse().read())
   # Add Section id to Course's list
-  if course and (section_url not in course["sections"]):
+  if course and (section_id not in course["sections"]):
     course["sections"].append(section_id)
 
   # Persist new course

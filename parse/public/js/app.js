@@ -28,7 +28,8 @@ atlasApp.config(function($routeProvider) {
 });
 
 atlasApp.run(function($rootScope) {
-  var prod = false;
+
+  var prod = true;
   if (prod) {
     Parse.initialize(
       "Hs7BvAGhMU9B4g757NZ0YAT0kOtxQ1hM78bQGu2y",
