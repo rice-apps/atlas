@@ -30,6 +30,7 @@ Parse.Cloud.define("placeSearch", function(request, response) {
   });
 });
 
+
 /*
  * Provides autocomplete suggestions for Places 
  */
@@ -40,7 +41,7 @@ Parse.Cloud.define("placeAutocomplete", function(request, response) {
   var query = new Parse.Query("Place");
   query.limit(200);
   query.include("parentPlace");
-  query.select("name");
+  query.select("name", "symbol");
 
   query.find({
     success: function(results) {
@@ -59,23 +60,26 @@ Parse.Cloud.define("placeAutocomplete", function(request, response) {
   });
 });
 
+
+/*
+ * Provides autocomplete suggestions for Sections 
+ */
 Parse.Cloud.define("courseAutocomplete", function(request, response) {
   console.log("Search Query: " + request.params.query);
 
   // Define Parse cloud query that retrieves all Place objects and matches them to a search
   var query = new Parse.Query("Course");
-  query.limit(200);
-  query.select("name");
+  query.limit(200); // Change for production
 
-  query.find({
-    success: function(results) {
+  query.find().then(function(results) {
       matches = []
       for result in results:
-        if result.find(query) >= 0:
-          return matches.append(result)
+        var course_name = result.get("subject") + " " + result.get("courseNumber")
+        if (course_name.indexOf(request.params.query) > -1){
+          matches.append(result)
+        }
       response.success(matches.slice(0, 5));
-    },
-    error: function(error) {
+    }, function(error) {
       response.error(error);
     }
   });
