@@ -64,19 +64,15 @@
  *                              Main Page
  ******************************************************************************/
 
-#search-bar {
-  margin: 5px;
-  z-index: 100;
-}
 #main-menu .btn{
   margin: 5px;
   width: inherit;
 }
 
 #search-bar {
-  margin-left: 5px;
-  margin-right: 5px;
- }
+  margin: 5px;
+  z-index: 100;
+}
 
 .overlay {
   position: absolute;
