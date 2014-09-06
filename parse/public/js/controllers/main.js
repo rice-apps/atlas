@@ -17,8 +17,9 @@ angular.module('atlasApp').controller('MainCtrl', function(
    */
   $scope.autocomplete = function(query) {
     var places = Parse.Cloud.run("placeAutocomplete", {query: query});
-    var courses = Parse.Cloud.run("courseAutocomplete", {query: query});
-    return places + courses
+    return places;
+    // var courses = Parse.Cloud.run("courseAutocomplete", {query: query});
+    // return places + courses
   };
 
   $scope.onAutocompleteSelect = function(item, model, label, from) {
