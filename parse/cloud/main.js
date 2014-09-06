@@ -51,10 +51,34 @@ Parse.Cloud.define("placeAutocomplete", function(request, response) {
 
       var searcher = new Fuse(results, options);
       var matches = searcher.search(request.params.query);
-      response.success(matches.slice(0, 10));
+      response.success(matches.slice(0, 5));
+    },
+    error: function(error) {
+      response.error(error);
+    }
+  });
+});
+
+Parse.Cloud.define("courseAutocomplete", function(request, response) {
+  console.log("Search Query: " + request.params.query);
+
+  // Define Parse cloud query that retrieves all Place objects and matches them to a search
+  var query = new Parse.Query("Course");
+  query.limit(200);
+  query.select("name");
+
+  query.find({
+    success: function(results) {
+      matches = []
+      // TODO(john): Python code needs to go away
+      // for result in results:
+      //   if result.find(query) >= 0:
+      //     return matches.append(result)
+      // response.success(matches.slice(0, 5));
     },
     error: function(error) {
       response.error(error);
     }
   });
 })
+

@@ -22,6 +22,10 @@ atlasApp.config(function($routeProvider) {
       templateUrl: '/views/place.html',
       controller: 'PlaceCtrl'
     })
+    .when('/bus', {
+      templateUrl: '/views/bus.html',
+      controller: 'BusCtrl'
+    })
     .otherwise({
       redirectTo: '/'
     });
