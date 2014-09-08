@@ -1,5 +1,5 @@
 'use strict';
-alert("Hello");
+
 angular.module('atlasApp').controller('MainCtrl', function(
   $location,
   $routeParams,
