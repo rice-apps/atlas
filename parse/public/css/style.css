@@ -105,9 +105,10 @@
  *                              Place Page
  ******************************************************************************/
 
+
 #map-canvas {
   height: 500px;
-  z-index: 
+  z-index:
 }
 
 #info-bar {
@@ -123,4 +124,12 @@
 
 #info-bar .label {
   margin-right: 5px;
+}
+
+/*For a toggle button*/
+#toolbar {
+    background-color:dodgerblue;
+    padding: 0px;
+    margin-bottom: 0px;
+    text-align: center;
 }

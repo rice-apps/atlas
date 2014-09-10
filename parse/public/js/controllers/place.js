@@ -24,7 +24,7 @@ angular.module('atlasApp').controller('PlaceCtrl', function(
     $scope.resizeView();
     $(window).resize($scope.resizeView);
     $scope.initMap();
-    $scope.geoMarker = new GeolocationMarker($scope.map);
+    /*$scope.geoMarker = new GeolocationMarker($scope.map);*/
 
     // Fetch the place from Parse
     var placeID = $routeParams.placeID
