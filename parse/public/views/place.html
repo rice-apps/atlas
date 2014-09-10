@@ -1,10 +1,16 @@
+<div id="toolbar" class="panel panel-default">
+    <a class="btn btn-primary btn-lg" type="button">
+        Show My Location
+    </a>
+</div>
 
 <div 
   id="search-bar"
   ng-controller="MainCtrl"
   class="input-group input-group-lg overlay"
 >
-  <input 
+
+  <input
     type="text"
     class="form-control"
     ng-model="query"
@@ -23,7 +29,10 @@
   </a>
 </div>
 
+
 <div id="map-canvas"></div>
+
+
 <div id="info-bar" class="well">
   <span class="pull-left glyphicon glyphicon-map-marker"></span>
   <div class="media-body">
