@@ -17,6 +17,11 @@ angular.module('atlasApp').controller('PlaceCtrl', function(
 
   $scope.Place = Parse.Object.extend('Place');
 
+  $scope.userLocation = null;
+
+  $scope.userLocationOn = false;
+
+
   /**
    * Initalizes the Place controller.
    */
@@ -90,6 +95,30 @@ angular.module('atlasApp').controller('PlaceCtrl', function(
     $('#map-canvas').css({height: newHeight});
   };
 
+  /**
+   *Makes user able to choose if to show the current location or not
+   */
+
+  $scope.toggleUserLocation = function($event){
+    if ($scope.userLocation == null && ! $scope.userLocationOn){
+      $scope.userLocation = new GeolocationMarker($scope.map);
+      $scope.userLocation.setCircleOptions({visible:false});
+      $event.target.text = "Hide My Location";
+      $scope.userLocationOn = true;
+    }
+    else{
+      if ($scope.userLocationOn){
+        $scope.userLocationOn = false;
+        $event.target.text = "Show My Location";
+        $scope.userLocation.setMarkerOptions({visible:false});
+      }
+      else{
+        $scope.userLocationOn = true;
+        $event.target.text = "Hide My Location";
+        $scope.userLocation.setMarkerOptions({visible:true});
+      }
+    }
+  }
   $scope.init();
 
 });
