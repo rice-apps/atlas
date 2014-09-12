@@ -14,12 +14,7 @@ angular.module('atlasApp').controller('PlaceCtrl', function(
    */
   $scope.mapCenter = new google.maps.LatLng(29.717384, -95.403171);
 
-
   $scope.Place = Parse.Object.extend('Place');
-
-  $scope.userLocation = null;
-
-  $scope.userLocationOn = false;
 
 
   /**
@@ -29,6 +24,8 @@ angular.module('atlasApp').controller('PlaceCtrl', function(
     $scope.resizeView();
     $(window).resize($scope.resizeView);
     $scope.initMap();
+    $scope.userLocation = new GeolocationMarker($scope.map);
+    $scope.setUserLocationOff();
 
     // Fetch the place from Parse
     var placeID = $routeParams.placeID
@@ -95,23 +92,30 @@ angular.module('atlasApp').controller('PlaceCtrl', function(
     $('#map-canvas').css({height: newHeight});
   };
 
+  $scope.setUserLocationOff = function() {
+    $scope.userLocation.setMarkerOptions({visible:false});
+    $scope.userLocation.setCircleOptions({visible: false});
+    $scope.userLocationOn = false;
+    if ($scope.marker)
+      $scope.map.panTo($scope.marker.getPosition());
+    $scope.map.setOptions({zoom:15});
+  }
+
+  $scope.setUserLocationOn = function() {
+    $scope.userLocation.setMarkerOptions({visible:true});
+    $scope.userLocation.setCircleOptions({visible: true});
+    $scope.userLocationOn = true;
+    $scope.map.panTo($scope.userLocation.getPosition());
+    $scope.map.setOptions({zoom:17});
+  }
 
   $scope.toggleUserLocation = function($event) {
-    if ($scope.userLocation == null && !$scope.userLocationOn){
-      $scope.userLocation = new GeolocationMarker($scope.map);
-      $scope.userLocation.setCircleOptions({visible:false});
-      $event.target.text = "Hide My Location";
-      $scope.userLocationOn = true;
+    if ($scope.userLocationOn){
+      $scope.setUserLocationOff();
+      $event.target.text = "Show My Location";
     } else {
-      if ($scope.userLocationOn){
-        $scope.userLocationOn = false;
-        $event.target.text = "Show My Location";
-        $scope.userLocation.setMarkerOptions({visible:false});
-      } else {
-        $scope.userLocationOn = true;
-        $event.target.text = "Hide My Location";
-        $scope.userLocation.setMarkerOptions({visible:true});
-      }
+      $scope.setUserLocationOn();
+      $event.target.text = "Hide My Location";
     }
   }
 
