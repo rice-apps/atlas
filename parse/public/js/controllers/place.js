@@ -29,7 +29,6 @@ angular.module('atlasApp').controller('PlaceCtrl', function(
     $scope.resizeView();
     $(window).resize($scope.resizeView);
     $scope.initMap();
-    /*$scope.geoMarker = new GeolocationMarker($scope.map);*/
 
     // Fetch the place from Parse
     var placeID = $routeParams.placeID
@@ -91,34 +90,31 @@ angular.module('atlasApp').controller('PlaceCtrl', function(
     var newHeight = 
       $(window).height() 
       - $('div.navbar').height() 
-      - 90;
+      - 90
+      - $('#toolbar').height();
     $('#map-canvas').css({height: newHeight});
   };
 
-  /**
-   *Makes user able to choose if to show the current location or not
-   */
 
-  $scope.toggleUserLocation = function($event){
-    if ($scope.userLocation == null && ! $scope.userLocationOn){
+  $scope.toggleUserLocation = function($event) {
+    if ($scope.userLocation == null && !$scope.userLocationOn){
       $scope.userLocation = new GeolocationMarker($scope.map);
       $scope.userLocation.setCircleOptions({visible:false});
       $event.target.text = "Hide My Location";
       $scope.userLocationOn = true;
-    }
-    else{
+    } else {
       if ($scope.userLocationOn){
         $scope.userLocationOn = false;
         $event.target.text = "Show My Location";
         $scope.userLocation.setMarkerOptions({visible:false});
-      }
-      else{
+      } else {
         $scope.userLocationOn = true;
         $event.target.text = "Hide My Location";
         $scope.userLocation.setMarkerOptions({visible:true});
       }
     }
   }
+
   $scope.init();
 
 });

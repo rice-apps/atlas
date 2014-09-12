@@ -112,6 +112,7 @@
 }
 
 #info-bar {
+  background-color: #f5f5f5;
   padding-top: 10px;
   padding-left: 10px;
   padding-right: 10px;
@@ -126,10 +127,9 @@
   margin-right: 5px;
 }
 
-/*For a toggle button*/
 #toolbar {
-    background-color:dodgerblue;
-    padding: 0px;
-    margin-bottom: 0px;
-    text-align: center;
+  background-color:#f5f5f5;
+  padding: 5px;
+  margin-bottom: 0px;
+  text-align: center;
 }
