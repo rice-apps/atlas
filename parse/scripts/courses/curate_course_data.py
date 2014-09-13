@@ -3,6 +3,7 @@ import urllib
 import xml.etree.ElementTree as ET
 import json
 import sys
+import argparse
 
 term = ''
 app_id = ""
@@ -165,7 +166,9 @@ def parse_create_section(xml_course):
   # Get places from Parse
   places = get_places()["results"]
   # Get location info from section (of form ["BRK 101", "TBA"])
-  all_locations = section["location"].split(", ")
+  all_locations = []
+  if section.get("location"):
+    all_locations = section["location"].split(", ")
   # Filter out TBA
   # TODO Maybe do something else with them
   locations = [location for location in all_locations if location != "TBA"]
@@ -327,15 +330,26 @@ def main():
   """
   global app_id, rest_api_key, term
 
+
   term = sys.argv[1]
   xml_filename = sys.argv[2]
   app_id = sys.argv[3]
   rest_api_key = sys.argv[4]
 
+  skipping = True
+  start_from_crn = "23194"
+
   xml_courses = read_courses_tree(xml_filename)
-  for i in range(5):
-    # TODO: Process all courses once script is thoroughly tested
-    process_course(xml_courses[i])
+
+
+  for course in xml_courses:
+    if skipping:
+      if course.findtext("crn") == start_from_crn:
+        skipping = False
+        process_course(course)
+      continue
+    else:
+      process_course(course)
       
 
 
