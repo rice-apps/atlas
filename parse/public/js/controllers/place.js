@@ -16,7 +16,9 @@ angular.module('atlasApp').controller('PlaceCtrl', function(
 
   $scope.Place = Parse.Object.extend('Place');
 
+  $scope.userLocation = null;
 
+  $scope.locationSuccessful = false;
   /**
    * Initalizes the Place controller.
    */
@@ -24,8 +26,6 @@ angular.module('atlasApp').controller('PlaceCtrl', function(
     $scope.resizeView();
     $(window).resize($scope.resizeView);
     $scope.initMap();
-    $scope.userLocation = new GeolocationMarker($scope.map);
-    $scope.setUserLocationOff();
 
     // Fetch the place from Parse
     var placeID = $routeParams.placeID
@@ -110,12 +110,25 @@ angular.module('atlasApp').controller('PlaceCtrl', function(
   }
 
   $scope.toggleUserLocation = function($event) {
-    if ($scope.userLocationOn){
-      $scope.setUserLocationOff();
-      $event.target.text = "Show My Location";
+    if ($scope.userLocation == null || !$scope.locationSuccessful){
+      $scope.locationSuccessful = false;
+      $scope.userLocation = new GeolocationMarker();
+      $scope.userLocation.setMap($scope.map);
+      google.maps.event.addListenerOnce($scope.userLocation, 'position_changed', function() {
+        $scope.map.panTo(this.getPosition());
+        $scope.map.setOptions({zoom:17});
+        $scope.locationSuccessful = true;
+        $scope.userLocationOn = true;
+        $event.target.text = "Hide My Location";
+        });
     } else {
-      $scope.setUserLocationOn();
-      $event.target.text = "Hide My Location";
+        if ($scope.userLocationOn) {
+            $scope.setUserLocationOff();
+            $event.target.text = "Show My Location";
+        } else {
+            $scope.setUserLocationOn();
+            $event.target.text = "Hide My Location";
+        }
     }
   }
 
