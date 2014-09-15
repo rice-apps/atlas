@@ -1,3 +1,9 @@
+<div id="toolbar" class="panel panel-default">
+    <a ng-click="toggleUserLocation($event)" class="btn btn-default" type="button">
+        {{ userLocationOn == true ?  "Hide My Location" : "Show My Location" }}
+    </a>
+</div>
+
 <div 
   id="search-bar"
   ng-controller="MainCtrl"

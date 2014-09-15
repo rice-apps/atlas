@@ -37,10 +37,13 @@ angular.module('atlasApp').factory('LocationProvider', function() {
     },
 
     showUserLocation: function() {
-      this.getUserLocation()
-        .setMarkerOptions({visible: true})
-      this.getUserLocation()  // TODO: Can this be chained
-        .setCircleOptions({visible: true});
+      this.getUserLocation().setMarkerOptions({visible: true});
+      this.getUserLocation().setCircleOptions({visible: true});
+    },
+
+    hideUserLocation: function() {
+      this.getUserLocation().setMarkerOptions({visible: false});
+      this.getUserLocation().setCircleOptions({visible: false});
     }
   }
 

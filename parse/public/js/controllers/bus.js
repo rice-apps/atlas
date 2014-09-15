@@ -57,6 +57,9 @@ angular.module('atlasApp').controller('BusCtrl', function(
     // init the list for bus data.
     $scope.buses = [];
 
+    // Used to determine whether the user location is turned on or not
+    $scope.userLocationOn = false;
+
     /**
     * Initalizes the Bus controller.
     */
@@ -245,6 +248,17 @@ angular.module('atlasApp').controller('BusCtrl', function(
         for (var latLng in $scope.latLngToBusDict) {
             $scope.latLngToBusDict[latLng]['infoWindow'].close();
         }
+    }
+
+
+
+    $scope.toggleUserLocation = function($event) {
+        if ($scope.userLocationOn) {
+            $scope.locationProvider.hideUserLocation();
+        } else {
+            $scope.locationProvider.showUserLocation();
+        }
+        $scope.userLocationOn = !$scope.userLocationOn;
     }
 
     $scope.init();
