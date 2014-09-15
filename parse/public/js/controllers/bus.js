@@ -107,7 +107,6 @@ angular.module('atlasApp').controller('BusCtrl', function(
         );
 
         $scope.locationProvider = new LocationProvider($scope.map);
-        $scope.locationProvider.showUserLocation();
     }
 
 
@@ -252,11 +251,18 @@ angular.module('atlasApp').controller('BusCtrl', function(
 
 
 
-    $scope.toggleUserLocation = function($event) {
+    $scope.toggleUserLocation = function() {
         if ($scope.userLocationOn) {
             $scope.locationProvider.hideUserLocation();
+            $scope.locationProvider.stopWatchingUserLocation();
         } else {
             $scope.locationProvider.showUserLocation();
+            $scope.locationProvider.startWatchingUserLocation();
+            var position = 
+                    $scope.locationProvider.getUserLocation().getPosition();
+            if (position) {
+                $scope.map.panTo(position);
+            }
         }
         $scope.userLocationOn = !$scope.userLocationOn;
     }

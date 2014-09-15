@@ -6,7 +6,8 @@ angular.module('atlasApp').controller('PlaceCtrl', function(
   $scope,
   $http,
   $q,
-  cfpLoadingBar
+  cfpLoadingBar,
+  LocationProvider
 ) {
 
   /**
@@ -16,9 +17,12 @@ angular.module('atlasApp').controller('PlaceCtrl', function(
 
   $scope.Place = Parse.Object.extend('Place');
 
-  $scope.userLocation = null;
+  // Used to determine whether the user location is turned on or not
+  $scope.userLocationOn = false;
 
-  $scope.locationSuccessful = false;
+  // Used to display user location on the map, initiated along with map
+  $scope.locationProvider = null;
+
   /**
    * Initalizes the Place controller.
    */
@@ -64,6 +68,8 @@ angular.module('atlasApp').controller('PlaceCtrl', function(
       mapCanvas,
       mapOptions
     );
+
+    $scope.locationProvider = new LocationProvider($scope.map);
   };
 
   $scope.plotPlace = function(place) {
@@ -92,44 +98,20 @@ angular.module('atlasApp').controller('PlaceCtrl', function(
     $('#map-canvas').css({height: newHeight});
   };
 
-  $scope.setUserLocationOff = function() {
-    $scope.userLocation.setMarkerOptions({visible:false});
-    $scope.userLocation.setCircleOptions({visible: false});
-    $scope.userLocationOn = false;
-    if ($scope.marker)
-      $scope.map.panTo($scope.marker.getPosition());
-    $scope.map.setOptions({zoom:15});
-  }
-
-  $scope.setUserLocationOn = function() {
-    $scope.userLocation.setMarkerOptions({visible:true});
-    $scope.userLocation.setCircleOptions({visible: true});
-    $scope.userLocationOn = true;
-    $scope.map.panTo($scope.userLocation.getPosition());
-    $scope.map.setOptions({zoom:17});
-  }
-
-  $scope.toggleUserLocation = function($event) {
-    if ($scope.userLocation == null || !$scope.locationSuccessful){
-      $scope.locationSuccessful = false;
-      $scope.userLocation = new GeolocationMarker();
-      $scope.userLocation.setMap($scope.map);
-      google.maps.event.addListenerOnce($scope.userLocation, 'position_changed', function() {
-        $scope.map.panTo(this.getPosition());
-        $scope.map.setOptions({zoom:17});
-        $scope.locationSuccessful = true;
-        $scope.userLocationOn = true;
-        $event.target.text = "Hide My Location";
-        });
+  $scope.toggleUserLocation = function() {
+    if ($scope.userLocationOn) {
+      $scope.locationProvider.hideUserLocation();
+      $scope.locationProvider.stopWatchingUserLocation();
     } else {
-        if ($scope.userLocationOn) {
-            $scope.setUserLocationOff();
-            $event.target.text = "Show My Location";
-        } else {
-            $scope.setUserLocationOn();
-            $event.target.text = "Hide My Location";
-        }
+      $scope.locationProvider.showUserLocation();
+      $scope.locationProvider.startWatchingUserLocation();
+      var position = 
+          $scope.locationProvider.getUserLocation().getPosition();
+      if (position) {
+        $scope.map.panTo(position);
+      }
     }
+    $scope.userLocationOn = !$scope.userLocationOn;
   }
 
   $scope.init();

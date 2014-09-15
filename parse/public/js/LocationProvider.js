@@ -28,7 +28,10 @@ angular.module('atlasApp').factory('LocationProvider', function() {
       return this._userLocation;
     },
 
-    _startWatchingUserLocation: function() {
+    /**
+     * Starts watching and panning to the user location.
+     */
+    startWatchingUserLocation: function() {
       var self = this;
       if (!navigator.geolocation) {
         return;   // Geolocation not supported
@@ -46,20 +49,31 @@ angular.module('atlasApp').factory('LocationProvider', function() {
       }, this.getUserLocation().getPositionOptions());
     },
 
-    _stopWatchingUserLocation: function() {
-      // TODO: Implement this
+    /**
+     * Stops watching the user location.
+     */
+    stopWatchingUserLocation: function() {
+      if (this._watchId == null || !navigator.geolocation) {
+        return;  // Not watching  / Geolocation not supported
+      }
+      navigator.geolocation.clearWatch(this._watchId);
+      this._watchId = null;
     },
 
+    /**
+     * Displays the user location on the provided map
+     */
     showUserLocation: function() {
       this.getUserLocation().setMarkerOptions({visible: true});
       this.getUserLocation().setCircleOptions({visible: true});
-      this._startWatchingUserLocation();
     },
 
+    /**
+     * Hides user location
+     */
     hideUserLocation: function() {
       this.getUserLocation().setMarkerOptions({visible: false});
       this.getUserLocation().setCircleOptions({visible: false});
-      this._stopWatchingUserLocation();
     }
   }
 
