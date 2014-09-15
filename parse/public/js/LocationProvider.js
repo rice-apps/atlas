@@ -29,7 +29,21 @@ angular.module('atlasApp').factory('LocationProvider', function() {
     },
 
     _startWatchingUserLocation: function() {
-      // TODO: Implement this
+      var self = this;
+      if (!navigator.geolocation) {
+        return;   // Geolocation not supported
+      }
+      if (this._watchId != null) {
+        return;   // Already watching
+      }
+      this._watchId = navigator.geolocation.watchPosition(function(position) {
+        var coordinates = new google.maps.LatLng(
+            position.coords.latitude, 
+            position.coords.longitude);
+        self._map.panTo(coordinates);
+      }, function(error) {
+        console.log(error);
+      }, this.getUserLocation().getPositionOptions());
     },
 
     _stopWatchingUserLocation: function() {
@@ -39,11 +53,13 @@ angular.module('atlasApp').factory('LocationProvider', function() {
     showUserLocation: function() {
       this.getUserLocation().setMarkerOptions({visible: true});
       this.getUserLocation().setCircleOptions({visible: true});
+      this._startWatchingUserLocation();
     },
 
     hideUserLocation: function() {
       this.getUserLocation().setMarkerOptions({visible: false});
       this.getUserLocation().setCircleOptions({visible: false});
+      this._stopWatchingUserLocation();
     }
   }
 
