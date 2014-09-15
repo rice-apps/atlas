@@ -6,7 +6,8 @@ angular.module('atlasApp').controller('BusCtrl', function(
     $scope,
     $http,
     $q,
-    cfpLoadingBar
+    cfpLoadingBar,
+    LocationProvider
     ) {
 
     // Bus image we are going to use.
@@ -62,9 +63,8 @@ angular.module('atlasApp').controller('BusCtrl', function(
     $scope.init = function() {
         $scope.resizeView();
         $(window).resize($scope.resizeView);
-        $scope.geoMarker = new GeolocationMarker($scope.map);
         $scope.initializeMap();
-        $scope.showMyLocation();
+        // $scope.showMyLocation();
         // Function to update buses and pull's data every 5 seconds.
         (function tick() {
         $http.get('http://rice-buses.herokuapp.com').success(function (data) {
@@ -102,54 +102,9 @@ angular.module('atlasApp').controller('BusCtrl', function(
         mapCanvas,
         mapOptions
         );
-    }
 
-    // // function that clears input from input box and selects the input.
-    // $scope.clearInput = function() {
-    //     $scope.searchText = "";
-    //     $timeout(function() {
-    //         $('#searchBox').focus();
-    //     });
-    // }
-
-    // function that gets called when the My Location button is clicked, and show the user's locaiton on the map and pans to your location.
-    $scope.showMyLocation = function() {
-        //sets the marker at your location and pans the screen to it.
-        if (navigator.geolocation) navigator.geolocation.getCurrentPosition(function(pos) {
-            var myLoc = new google.maps.LatLng(pos.coords.latitude, pos.coords.longitude);
-            $scope.createPersonMarker(myLoc);
-        }, function(error) {
-            // ...
-        });
-    }
-
-    // function that creates a little marker representing a person/their location.
-    $scope.createPersonMarker = function(latLng) {
-        // Creates the marker to designate the position of a person.
-        var personLocMarker = new google.maps.Marker({
-            clickable: false,
-            icon: new google.maps.MarkerImage('//maps.gstatic.com/mapfiles/mobile/mobileimgs2.png',
-                                                    new google.maps.Size(22,22),
-                                                    new google.maps.Point(0,18),
-                                                    new google.maps.Point(11,11)),
-            shadow: null,
-            zIndex: 999,
-            map: $scope.map
-        });
-
-        personLocMarker.setPosition(latLng);
-        $scope.map.panTo(latLng);
-    }
-
-    // removes a marker on the map for a map element.
-    $scope.removeMarker = function(mapElement) {
-        // check whether we've made the maker yet. If it exists, remove it.
-        var latLng = new google.maps.LatLng(mapElement.location.latitude, mapElement.location.longitude);
-        if (latLng in latLngDict) {
-            // delete marker and entry in latLngDict.
-            $scope.latLngDict[latLng].marker.setMap(null);
-            delete l$scope.atLngDict[latLng];
-        }
+        $scope.locationProvider = new LocationProvider($scope.map);
+        $scope.locationProvider.showUserLocation();
     }
 
 
