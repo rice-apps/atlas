@@ -73,13 +73,13 @@ Parse.Cloud.define("courseAutocomplete", function(request, response) {
 
   query.find().then(function(results) {
       matches = []
-      for result in results:
-        var course_name = result.get("subject") + " " + result.get("courseNumber")
-        if (course_name.indexOf(request.params.query) > -1){
-          matches.append(result)
-        }
-      response.success(matches.slice(0, 5));
-    }, function(error) {
+      // TODO(john): Python code needs to go away
+      // for result in results:
+      //   if result.find(query) >= 0:
+      //     return matches.append(result)
+      // response.success(matches.slice(0, 5));
+    },
+    error: function(error) {
       response.error(error);
     }
   });

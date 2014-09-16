@@ -22,6 +22,10 @@ atlasApp.config(function($routeProvider) {
       templateUrl: '/views/place.html',
       controller: 'PlaceCtrl'
     })
+    .when('/bus', {
+      templateUrl: '/views/bus.html',
+      controller: 'BusCtrl'
+    })
     .otherwise({
       redirectTo: '/'
     });
@@ -29,7 +33,7 @@ atlasApp.config(function($routeProvider) {
 
 atlasApp.run(function($rootScope) {
 
-  var prod = true;
+  var prod = false;
   if (prod) {
     Parse.initialize(
       "Hs7BvAGhMU9B4g757NZ0YAT0kOtxQ1hM78bQGu2y",
