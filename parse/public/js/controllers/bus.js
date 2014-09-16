@@ -43,7 +43,7 @@ angular.module('atlasApp').controller('BusCtrl', function(
     // declare the google map.
     $scope.map;
 
-    $scope.refreshRate = 5000;
+    $scope.refreshRate = 2500;
 
     // init the lat/lng dictionary. Maps a latLng to various things.
     var latLngDict = {};
@@ -73,7 +73,6 @@ angular.module('atlasApp').controller('BusCtrl', function(
         $http.get('http://rice-buses.herokuapp.com').success(function (data) {
             // redraw the buses
             $scope.refreshBuses(data.d);
-            console.log("Pulled in Data");
             setTimeout(tick, $scope.refreshRate);
         });
     })();
@@ -158,6 +157,8 @@ angular.module('atlasApp').controller('BusCtrl', function(
     $scope.createBus = function(sessionID, latLng, type) {
         var image = ''
  
+        console.log("Type is: " + type);
+
         switch(type) {
             case "Graduate Apartments":
                 image = $scope.graduateApartmentsImage;
@@ -177,10 +178,13 @@ angular.module('atlasApp').controller('BusCtrl', function(
             case "Rice Village":
                 image = $scope.riceVillageImage;
                 break;
-            case "Rice Village Apartments":
+            case "Rice Village Apartments\/Greenbriar":
                 image = $scope.riceVillageApartmentsImage;
                 break;
             case "Undergraduate Shopping Shuttle":
+                image = $scope.undergraduateShoppingShuttleImage;
+                break;
+            case "Texas Medical Center\/BRC":
                 image = $scope.undergraduateShoppingShuttleImage;
                 break;
             default:
