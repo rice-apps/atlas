@@ -6,8 +6,10 @@ angular.module('atlasApp').controller('PlaceCtrl', function(
   $scope,
   $http,
   $q,
+  $timeout,
   cfpLoadingBar,
-  LocationProvider
+  LocationProvider,
+  BusInfoProvider
 ) {
 
   /**
@@ -22,6 +24,13 @@ angular.module('atlasApp').controller('PlaceCtrl', function(
 
   // Used to display user location on the map, initiated along with map
   $scope.locationProvider = null;
+
+  // This tells us if the user wants to see the bus info
+  $scope.busInfoWanted = false;
+
+  $scope.busInfoProvider = null;
+
+  $scope.refreshThemBuses = null;
 
   /**
    * Initalizes the Place controller.
@@ -70,6 +79,9 @@ angular.module('atlasApp').controller('PlaceCtrl', function(
     );
 
     $scope.locationProvider = new LocationProvider($scope.map);
+
+    // Instantiating the Bus Info Provider with a map.
+    $scope.busInfoProvider = new BusInfoProvider($scope.map);
   };
 
   $scope.plotPlace = function(place) {
@@ -112,7 +124,23 @@ angular.module('atlasApp').controller('PlaceCtrl', function(
       }
     }
     $scope.userLocationOn = !$scope.userLocationOn;
-  }
+  };
+
+  $scope.toggleBusLocation = function() {
+    if ($scope.busInfoWanted) {
+      $timeout.cancel($scope.refreshThemBuses);
+      $scope.busInfoProvider.stopDrawingBusInfo();
+    } else {
+        $scope.refreshThemBuses = $timeout(function myFunction() {
+          console.log('Inside refreshThemBuses Func.');
+          $http.get('http://rice-buses.herokuapp.com').success(function (data) {
+            $scope.busInfoProvider.refreshBuses(data.d);
+            $scope.refreshThemBuses = $timeout(myFunction, 2000);
+          },2000);
+        });
+    }
+    $scope.busInfoWanted = !$scope.busInfoWanted;
+  };
 
   $scope.init();
 
