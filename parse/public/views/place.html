@@ -1,9 +1,17 @@
 <div id="toolbar" class="panel panel-default">
-    <a ng-click="toggleUserLocation()" class="btn btn-default" type="button">
-        {{ userLocationOn == true ?  "Hide My Location" : "Show My Location" }}
+    <a 
+      ng-click="toggleUserLocation()"
+      class="btn {{ userLocationOn == true ? 'btn-success' : 'btn-default' }}" 
+      type="button">
+        {{ userLocationOn == true ?  
+            "Hide My Location" : "Show My Location" }}
     </a>
-    <a ng-click="toggleBusLocation()" class="btn btn-default" type="button">
-        {{ busInfoWanted == true ?  "Hide Bus Info" : "Show Live Buses" }}
+    <a 
+      ng-click="toggleBusLocation()"
+      class="btn btn-default {{ busInfoOn == true ? 'btn-success' : 'btn-default' }}"
+      type="button">
+        {{ busInfoOn == true ?
+            "Hide Bus Info" : "Show Live Buses" }}
     </a>
 </div>
 
