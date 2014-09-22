@@ -4,6 +4,7 @@ var atlasApp = angular.module('atlasApp', [
   'ngRoute',
   'ui.bootstrap',
   'cfp.loadingBar',
+  'angular-ladda',
   'angulartics',
   'angulartics.google.analytics'
 ]);
