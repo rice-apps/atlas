@@ -6,6 +6,7 @@ angular.module('atlasApp').controller('BusCtrl', function(
     $scope,
     $http,
     $q,
+    $timeout,
     cfpLoadingBar,
     LocationProvider
     ) {
@@ -59,6 +60,8 @@ angular.module('atlasApp').controller('BusCtrl', function(
 
     // Used to determine whether the user location is turned on or not
     $scope.userLocationOn = false;
+
+    $scope.userLocationLoading = false;
 
     /**
     * Initalizes the Bus controller.
@@ -253,23 +256,50 @@ angular.module('atlasApp').controller('BusCtrl', function(
         }
     }
 
-
-
     $scope.toggleUserLocation = function() {
-        if ($scope.userLocationOn) {
-            $scope.locationProvider.hideUserLocation();
-            $scope.locationProvider.stopWatchingUserLocation();
-        } else {
-            $scope.locationProvider.showUserLocation();
-            $scope.locationProvider.startWatchingUserLocation();
-            var position = 
-                    $scope.locationProvider.getUserLocation().getPosition();
-            if (position) {
-                $scope.map.panTo(position);
-            }
-        }
-        $scope.userLocationOn = !$scope.userLocationOn;
-    }
+      if ($scope.userLocationOn) {
+        $scope.locationProvider.hideUserLocation();
+        $scope.locationProvider.stopWatchingUserLocation();
+        $scope.userLocationOn = false;
+        return;
+      } 
+
+      $scope.userLocationLoading = true;
+
+      var position =
+          $scope.locationProvider.getUserLocation().getPosition();
+      if (position) {
+        $timeout(function() {
+          $scope.map.panTo(position);
+          $scope.userLocationLoading = false;
+          $scope.userLocationOn = true;
+          $scope.locationProvider.showUserLocation();
+        }, 1000);
+      } else {
+        $scope.locationProvider.startWatchingUserLocation()
+            .then(function(coordinates) {
+              $scope.userLocationLoading = false;
+              $scope.userLocationOn = true;
+              $scope.map.panTo(coordinates);
+            });
+      }
+    };
+
+    // $scope.toggleUserLocation = function() {
+    //     if ($scope.userLocationOn) {
+    //         $scope.locationProvider.hideUserLocation();
+    //         $scope.locationProvider.stopWatchingUserLocation();
+    //     } else {
+    //         $scope.locationProvider.showUserLocation();
+    //         $scope.locationProvider.startWatchingUserLocation();
+    //         var position = 
+    //                 $scope.locationProvider.getUserLocation().getPosition();
+    //         if (position) {
+    //             $scope.map.panTo(position);
+    //         }
+    //     }
+    //     $scope.userLocationOn = !$scope.userLocationOn;
+    // }
 
     $scope.init();
 

@@ -4,7 +4,7 @@
  * A utility class that obtains user location from browser and plots it on the 
  * map.
  */
-angular.module('atlasApp').factory('LocationProvider', function() {
+angular.module('atlasApp').factory('LocationProvider', function($q) {
   /**
    * Instantiates a LocationProvider.
    * Parameters:
@@ -32,21 +32,26 @@ angular.module('atlasApp').factory('LocationProvider', function() {
      * Starts watching and panning to the user location.
      */
     startWatchingUserLocation: function() {
+      var deferred = $q.defer();
       var self = this;
       if (!navigator.geolocation) {
+        deferred.reject('Geolocation not supported.');
         return;   // Geolocation not supported
       }
       if (this._watchId != null) {
+        deferred.reject('Already watching location.');
         return;   // Already watching
       }
       this._watchId = navigator.geolocation.watchPosition(function(position) {
         var coordinates = new google.maps.LatLng(
             position.coords.latitude, 
             position.coords.longitude);
-        self._map.panTo(coordinates);
+        deferred.resolve(coordinates);
       }, function(error) {
         console.log(error);
+        deferred.reject(error);
       }, this.getUserLocation().getPositionOptions());
+      return deferred.promise;
     },
 
     /**
