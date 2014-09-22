@@ -6,7 +6,10 @@ angular.module('atlasApp').controller('PlaceCtrl', function(
   $scope,
   $http,
   $q,
-  cfpLoadingBar
+  $timeout,
+  cfpLoadingBar,
+  LocationProvider,
+  BusInfoProvider
 ) {
 
   /**
@@ -16,9 +19,23 @@ angular.module('atlasApp').controller('PlaceCtrl', function(
 
   $scope.Place = Parse.Object.extend('Place');
 
-  $scope.userLocation = null;
+  // Used to determine whether the user location is turned on or not
+  $scope.userLocationOn = false;
 
-  $scope.locationSuccessful = false;
+  $scope.userLocationLoading = false;
+
+  // Used to display user location on the map, initiated along with map
+  $scope.locationProvider = null;
+
+  // This tells us if the user wants to see the bus info
+  $scope.busInfoOn = false;
+
+  $scope.busInfoLoading = false;
+
+  $scope.busInfoProvider = null;
+
+  $scope.refreshThemBuses = null;
+
   /**
    * Initalizes the Place controller.
    */
@@ -64,6 +81,11 @@ angular.module('atlasApp').controller('PlaceCtrl', function(
       mapCanvas,
       mapOptions
     );
+
+    $scope.locationProvider = new LocationProvider($scope.map);
+
+    // Instantiating the Bus Info Provider with a map.
+    $scope.busInfoProvider = new BusInfoProvider($scope.map);
   };
 
   $scope.plotPlace = function(place) {
@@ -92,45 +114,52 @@ angular.module('atlasApp').controller('PlaceCtrl', function(
     $('#map-canvas').css({height: newHeight});
   };
 
-  $scope.setUserLocationOff = function() {
-    $scope.userLocation.setMarkerOptions({visible:false});
-    $scope.userLocation.setCircleOptions({visible: false});
-    $scope.userLocationOn = false;
-    if ($scope.marker)
-      $scope.map.panTo($scope.marker.getPosition());
-    $scope.map.setOptions({zoom:15});
-  }
+  $scope.toggleUserLocation = function() {
+    if ($scope.userLocationOn) {
+      $scope.locationProvider.hideUserLocation();
+      $scope.locationProvider.stopWatchingUserLocation();
+      $scope.userLocationOn = false;
+      return;
+    } 
 
-  $scope.setUserLocationOn = function() {
-    $scope.userLocation.setMarkerOptions({visible:true});
-    $scope.userLocation.setCircleOptions({visible: true});
-    $scope.userLocationOn = true;
-    $scope.map.panTo($scope.userLocation.getPosition());
-    $scope.map.setOptions({zoom:17});
-  }
+    $scope.userLocationLoading = true;
 
-  $scope.toggleUserLocation = function($event) {
-    if ($scope.userLocation == null || !$scope.locationSuccessful){
-      $scope.locationSuccessful = false;
-      $scope.userLocation = new GeolocationMarker();
-      $scope.userLocation.setMap($scope.map);
-      google.maps.event.addListenerOnce($scope.userLocation, 'position_changed', function() {
-        $scope.map.panTo(this.getPosition());
-        $scope.map.setOptions({zoom:17});
-        $scope.locationSuccessful = true;
+    var position =
+        $scope.locationProvider.getUserLocation().getPosition();
+    if (position) {
+      $timeout(function() {
+        $scope.map.panTo(position);
+        $scope.userLocationLoading = false;
         $scope.userLocationOn = true;
-        $event.target.text = "Hide My Location";
-        });
+        $scope.locationProvider.showUserLocation();
+      }, 1000);
     } else {
-        if ($scope.userLocationOn) {
-            $scope.setUserLocationOff();
-            $event.target.text = "Show My Location";
-        } else {
-            $scope.setUserLocationOn();
-            $event.target.text = "Hide My Location";
-        }
+      $scope.locationProvider.startWatchingUserLocation()
+          .then(function(coordinates) {
+            $scope.userLocationLoading = false;
+            $scope.userLocationOn = true;
+            $scope.map.panTo(coordinates);
+          });
     }
-  }
+  };
+
+  $scope.toggleBusLocation = function() {
+    if ($scope.busInfoOn) {
+      $timeout.cancel($scope.getBusInfo);
+      $scope.busInfoProvider.stopDrawingBusInfo();
+      $scope.busInfoOn = false;
+    } else {
+      $scope.busInfoLoading = true;
+      $scope.getBusInfo = $timeout(function myFunction() {
+        $http.get('http://rice-buses.herokuapp.com').success(function (data) {
+          $scope.busInfoLoading = false;
+          $scope.busInfoOn = true;
+          $scope.busInfoProvider.refreshBuses(data.d);
+          $scope.getBusInfo = $timeout(myFunction, 2000);
+        }, 2000);
+      });
+    }
+  };
 
   $scope.init();
 

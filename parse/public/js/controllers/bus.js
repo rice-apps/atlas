@@ -6,7 +6,9 @@ angular.module('atlasApp').controller('BusCtrl', function(
     $scope,
     $http,
     $q,
-    cfpLoadingBar
+    $timeout,
+    cfpLoadingBar,
+    LocationProvider
     ) {
 
     // Bus image we are going to use.
@@ -42,7 +44,7 @@ angular.module('atlasApp').controller('BusCtrl', function(
     // declare the google map.
     $scope.map;
 
-    $scope.refreshRate = 5000;
+    $scope.refreshRate = 2500;
 
     // init the lat/lng dictionary. Maps a latLng to various things.
     var latLngDict = {};
@@ -56,21 +58,24 @@ angular.module('atlasApp').controller('BusCtrl', function(
     // init the list for bus data.
     $scope.buses = [];
 
+    // Used to determine whether the user location is turned on or not
+    $scope.userLocationOn = false;
+
+    $scope.userLocationLoading = false;
+
     /**
     * Initalizes the Bus controller.
     */
     $scope.init = function() {
         $scope.resizeView();
         $(window).resize($scope.resizeView);
-        $scope.geoMarker = new GeolocationMarker($scope.map);
         $scope.initializeMap();
-        $scope.showMyLocation();
+        // $scope.showMyLocation();
         // Function to update buses and pull's data every 5 seconds.
         (function tick() {
         $http.get('http://rice-buses.herokuapp.com').success(function (data) {
             // redraw the buses
             $scope.refreshBuses(data.d);
-            console.log("Pulled in Data");
             setTimeout(tick, $scope.refreshRate);
         });
     })();
@@ -102,54 +107,8 @@ angular.module('atlasApp').controller('BusCtrl', function(
         mapCanvas,
         mapOptions
         );
-    }
 
-    // // function that clears input from input box and selects the input.
-    // $scope.clearInput = function() {
-    //     $scope.searchText = "";
-    //     $timeout(function() {
-    //         $('#searchBox').focus();
-    //     });
-    // }
-
-    // function that gets called when the My Location button is clicked, and show the user's locaiton on the map and pans to your location.
-    $scope.showMyLocation = function() {
-        //sets the marker at your location and pans the screen to it.
-        if (navigator.geolocation) navigator.geolocation.getCurrentPosition(function(pos) {
-            var myLoc = new google.maps.LatLng(pos.coords.latitude, pos.coords.longitude);
-            $scope.createPersonMarker(myLoc);
-        }, function(error) {
-            // ...
-        });
-    }
-
-    // function that creates a little marker representing a person/their location.
-    $scope.createPersonMarker = function(latLng) {
-        // Creates the marker to designate the position of a person.
-        var personLocMarker = new google.maps.Marker({
-            clickable: false,
-            icon: new google.maps.MarkerImage('//maps.gstatic.com/mapfiles/mobile/mobileimgs2.png',
-                                                    new google.maps.Size(22,22),
-                                                    new google.maps.Point(0,18),
-                                                    new google.maps.Point(11,11)),
-            shadow: null,
-            zIndex: 999,
-            map: $scope.map
-        });
-
-        personLocMarker.setPosition(latLng);
-        $scope.map.panTo(latLng);
-    }
-
-    // removes a marker on the map for a map element.
-    $scope.removeMarker = function(mapElement) {
-        // check whether we've made the maker yet. If it exists, remove it.
-        var latLng = new google.maps.LatLng(mapElement.location.latitude, mapElement.location.longitude);
-        if (latLng in latLngDict) {
-            // delete marker and entry in latLngDict.
-            $scope.latLngDict[latLng].marker.setMap(null);
-            delete l$scope.atLngDict[latLng];
-        }
+        $scope.locationProvider = new LocationProvider($scope.map);
     }
 
 
@@ -201,6 +160,8 @@ angular.module('atlasApp').controller('BusCtrl', function(
     $scope.createBus = function(sessionID, latLng, type) {
         var image = ''
  
+        console.log("Type is: " + type);
+
         switch(type) {
             case "Graduate Apartments":
                 image = $scope.graduateApartmentsImage;
@@ -220,10 +181,13 @@ angular.module('atlasApp').controller('BusCtrl', function(
             case "Rice Village":
                 image = $scope.riceVillageImage;
                 break;
-            case "Rice Village Apartments":
+            case "Rice Village Apartments\/Greenbriar":
                 image = $scope.riceVillageApartmentsImage;
                 break;
             case "Undergraduate Shopping Shuttle":
+                image = $scope.undergraduateShoppingShuttleImage;
+                break;
+            case "Texas Medical Center\/BRC":
                 image = $scope.undergraduateShoppingShuttleImage;
                 break;
             default:
@@ -291,6 +255,51 @@ angular.module('atlasApp').controller('BusCtrl', function(
             $scope.latLngToBusDict[latLng]['infoWindow'].close();
         }
     }
+
+    $scope.toggleUserLocation = function() {
+      if ($scope.userLocationOn) {
+        $scope.locationProvider.hideUserLocation();
+        $scope.locationProvider.stopWatchingUserLocation();
+        $scope.userLocationOn = false;
+        return;
+      } 
+
+      $scope.userLocationLoading = true;
+
+      var position =
+          $scope.locationProvider.getUserLocation().getPosition();
+      if (position) {
+        $timeout(function() {
+          $scope.map.panTo(position);
+          $scope.userLocationLoading = false;
+          $scope.userLocationOn = true;
+          $scope.locationProvider.showUserLocation();
+        }, 1000);
+      } else {
+        $scope.locationProvider.startWatchingUserLocation()
+            .then(function(coordinates) {
+              $scope.userLocationLoading = false;
+              $scope.userLocationOn = true;
+              $scope.map.panTo(coordinates);
+            });
+      }
+    };
+
+    // $scope.toggleUserLocation = function() {
+    //     if ($scope.userLocationOn) {
+    //         $scope.locationProvider.hideUserLocation();
+    //         $scope.locationProvider.stopWatchingUserLocation();
+    //     } else {
+    //         $scope.locationProvider.showUserLocation();
+    //         $scope.locationProvider.startWatchingUserLocation();
+    //         var position = 
+    //                 $scope.locationProvider.getUserLocation().getPosition();
+    //         if (position) {
+    //             $scope.map.panTo(position);
+    //         }
+    //     }
+    //     $scope.userLocationOn = !$scope.userLocationOn;
+    // }
 
     $scope.init();
 
