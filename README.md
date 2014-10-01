@@ -1,11 +1,11 @@
-Interactive Rice Map
-====================
+Atlas
+=====
 
 Welcome to the interactive Rice map, brought to you by Rice Apps!
 
 -------------------------------------------
 
-Rice Map's mission is to provide students at Rice with useful campus information such as building locations, classes, places to eat, parking, etc.
+Atlas' mission is to provide students at Rice with useful campus information such as building locations, classes, places to eat, parking, etc.
 
 Team Members:
 - Abdul Hadi Tabani
@@ -16,7 +16,6 @@ Team Members:
 Currently, we are developing a platform-independent back-end that provides accurate campus data. 
 
 The back-end will be implemented in Parse to minimize coding efforts and have access to native SDKs for Android, iOS, JavaScript, Unity and more.
-
 
 General Use Cases We Hope to Support:
 - User enters class name to get location of class
