@@ -66,53 +66,62 @@ angular.module('atlasApp').controller('PlaceCtrl', function(
   /**
    * Initializes the Google Maps canvas
    */
-  $scope.initMap = function () {
-    console.log('Initializing');
-    var mapOptions = {
-      zoom: 15,
-      center: $scope.mapCenter,
-      mapTypeId: google.maps.MapTypeId.ROADMAP,
-      disableDefaultUI: true,
-    };
+  // $scope.initMap = function () {
+  //   console.log('Initializing');
+  //   var mapOptions = {
+  //     zoom: 15,
+  //     center: $scope.mapCenter,
+  //     mapTypeId: google.maps.MapTypeId.ROADMAP,
+  //     disableDefaultUI: true,
+  //   };
 
-    var mapCanvas = document.getElementById('map-canvas');
+  //   var mapCanvas = document.getElementById('map-canvas');
 
-    $scope.map = new google.maps.Map(
-      mapCanvas,
-      mapOptions
-    );
+  //   $scope.map = new google.maps.Map(
+  //     mapCanvas,
+  //     mapOptions
+  //   );
 
-    $scope.locationProvider = new LocationProvider($scope.map);
+  //   $scope.locationProvider = new LocationProvider($scope.map);
 
-    // Instantiating the Bus Info Provider with a map.
-    $scope.busInfoProvider = new BusInfoProvider($scope.map);
-  };
+  //   // Instantiating the Bus Info Provider with a map.
+  //   $scope.busInfoProvider = new BusInfoProvider($scope.map);
+  // };
+
+  // $scope.plotPlace = function(place) {
+  //   var position = new google.maps.LatLng(
+  //     place.get('location').latitude,
+  //     place.get('location').longitude
+  //   );
+
+  //   $scope.marker = new google.maps.Marker({
+  //     position: position,
+  //     map: $scope.map,
+  //     title: place.get('name')
+  //   });
+  //   $scope.map.setCenter(position);
+  // };
 
   $scope.plotPlace = function(place) {
-    var position = new google.maps.LatLng(
+    MapsService.plotMarker(
       place.get('location').latitude,
-      place.get('location').longitude
+      place.get('location').longitude,
+      place.get('name')
     );
-
-    $scope.marker = new google.maps.Marker({
-      position: position,
-      map: $scope.map,
-      title: place.get('name')
-    });
-    $scope.map.setCenter(position);
   };
 
-  /**
-   * Resizes the view to fit within the bounds of the screen.
-   */
-  $scope.resizeView = function() {
-    var newHeight = 
-      $(window).height() 
-      - $('div.navbar').height() 
-      - 90
-      - $('#toolbar').height();
-    $('#map-canvas').css({height: newHeight});
-  };
+
+  // /**
+  //  * Resizes the view to fit within the bounds of the screen.
+  //  */
+  // $scope.resizeView = function() {
+  //   var newHeight = 
+  //     $(window).height() 
+  //     - $('div.navbar').height() 
+  //     - 90
+  //     - $('#toolbar').height();
+  //   $('#map-canvas').css({height: newHeight});
+  // };
 
   $scope.toggleUserLocation = function() {
     if ($scope.userLocationOn) {
