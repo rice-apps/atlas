@@ -50,12 +50,15 @@
 <div id="info-bar" class="well">
   <span class="pull-left glyphicon glyphicon-map-marker"></span>
   <div class="media-body">
-    <h4 class="media-heading"> <a ng-href="{{ place.attributes.url}}" > {{ place.attributes.name }} </a> </h4>
+    <h4 class="media-heading">{{ place.attributes.name }}</h4>
     <span 
       class="label label-default"
       ng-repeat="type in place.attributes.types"
     >
       {{ type }}
+    </span>
+    <span class="url-link" ng-show="{{place.attributes.url}}.length">
+        <a ng-href="{{ place.attributes.url }}" >{{ place.attributes.url }}</a>
     </span>
   </div>
 </div>
