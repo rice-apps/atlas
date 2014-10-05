@@ -22,6 +22,9 @@ angular.module('atlasApp').controller('MainCtrl', function(
     // return places + courses
   };
 
+  /**
+   * Google Analytics for Autocomplete
+   */
   $scope.onAutocompleteSelect = function(item, model, label, from) {
     $analytics.eventTrack(
       'Click Autocomplete Suggestion from ' + from,
@@ -30,16 +33,6 @@ angular.module('atlasApp').controller('MainCtrl', function(
     $scope.search(model.id);
   }
   
-  /**
-   * Google Analytics for Click Url to Place
-   */
-  $scope.clickLinkToPlace = function(item, model, label) {
-    $analytics.eventTrack(
-      'Click link to Place',
-      { category: 'Result' }
-    );
-  }
-
   /**
    * Used to request a search with the provided query
    */
