@@ -8,7 +8,7 @@ angular.module('atlasApp').service('MapsService', function(
         /**
 	    * Initializes the Google Maps canvas
 	    */
-	    this.initMap = function () {
+	    initMap: function () {
 		    console.log('Initializing');
 		    var mapOptions = {
 		      zoom: 15,
@@ -31,7 +31,7 @@ angular.module('atlasApp').service('MapsService', function(
 	    };
 
 
-	    this.plotMarker = function(lat, lng, name) {
+	    plotMarker: function(lat, lng, name) {
 		    var position = new google.maps.LatLng(lat, lng);
 
 		    $scope.marker = new google.maps.Marker({
@@ -45,7 +45,7 @@ angular.module('atlasApp').service('MapsService', function(
 		/**
 		 * Resizes the view to fit within the bounds of the screen.
 		 */
-		this.resizeView = function() {
+		resizeView: function() {
 			var newHeight = 
 			$(window).height() 
 				- $('div.navbar').height() 
@@ -55,7 +55,7 @@ angular.module('atlasApp').service('MapsService', function(
 		};
 
 
-		this.clearMap = function() {};
+		clearMap: function() {};
 
     };
 });
