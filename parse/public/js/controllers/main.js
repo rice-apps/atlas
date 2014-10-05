@@ -29,6 +29,16 @@ angular.module('atlasApp').controller('MainCtrl', function(
     );
     $scope.search(model.id);
   }
+  
+  /**
+   * Google Analytics for Click Url to Place
+   */
+  $scope.clickLinkToPlace = function(item, model, label) {
+    $analytics.eventTrack(
+      'Click link to Place',
+      { category: 'Result' }
+    );
+  }
 
   /**
    * Used to request a search with the provided query

@@ -53,7 +53,15 @@
     <h4 class="media-heading">
 
     <span class="url-link" ng-show="place.attributes.url != undefines">
-        <a ng-href="{{ place.attributes.url }}" class="nav nav-pills">{{ place.attributes.name}} <span id="side-note" class="glyphicon glyphicon-hand-left"></span></a>
+        <a 
+          ng-href="{{ place.attributes.url }}" 
+          class="nav nav-pills" 
+          analytics-on="click"
+          analytics-event="Click link to Place"
+          analytics-category="Result"
+          ng-click="clickLinkToPlace($item, $model, $label)">
+        {{ place.attributes.name}} <span id="side-note" class="glyphicon glyphicon-hand-left"></span>
+        </a>
     </span>
 
     <span ng-show="place.attributes.url === undefines">
