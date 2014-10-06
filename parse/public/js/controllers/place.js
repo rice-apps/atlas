@@ -9,13 +9,13 @@ angular.module('atlasApp').controller('PlaceCtrl', function(
   $timeout,
   cfpLoadingBar,
   LocationProvider,
-  BusInfoProvider
+  BusInfoProvider,
+  MapsService
 ) {
 
   /**
    * The map center coordinates of Rice University.
    */
-  $scope.mapCenter = new google.maps.LatLng(29.717384, -95.403171);
 
   $scope.Place = Parse.Object.extend('Place');
 
@@ -40,9 +40,9 @@ angular.module('atlasApp').controller('PlaceCtrl', function(
    * Initalizes the Place controller.
    */
   $scope.init = function() {
-    $scope.resizeView();
-    $(window).resize($scope.resizeView);
-    $scope.initMap();
+    MapsService.resizeView();
+    $(window).resize(MapsService.resizeView);
+    MapsService.initMap();
 
     // Fetch the place from Parse
     var placeID = $routeParams.placeID
@@ -60,6 +60,11 @@ angular.module('atlasApp').controller('PlaceCtrl', function(
         console.log(error);
       });
     }
+
+    $scope.locationProvider = new LocationProvider();
+
+    // Instantiating the Bus Info Provider with a map.
+    $scope.busInfoProvider = new BusInfoProvider();
 
   }
 
@@ -137,7 +142,7 @@ angular.module('atlasApp').controller('PlaceCtrl', function(
         $scope.locationProvider.getUserLocation().getPosition();
     if (position) {
       $timeout(function() {
-        $scope.map.panTo(position);
+        MapsService.map.panTo(position);
         $scope.userLocationLoading = false;
         $scope.userLocationOn = true;
         $scope.locationProvider.showUserLocation();
@@ -147,7 +152,7 @@ angular.module('atlasApp').controller('PlaceCtrl', function(
           .then(function(coordinates) {
             $scope.userLocationLoading = false;
             $scope.userLocationOn = true;
-            $scope.map.panTo(coordinates);
+            MapsService.map.panTo(coordinates);
           });
     }
   };

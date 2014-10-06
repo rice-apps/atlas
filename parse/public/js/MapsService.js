@@ -1,10 +1,10 @@
 angular.module('atlasApp').service('MapsService', function(
 	$scope, 
-	$http,
-	LocationProvider,
-	BusInfoProvider
+	$http
 ) {
     return {
+
+    	var self = this;
         /**
 	    * Initializes the Google Maps canvas
 	    */
@@ -19,27 +19,22 @@ angular.module('atlasApp').service('MapsService', function(
 
 		    var mapCanvas = document.getElementById('map-canvas');
 
-		    $scope.map = new google.maps.Map(
+		    self.map = new google.maps.Map(
 		      mapCanvas,
 		      mapOptions
 		    );
-
-		    $scope.locationProvider = new LocationProvider($scope.map);
-
-		    // Instantiating the Bus Info Provider with a map.
-		    $scope.busInfoProvider = new BusInfoProvider($scope.map);
 	    };
 
 
 	    plotMarker: function(lat, lng, name) {
 		    var position = new google.maps.LatLng(lat, lng);
 
-		    $scope.marker = new google.maps.Marker({
+		    self.marker = new google.maps.Marker({
 		      position: position,
 		      map: $scope.map,
 		      title: name
 		    });
-		    $scope.map.setCenter(position);
+		    self.map.setCenter(position);
 		};
 
 		/**
