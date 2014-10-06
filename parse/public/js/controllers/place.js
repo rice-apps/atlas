@@ -56,6 +56,7 @@ angular.module('atlasApp').controller('PlaceCtrl', function(
         $scope.$apply();
         $('title').text('Atlas - ' + place.get('name'));
         $scope.plotPlace(place);
+        $analytics.eventTrack(place.get('name'), { category: 'Place'});
       }, function(error) {
         alert("Error: " + error.message);
         console.log(error);
