@@ -10,9 +10,9 @@ angular.module('atlasApp').factory('BusInfoProvider', function() {
    * Parameters:
    *   map{google.maps.Map}: The map to plot Bus location on
    */
-  function BusInfoProvider() {
+  function BusInfoProvider(map) {
     console.log("Bus Info Provider instantiated");
-    this._map = MapsService.initMap();
+    this._map = map;
 
     // Bus image we are going to use.
     this.graduateApartmentsShoppingShuttleImage = "img/buses/Graduate Apartments Shopping Shuttle.png";

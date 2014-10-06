@@ -34,8 +34,6 @@ atlasApp.config(function($routeProvider) {
 
 atlasApp.run(function($rootScope, MapsService) {
 
-  MapsService.initMap();
-
   var prod = false;
   if (prod) {
     Parse.initialize(

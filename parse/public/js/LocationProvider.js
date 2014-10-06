@@ -4,15 +4,15 @@
  * A utility class that obtains user location from browser and plots it on the 
  * map.
  */
-angular.module('atlasApp').factory('LocationProvider', function($q, MapsService) {
+angular.module('atlasApp').factory('LocationProvider', function($q) {
   /**
    * Instantiates a LocationProvider.
    * Parameters:
    *   map{google.maps.Map}: The map to plot user location on
    */
-  function LocationProvider() {
+  function LocationProvider(map) {
     console.log("Location Provider instantiated");
-    this._map = MapsService.initMap();
+    this._map = map;
   }
 
   LocationProvider.prototype = {

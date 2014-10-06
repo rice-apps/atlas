@@ -46,15 +46,11 @@ angular.module('atlasApp').service('MapsService', function(
     return position;
   };
 
+
   /**
    * Resizes the view to fit within the bounds of the screen.
    */
-  MapsService.resizeView = function() {
-    var newHeight = 
-    $(window).height() 
-      - $('div.navbar').height() 
-      - 90
-      - $('#toolbar').height();
+  MapsService.setMapHeight = function(newHeight) {
     $('#map-canvas').css({height: newHeight});
   };
 
