@@ -32,7 +32,7 @@ atlasApp.config(function($routeProvider) {
     });
 });
 
-atlasApp.run(function($rootScope) {
+atlasApp.run(function($rootScope, MapsService) {
 
   var prod = false;
   if (prod) {
