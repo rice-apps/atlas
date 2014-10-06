@@ -1,5 +1,4 @@
 angular.module('atlasApp').service('MapsService', function(
-  $scope, 
   $http
 ) {
   var MapsService = {};
@@ -21,7 +20,7 @@ angular.module('atlasApp').service('MapsService', function(
     MapsService.mapCanvas = document.getElementById('map-canvas');
 
     MapsService.map = new google.maps.Map(
-      mapCanvas,
+      MapsService.mapCanvas,
       mapOptions
     );
   };
