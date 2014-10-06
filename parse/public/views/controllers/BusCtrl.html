@@ -1,0 +1,18 @@
+<div id="toolbar" class="panel panel-default">
+  <a 
+    ng-click="toggleUserLocation()"
+    ladda="userLocationLoading"
+    data-style="expand-left"
+    class="btn btn-primary">
+      {{ userLocationOn == true ?  "Hide My Location" : "Show My Location" }}
+  </a>
+</div>
+
+
+<search-bar 
+  query="searchQuery" 
+  results="searchResults" 
+  overlay="true">
+</search-bar>
+
+<div id="map-canvas"></div>

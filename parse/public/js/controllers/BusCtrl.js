@@ -7,6 +7,7 @@ angular.module('atlasApp').controller('BusCtrl', function(
     $http,
     $q,
     $timeout,
+    $analytics,
     cfpLoadingBar,
     LocationProvider
     ) {
@@ -261,6 +262,10 @@ angular.module('atlasApp').controller('BusCtrl', function(
         $scope.locationProvider.hideUserLocation();
         $scope.locationProvider.stopWatchingUserLocation();
         $scope.userLocationOn = false;
+        $analytics.eventTrack(
+          'Turned Off',
+          { category: 'User Location' }
+        );
         return;
       } 
 
@@ -283,24 +288,17 @@ angular.module('atlasApp').controller('BusCtrl', function(
               $scope.map.panTo(coordinates);
             });
       }
+      $analytics.eventTrack(
+        'Turned On',
+        { category: 'User Location' }
+      );
     };
 
-    // $scope.toggleUserLocation = function() {
-    //     if ($scope.userLocationOn) {
-    //         $scope.locationProvider.hideUserLocation();
-    //         $scope.locationProvider.stopWatchingUserLocation();
-    //     } else {
-    //         $scope.locationProvider.showUserLocation();
-    //         $scope.locationProvider.startWatchingUserLocation();
-    //         var position = 
-    //                 $scope.locationProvider.getUserLocation().getPosition();
-    //         if (position) {
-    //             $scope.map.panTo(position);
-    //         }
-    //     }
-    //     $scope.userLocationOn = !$scope.userLocationOn;
-    // }
-
+    $analytics.eventTrack(
+        'Button Displayed',
+        { category: 'User Location' }
+    );
+    
     $scope.init();
 
 });

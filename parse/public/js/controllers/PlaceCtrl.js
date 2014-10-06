@@ -7,15 +7,16 @@ angular.module('atlasApp').controller('PlaceCtrl', function(
   $http,
   $q,
   $timeout,
+  $analytics,
   cfpLoadingBar,
   LocationProvider,
-  BusInfoProvider
+  BusInfoProvider,
+  MapsService
 ) {
 
   /**
    * The map center coordinates of Rice University.
    */
-  $scope.mapCenter = new google.maps.LatLng(29.717384, -95.403171);
 
   $scope.Place = Parse.Object.extend('Place');
 
@@ -40,9 +41,16 @@ angular.module('atlasApp').controller('PlaceCtrl', function(
    * Initalizes the Place controller.
    */
   $scope.init = function() {
-    $scope.resizeView();
-    $(window).resize($scope.resizeView);
-    $scope.initMap();
+
+    MapsService.initMap();
+    $(window).resize(function() {
+      var newHeight = 
+      $(window).height() 
+        - $('div.navbar').height() 
+        - 90
+        - $('#toolbar').height();
+      MapsService.setMapHeight(newHeight);
+    });
 
     // Fetch the place from Parse
     var placeID = $routeParams.placeID
@@ -50,75 +58,44 @@ angular.module('atlasApp').controller('PlaceCtrl', function(
       var query = new Parse.Query($scope.Place);
       query.get(placeID).then(function(place) {
         console.log(place);
-        window.place = place;
         $scope.place = place;
         $scope.$apply();
         $('title').text('Atlas - ' + place.get('name'));
         $scope.plotPlace(place);
+        $analytics.eventTrack(place.get('name'), { category: 'Place'});
       }, function(error) {
         alert("Error: " + error.message);
         console.log(error);
       });
     }
 
-  }
-
-  /**
-   * Initializes the Google Maps canvas
-   */
-  $scope.initMap = function () {
-    console.log('Initializing');
-    var mapOptions = {
-      zoom: 15,
-      center: $scope.mapCenter,
-      mapTypeId: google.maps.MapTypeId.ROADMAP,
-      disableDefaultUI: true,
-    };
-
-    var mapCanvas = document.getElementById('map-canvas');
-
-    $scope.map = new google.maps.Map(
-      mapCanvas,
-      mapOptions
-    );
-
-    $scope.locationProvider = new LocationProvider($scope.map);
+    $scope.locationProvider = new LocationProvider(MapsService.getMap());
 
     // Instantiating the Bus Info Provider with a map.
-    $scope.busInfoProvider = new BusInfoProvider($scope.map);
-  };
+    $scope.busInfoProvider = new BusInfoProvider(MapsService.getMap());
+
+  }
+
+ 
 
   $scope.plotPlace = function(place) {
-    var position = new google.maps.LatLng(
+    MapsService.plotMarker(
       place.get('location').latitude,
-      place.get('location').longitude
+      place.get('location').longitude,
+      place.get('name')
     );
-
-    $scope.marker = new google.maps.Marker({
-      position: position,
-      map: $scope.map,
-      title: place.get('name')
-    });
-    $scope.map.setCenter(position);
   };
 
-  /**
-   * Resizes the view to fit within the bounds of the screen.
-   */
-  $scope.resizeView = function() {
-    var newHeight = 
-      $(window).height() 
-      - $('div.navbar').height() 
-      - 90
-      - $('#toolbar').height();
-    $('#map-canvas').css({height: newHeight});
-  };
 
   $scope.toggleUserLocation = function() {
     if ($scope.userLocationOn) {
       $scope.locationProvider.hideUserLocation();
       $scope.locationProvider.stopWatchingUserLocation();
       $scope.userLocationOn = false;
+      $analytics.eventTrack(
+        'Turned Off',
+        { category: 'User Location' }
+      );
       return;
     } 
 
@@ -128,7 +105,7 @@ angular.module('atlasApp').controller('PlaceCtrl', function(
         $scope.locationProvider.getUserLocation().getPosition();
     if (position) {
       $timeout(function() {
-        $scope.map.panTo(position);
+        MapsService.getMap().panTo(position);
         $scope.userLocationLoading = false;
         $scope.userLocationOn = true;
         $scope.locationProvider.showUserLocation();
@@ -138,9 +115,13 @@ angular.module('atlasApp').controller('PlaceCtrl', function(
           .then(function(coordinates) {
             $scope.userLocationLoading = false;
             $scope.userLocationOn = true;
-            $scope.map.panTo(coordinates);
+            MapsService.getMap().panTo(coordinates);
           });
     }
+    $analytics.eventTrack(
+      'Turned On',
+      { category: 'User Location' }
+    );
   };
 
   $scope.toggleBusLocation = function() {
@@ -148,6 +129,10 @@ angular.module('atlasApp').controller('PlaceCtrl', function(
       $timeout.cancel($scope.getBusInfo);
       $scope.busInfoProvider.stopDrawingBusInfo();
       $scope.busInfoOn = false;
+      $analytics.eventTrack(
+        'Turned Off',
+        { category: 'Bus Location' }
+      );
     } else {
       $scope.busInfoLoading = true;
       $scope.getBusInfo = $timeout(function myFunction() {
@@ -158,9 +143,22 @@ angular.module('atlasApp').controller('PlaceCtrl', function(
           $scope.getBusInfo = $timeout(myFunction, 2000);
         }, 2000);
       });
+      $analytics.eventTrack(
+        'Turned On',
+        { category: 'Bus Location' }
+      );
     }
   };
 
+  $analytics.eventTrack(
+    'Button Displayed',
+    { category: 'User Location' }
+  );
+  $analytics.eventTrack(
+    'Button Displayed',
+    { category: 'Bus Location' }
+  );
+  
   $scope.init();
 
 });

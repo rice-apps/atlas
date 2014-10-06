@@ -12,19 +12,19 @@ var atlasApp = angular.module('atlasApp', [
 atlasApp.config(function($routeProvider) {
   $routeProvider
     .when('/', {
-      templateUrl: '/views/main.html',
+      templateUrl: '/views/controllers/MainCtrl.html',
       controller: 'MainCtrl'
     })
     .when('/search', {
-      templateUrl: '/views/main.html',
+      templateUrl: '/views/controllers/MainCtrl.html',
       controller: 'MainCtrl'
     })
     .when('/place/:placeID', {
-      templateUrl: '/views/place.html',
+      templateUrl: '/views/controllers/PlaceCtrl.html',
       controller: 'PlaceCtrl'
     })
     .when('/bus', {
-      templateUrl: '/views/bus.html',
+      templateUrl: '/views/controllers/BusCtrl.html',
       controller: 'BusCtrl'
     })
     .otherwise({
@@ -32,7 +32,7 @@ atlasApp.config(function($routeProvider) {
     });
 });
 
-atlasApp.run(function($rootScope) {
+atlasApp.run(function($rootScope, MapsService) {
 
   var prod = true;
   if (prod) {

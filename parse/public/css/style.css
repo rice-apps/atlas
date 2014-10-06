@@ -127,6 +127,14 @@
   margin-right: 5px;
 }
 
+#info-bar .label {
+  margin-right: 5px;
+}
+
+#info-bar #side-note{
+  font-size: 1em;
+}
+
 #toolbar {
   background-color:#f5f5f5;
   padding: 5px;
