@@ -1,6 +1,4 @@
-angular.module('atlasApp').service('MapsService', function(
-  $http
-) {
+angular.module('atlasApp').service('MapsService', function() {
   var MapsService = {};
 
   MapsService.mapCenter = new google.maps.LatLng(29.717384, -95.403171);
@@ -12,7 +10,7 @@ angular.module('atlasApp').service('MapsService', function(
     console.log('Initializing');
     var mapOptions = {
       zoom: 15,
-      center: self.mapCenter,
+      center: MapsService.mapCenter,
       mapTypeId: google.maps.MapTypeId.ROADMAP,
       disableDefaultUI: true,
     };
@@ -46,26 +44,22 @@ angular.module('atlasApp').service('MapsService', function(
     return position;
   };
 
-
   /**
-   * Resizes the view to fit within the bounds of the screen.
+   * Resizes the height of the map
    */
   MapsService.setMapHeight = function(newHeight) {
     $('#map-canvas').css({height: newHeight});
   };
 
-
   MapsService.setCenter = function(position) {
     MapsService.map.setCenter(position);
   };
-
 
   MapsService.clearMap = function() {};
 
   MapsService.getMap = function() {
     return MapsService.map;
   }
-
 
   return {
     initMap: MapsService.initMap,

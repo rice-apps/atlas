@@ -57,7 +57,6 @@ angular.module('atlasApp').controller('PlaceCtrl', function(
       var query = new Parse.Query($scope.Place);
       query.get(placeID).then(function(place) {
         console.log(place);
-        window.place = place;
         $scope.place = place;
         $scope.$apply();
         $('title').text('Atlas - ' + place.get('name'));
