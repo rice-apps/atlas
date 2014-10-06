@@ -1,24 +1,9 @@
 
 <!-- Search Bar -->
-<div id="search-bar" class="input-group input-group-lg">
-  <input 
-    type="text"
-    class="form-control"
-    ng-model="query"
-    typeahead="res as res.attributes.name for res in autocomplete($viewValue)"
-    typeahead-on-select="onAutocompleteSelect($item, $model, $label, 'MainCtrl')"
-    placeholder="What are you looking for?"
-  />
-  <a 
-    href="/#/search?q={{query}}"
-    class="input-group-addon"
-    analytics-on="click"
-    analytics-event="Click Search Button"
-    analytics-category="Search"
-    >
-    <span class="glyphicon glyphicon-search"></span>
-  </a>
-</div>
+<search-bar
+  query="query"
+  results="searchResults">
+</search-bar>
 
 <!-- Main Menu -->
 <div id="main-menu">
