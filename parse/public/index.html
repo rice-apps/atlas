@@ -8,7 +8,12 @@
   <link href="/bower_components/ladda/dist/ladda-themeless.min.css" rel="stylesheet">
   <link href="/css/style.css" rel="stylesheet">
 </head>
+
+
+
 <body ng-app="atlasApp">
+
+
   <!-- Navbar -->
   <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
     <div class="container">
@@ -33,6 +38,10 @@
   <div id="page-view" ng-view="">
     <!-- Page View Goes Here -->
   </div>
+
+    <!-- Google Maps -->
+  <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=true"></script>
+  <script src="/js/lib/geolocationmarker.js"></script>
 
   <!-- Parse SDK -->
   <script src="//www.parsecdn.com/js/parse-1.2.19.min.js"></script>
@@ -64,9 +73,7 @@
   <script src="/js/BusInfoProvider.js"></script>
   <script src="/js/MapsService.js"></script>
 
-  <!-- Google Maps -->
-  <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=true"></script>
-  <script src="/js/lib/geolocationmarker.js"></script>
+
 
   <!-- Google Analytics - Prod Only -->
   <!--
