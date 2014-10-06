@@ -9,7 +9,7 @@ angular.module('atlasApp').directive('searchBar', function() {
       // The query text that goes in the search bar
       query: '=',
       // Whether the search bar should be overlayed or take its own space
-      overlay: '='
+      overlay: '@'
     },
     templateUrl: '/views/directives/SearchBar.html',
     controller: function(
