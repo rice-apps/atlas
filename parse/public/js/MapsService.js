@@ -73,6 +73,7 @@ angular.module('atlasApp').service('MapsService', function(
     hideMap: MapsService.hideMap,
     plotMarker: MapsService.plotMarker,
     setCenter: MapsService.setCenter,
-    getMap: MapsService.getMap
+    getMap: MapsService.getMap,
+    setMapHeight: MapsService.setMapHeight
   };
 });

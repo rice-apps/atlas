@@ -42,7 +42,6 @@ angular.module('atlasApp').controller('PlaceCtrl', function(
   $scope.init = function() {
 
     MapsService.initMap();
-    MapsService.resizeView();
     $(window).resize(function() {
       var newHeight = 
       $(window).height() 
@@ -69,10 +68,10 @@ angular.module('atlasApp').controller('PlaceCtrl', function(
       });
     }
 
-    $scope.locationProvider = new LocationProvider();
+    $scope.locationProvider = new LocationProvider(MapsService.getMap());
 
     // Instantiating the Bus Info Provider with a map.
-    $scope.busInfoProvider = new BusInfoProvider();
+    $scope.busInfoProvider = new BusInfoProvider(MapsService.getMap());
 
   }
 
