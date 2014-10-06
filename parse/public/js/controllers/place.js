@@ -7,6 +7,7 @@ angular.module('atlasApp').controller('PlaceCtrl', function(
   $http,
   $q,
   $timeout,
+  $analytics,
   cfpLoadingBar,
   LocationProvider,
   BusInfoProvider
@@ -119,6 +120,10 @@ angular.module('atlasApp').controller('PlaceCtrl', function(
       $scope.locationProvider.hideUserLocation();
       $scope.locationProvider.stopWatchingUserLocation();
       $scope.userLocationOn = false;
+      $analytics.eventTrack(
+        'Turned Off',
+        { category: 'User Location' }
+      );
       return;
     } 
 
@@ -141,6 +146,10 @@ angular.module('atlasApp').controller('PlaceCtrl', function(
             $scope.map.panTo(coordinates);
           });
     }
+    $analytics.eventTrack(
+      'Turned On',
+      { category: 'User Location' }
+    );
   };
 
   $scope.toggleBusLocation = function() {
@@ -148,6 +157,10 @@ angular.module('atlasApp').controller('PlaceCtrl', function(
       $timeout.cancel($scope.getBusInfo);
       $scope.busInfoProvider.stopDrawingBusInfo();
       $scope.busInfoOn = false;
+      $analytics.eventTrack(
+        'Turned Off',
+        { category: 'Bus Location' }
+      );
     } else {
       $scope.busInfoLoading = true;
       $scope.getBusInfo = $timeout(function myFunction() {
@@ -158,9 +171,22 @@ angular.module('atlasApp').controller('PlaceCtrl', function(
           $scope.getBusInfo = $timeout(myFunction, 2000);
         }, 2000);
       });
+      $analytics.eventTrack(
+        'Turned On',
+        { category: 'Bus Location' }
+      );
     }
   };
 
+  $analytics.eventTrack(
+    'Button Displayed',
+    { category: 'User Location' }
+  );
+  $analytics.eventTrack(
+    'Button Displayed',
+    { category: 'Bus Location' }
+  );
+  
   $scope.init();
 
 });
