@@ -40,18 +40,30 @@ Parse.Cloud.define("placeAutocomplete", function(request, response) {
   var query = new Parse.Query("Place");
   query.limit(200);
   query.include("parentPlace");
-  query.select("name");
+  query.select("name, symbol");
 
   query.find({
     success: function(results) {
+
       // Perform Fuse.js fuzzy search on all Place objects
       var options = {
-        keys: ['attributes.name', 'attributes.symbol']
+        keys: ['attributes.name']
       }
 
       var searcher = new Fuse(results, options);
       var matches = searcher.search(request.params.query);
-      response.success(matches.slice(0, 5));
+      // Will contain any matches and be returned in the response
+      var res = matches.slice(0, 5);
+
+      // Perform substring search of results symbols (aka building abbreviations)
+      for (i = 0; i < results.length; i++) {
+        var place = results[i];
+        if (place.attributes.symbol.indexOf(request.params.query) > -1) {
+          res.push(place);
+        }
+      }
+
+      response.success(res);
     },
     error: function(error) {
       response.error(error);
