@@ -59,6 +59,31 @@ Parse.Cloud.define("placeAutocomplete", function(request, response) {
   });
 });
 
+Parse.Cloud.define("courseSearch", function(request,response){
+  console.log("Search Query:" + request.params.query);
+
+    var query = new Parse.Query("Course");
+    query.limit(200)
+
+    query.find({
+      success: function(results){
+
+        var options ={
+          keys: ['attributes.name']
+        }
+
+        var searcher = new Fuse(results, options);
+        var matchers = searcher.search(request.param.query);
+        response.success(matches.slice(0,5));
+
+      }
+
+      error: function(error){
+        response.error(error);
+      }
+    });
+});
+
 Parse.Cloud.define("courseAutocomplete", function(request, response) {
   console.log("Search Query: " + request.params.query);
 
